@@ -1,1 +1,189 @@
-{"factors": {}}
+{
+  "factors": {
+    "CrowdingFade": {
+      "status": "TRADE_RULE_REPAIR",
+      "family": "vol_accel_fade",
+      "role": "candidate_trade_signal",
+      "latest_paper": {
+        "best_config": "threshold_entry z=2.0 hold=3 cost=9bps",
+        "net_pnl": -10.64,
+        "gross_pnl": 6.38,
+        "cost_to_gross_pct": 267.0,
+        "turnover": 13,
+        "pf": 0.86,
+        "improvement_vs_baseline_pct": 88
+      },
+      "baseline_net": -90.87,
+      "6x6_pass": true,
+      "ic": 0.025,
+      "oos_icir": 0.260,
+      "parameter_fragile": false,
+      "notes": "Best existing factor. Optimization matrix running to test z=1.5-3.0 × hold=1-8 × cost=4-9bps. If plateau region shows net positive → PAPER_REPAIR_PASS.",
+      "killed": false,
+      "killed_reason": null,
+      "last_updated": "2026-06-04T03:00:00Z"
+    },
+    "VolAccelFade": {
+      "status": "TRADE_RULE_REPAIR",
+      "family": "vol_accel_fade",
+      "role": "candidate_trade_signal",
+      "latest_paper": {
+        "best_config": "threshold_entry z=1.5 hold=3 cost=9bps",
+        "net_pnl": -16.85,
+        "gross_pnl": 5.73,
+        "cost_to_gross_pct": 394.0,
+        "turnover": 18,
+        "pf": 0.81,
+        "improvement_vs_baseline_pct": 81
+      },
+      "baseline_net": -90.49,
+      "6x6_pass": true,
+      "ic": 0.028,
+      "oos_icir": 0.326,
+      "parameter_fragile": false,
+      "notes": "First factor to reach TRADE_RULE_REPAIR. Optimization matrix running.",
+      "killed": false,
+      "killed_reason": null,
+      "last_updated": "2026-06-04T03:00:00Z"
+    },
+    "FPR_DirStrengthSplit": {
+      "status": "TRADE_RULE_REPAIR",
+      "family": "funding_pressure",
+      "role": "candidate_trade_signal",
+      "latest_paper": {
+        "best_config": "full_rebalance hold=1 cost=9bps",
+        "net_pnl": -91.14,
+        "gross_pnl": 4.40,
+        "cost_to_gross_pct": 1086.0,
+        "turnover": 37,
+        "pf": 0.58
+      },
+      "baseline_net": -91.14,
+      "6x6_pass": true,
+      "ic": 0.019,
+      "oos_icir": 0.253,
+      "parameter_fragile": true,
+      "notes": "Gross positive but threshold_entry mode shows Gross turning negative — alpha disappears with filtering. parameter_fragile. Lower priority than CrowdingFade/VolAccelFade.",
+      "killed": false,
+      "killed_reason": null,
+      "last_updated": "2026-06-04T03:00:00Z"
+    },
+    "FundingPressureRelease": {
+      "status": "KILL",
+      "family": "funding_pressure",
+      "role": "none",
+      "latest_paper": {
+        "best_config": "full_rebalance hold=1 cost=9bps",
+        "net_pnl": -95.73,
+        "gross_pnl": -0.19,
+        "cost_to_gross_pct": 25419.0,
+        "turnover": 37,
+        "pf": 0.56
+      },
+      "baseline_net": -95.73,
+      "6x6_pass": false,
+      "ic": 0.018,
+      "oos_icir": 0.225,
+      "parameter_fragile": false,
+      "notes": "Gross NEGATIVE. No alpha regardless of execution. True KILL.",
+      "killed": true,
+      "killed_reason": "Gross PnL negative — no alpha to salvage",
+      "last_updated": "2026-06-04T03:00:00Z"
+    },
+    "OIMomentumDivergence": {
+      "status": "KILL",
+      "family": "oi_momentum",
+      "role": "none",
+      "latest_paper": {
+        "best_config": "full_rebalance hold=1 cost=9bps",
+        "net_pnl": -96.72,
+        "gross_pnl": -1.17,
+        "cost_to_gross_pct": 4082.0,
+        "turnover": 37,
+        "pf": 0.57
+      },
+      "baseline_net": -96.72,
+      "6x6_pass": false,
+      "ic": 0.002,
+      "oos_icir": null,
+      "parameter_fragile": false,
+      "notes": "Gross NEGATIVE. Never revisit.",
+      "killed": true,
+      "killed_reason": "Gross PnL negative",
+      "last_updated": "2026-06-04T03:00:00Z"
+    },
+    "MADVolAccelOIRankV6": {
+      "status": "TRADE_RULE_REPAIR",
+      "family": "mad_vol_accel",
+      "role": "idea_only",
+      "latest_paper": {
+        "best_config": "threshold_entry hold=6 cost=9bps",
+        "net_pnl": -21.12,
+        "gross_pnl": 1.83,
+        "cost_to_gross_pct": 1256.0,
+        "turnover": 18,
+        "pf": 0.81
+      },
+      "baseline_net": -94.00,
+      "6x6_pass": true,
+      "ic": null,
+      "oos_icir": null,
+      "parameter_fragile": true,
+      "notes": "External AI flagged as paper_candidate but paper trading shows weaker Gross than CrowdingFade (1.83 vs 6.38). MAD direction has research value but this specific implementation is too weak. Needs stronger vol structure + OI interaction.",
+      "killed": false,
+      "killed_reason": null,
+      "last_updated": "2026-06-04T03:00:00Z"
+    },
+    "OIFailureToAdvance": {
+      "status": "KILL",
+      "family": "oi_efficiency",
+      "role": "none",
+      "6x6_pass": false,
+      "ic": -0.0005,
+      "oos_icir": 0.016,
+      "notes": "IC effectively zero. Formula produces noise. KILL.",
+      "killed": true,
+      "killed_reason": "IC = -0.0005 — no alpha",
+      "last_updated": "2026-06-04T03:30:00Z"
+    },
+    "DeleveragingSnapback": {
+      "status": "KILL",
+      "family": "event_reversal",
+      "role": "none",
+      "6x6_pass": false,
+      "ic": 0.0128,
+      "oos_icir": -0.108,
+      "notes": "Events too rare (2.4% nonzero). OOS negative. KILL.",
+      "killed": true,
+      "killed_reason": "OOS negative, only 2.4% of bars have signal",
+      "last_updated": "2026-06-04T03:30:00Z"
+    },
+    "FundingTrapFade": {
+      "status": "KILL",
+      "family": "funding_trap",
+      "role": "none",
+      "6x6_pass": false,
+      "ic": 0.0088,
+      "oos_icir": 0.182,
+      "notes": "IC too weak, 82% short bias, quantile returns all negative. KILL.",
+      "killed": true,
+      "killed_reason": "IC=0.0088 too weak + extreme short bias",
+      "last_updated": "2026-06-04T03:30:00Z"
+    }
+  },
+  "methodology_version": "v2",
+  "anti_patterns": [
+    "sign/zscore/rank_pct mechanical swapping",
+    "single-point parameter claims",
+    "low correlation = new alpha",
+    "6/6 PASS = deployable"
+  ],
+  "priority_directions": [
+    "MAD vol structure + OI ranking (stronger than V6)",
+    "BTC regime + small coin relative strength",
+    "Event-triggered OI shock / deleveraging",
+    "Funding trap (stronger implementation)",
+    "Multi-factor combination of TRADE_RULE_REPAIR candidates"
+  ],
+  "last_updated": "2026-06-04T03:30:00Z"
+}
