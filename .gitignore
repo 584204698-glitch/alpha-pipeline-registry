@@ -1,0 +1,22 @@
+# Data files — too large for git
+data/markets/
+data/data_storage.parquet
+data/data_storage_*.parquet
+data/download_progress_*.json
+
+# Python cache
+__pycache__/
+*.pyc
+.venv/
+
+# Secrets
+.env.runtime
+.env
+
+# Logs (reports go to registry/reports/)
+logs/
+!registry/
+
+# IDE
+.vscode/
+.idea/

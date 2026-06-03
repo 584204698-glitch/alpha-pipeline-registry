@@ -1,0 +1,17 @@
+{
+  "deepseek_api_key_env": "DEEPSEEK_API_KEY",
+  "coinglass_api_key_env": "COINGLASS_API_KEY",
+  "default_mode": "discover",
+  "default_batch_size": 10,
+  "cpu_usage_cap": 0.7,
+  "memory_cap_gb": 100,
+  "transaction_fee_bps": 5.0,
+  "slippage_bps": 3.0,
+  "spread_bps": 1.0,
+  "live_symbol_limit": 200,
+  "live_history_limit": 1000,
+  "live_intervals": ["15m", "1h", "2h", "4h"],
+  "live_pause_seconds": 4.5,
+  "live_exchanges": ["Binance", "OKX"],
+  "data_path": "data/data_storage_1h.parquet"
+}

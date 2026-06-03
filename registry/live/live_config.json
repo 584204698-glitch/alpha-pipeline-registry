@@ -1,0 +1,8 @@
+{
+  "mode": "disabled",
+  "enabled_factors": [],
+  "max_risk_per_trade": 0.002,
+  "allow_ai_override": false,
+  "require_risk_check_id": true,
+  "block_unapproved_factors": true
+}

@@ -1,0 +1,70 @@
+{
+  "factors": [
+    {
+      "factor_name": "OIMomentumDivergence",
+      "factor_file": "factors/alpha_oimomentumdivergence.py",
+      "parameters": {
+        "oi_delta_lag": 5,
+        "zscore_window": 20,
+        "close_lag": 1
+      },
+      "enabled_key": "FACTOR_OIMOMENTUMDIVERGENCE_ENABLED",
+      "FACTOR_OIMOMENTUMDIVERGENCE_ENABLED": false,
+      "deployed_at": "2026-06-03T11:34:48Z"
+    },
+    {
+      "factor_name": "CrowdingFade",
+      "factor_file": "factors/alpha_crowding_fade.py",
+      "parameters": {
+        "lookback": 6,
+        "window": 24,
+        "vol_window": 48
+      },
+      "enabled_key": "FACTOR_CROWDINGFADE_ENABLED",
+      "FACTOR_CROWDINGFADE_ENABLED": false,
+      "deployed_at": "2026-06-03T14:30:00Z"
+    },
+    {
+      "factor_name": "VolAccelFade",
+      "factor_file": "factors/alpha_vol_accel_fade.py",
+      "parameters": {
+        "vol_window": 12,
+        "accel_lag": 6,
+        "window": 24,
+        "mom_lag": 6
+      },
+      "enabled_key": "FACTOR_VOLACCELFADE_ENABLED",
+      "FACTOR_VOLACCELFADE_ENABLED": false,
+      "deployed_at": "2026-06-03T17:20:00Z"
+    },
+    {
+      "factor_name": "FundingPressureRelease",
+      "factor_file": "factors/alpha_funding_pressure_release.py",
+      "parameters": {
+        "funding_window": 24,
+        "return_window": 24,
+        "oi_window": 6
+      },
+      "enabled_key": "FACTOR_FUNDINGPRESSURERELEASE_ENABLED",
+      "FACTOR_FUNDINGPRESSURERELEASE_ENABLED": false,
+      "deployed_at": "2026-06-04T01:30:00Z"
+    },
+    {
+      "factor_name": "FPR_DirStrengthSplit",
+      "factor_file": "factors/alpha_fpr_dir_strength_split.py",
+      "parameters": {
+        "funding_window": 24,
+        "oi_window": 6,
+        "ret_window": 24
+      },
+      "enabled_key": "FACTOR_FPR_DIRSTRENGTHSPLIT_ENABLED",
+      "FACTOR_FPR_DIRSTRENGTHSPLIT_ENABLED": false,
+      "deployed_at": "2026-06-04T06:30:00Z",
+      "metrics_snapshot": {
+        "overall_ic": 0.0191,
+        "out_of_sample_icir": 0.253,
+        "long_ratio": 0.443
+      }
+    }
+  ]
+}
