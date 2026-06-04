@@ -32,12 +32,18 @@ import pandas as pd
 # ── State Machine ────────────────────────────────────
 
 class EventState(Enum):
-    WATCH = "watch"                    # preliminary signal, not yet qualified
-    QUALIFIED = "qualified"            # core event detected, awaiting confirmation
-    CONFIRMED = "confirmed"            # entry confirmation passed (e.g. price stabilizing)
-    ENTERED = "entered"                # position opened
-    EXITED = "exited"                  # position closed
-    REJECTED = "rejected"              # filtered out (panic, spread, black swan)
+    """Event state machine.
+
+    Spec mapping:
+        REJECTED → WATCH → QUALIFIED (QUALIFIED_EVENT) → CONFIRMED (SHADOW_SIGNAL) → ENTERED → EXITED / EXPIRED
+    """
+    WATCH = "watch"
+    QUALIFIED = "qualified"
+    CONFIRMED = "confirmed"
+    ENTERED = "entered"
+    EXITED = "exited"
+    EXPIRED = "expired"
+    REJECTED = "rejected"
 
 
 # ── Data structures ──────────────────────────────────

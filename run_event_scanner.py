@@ -228,10 +228,18 @@ class EventScannerRunner:
 
     # ── Helpers ─────────────────────────────────────
 
+    # ── Event type → registry factor ID mapping ──────
+    REGISTRY_FACTOR_IDS = {
+        "DeleveragingReversal": "SmallCapDeleveragingReversalV1.2",
+        "OIShockAbsorption": "OIShockAbsorptionV1.0",
+        "RelativeStrengthShock": "RelativeStrengthShockV1.0",
+    }
+
     def _build_base_record(self, symbol: str, event_type: str, direction: str, score: float,
                            return_1h: float = 0.0, oi_delta_z: float = 0.0, volume_z: float = 0.0,
-                           close_location: float = 0.0, spread_bps: float = 0.0) -> dict:
-        """Build shadow record matching trading Hermes signal spec."""
+                           close_location: float = 0.0, spread_bps: float = 0.0,
+                           funding_z: float = 0.0) -> dict:
+        """Build shadow record matching Section 10 shadow signal spec."""
         regime = self.regime_map.get(self.latest_ts, "unknown") if self.latest_ts else "unknown"
         rg_conf = int(self.regime_conf_map.get(self.latest_ts, 0)) if self.latest_ts else 0
 
@@ -256,17 +264,20 @@ class EventScannerRunner:
             "direction": direction,
             "hold_bars": None,
             "event_score": round(score, 4),
+            "regime": regime,
+            "regime_confidence": rg_conf,
             "return_1h": round(return_1h, 4),
             "oi_delta_z": round(oi_delta_z, 2),
             "volume_z": round(volume_z, 2),
+            "funding_z": round(funding_z, 2),
             "close_location": round(close_location, 3),
-            "btc_regime": regime,
-            "regime_confidence": rg_conf,
-            "marketwide_oi_collapse_count": marketwide_collapse,
             "spread_bps": round(spread_bps, 1),
             "expected_cost_bps": 18,
+            "marketwide_oi_collapse_count": marketwide_collapse,
             "reasons": [],
             "reject_reason": "",
+            "scanner_config_version": "scanner_v1.0",
+            "registry_factor_id": self.REGISTRY_FACTOR_IDS.get(event_type, "UNKNOWN"),
         }
 
     def _get_oi_z(self, symbol: str) -> float | None:
@@ -289,7 +300,7 @@ class EventScannerRunner:
     def _count_by_regime(self, signals: list[dict]) -> dict[str, int]:
         counts: dict[str, int] = {}
         for s in signals:
-            counts[s.get("btc_regime", "unknown")] = counts.get(s.get("btc_regime", "unknown"), 0) + 1
+            counts[s.get("regime", "unknown")] = counts.get(s.get("regime", "unknown"), 0) + 1
         return counts
 
     def _count_by_reason(self, rejects: list[dict]) -> dict[str, int]:
@@ -355,4 +366,4 @@ if __name__ == "__main__":
         for sig in sorted(runner.all_signals, key=lambda s: -s.get("event_score", 0))[:5]:
             print(f"  {sig['symbol']:20s} {sig['event_type']:25s} "
                   f"score={sig['event_score']:.3f} dir={sig['direction']:5s} "
-                  f"regime={sig.get('btc_regime','?')}")
+                  f"regime={sig.get('regime','?')}")
