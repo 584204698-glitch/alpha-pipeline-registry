@@ -12,7 +12,6 @@
         "universe": "volume_rank 20-100",
         "entry_mode": "current_close",
         "hold_bars": 2,
-        "v1.0_cost_9bps": { "n_trades": 233, "net_bps": 7257, "pf": 1.68, "cost_to_gross_pct": 22, "hit_rate": 0.532 },
         "v1.2_regime_gated": {
           "n_trades": 34,
           "net_9bps": 3349,
@@ -38,11 +37,6 @@
         "regime-based position sizing: trend_up=50%",
         "cooldown 4h per symbol"
       ],
-      "promotion_requirements": [
-        "Shadow for 2-4 weeks before tiny_live",
-        "Expand data to 1000-bar for more regime samples",
-        "Validate regime rules hold with more trade samples"
-      ],
       "killed": false,
       "last_updated": "2026-06-04T10:00:00Z"
     },
@@ -52,55 +46,70 @@
       "family": "small_cap_event_alpha",
       "role": "small_cap_event_alpha",
       "direction": "regime_dependent",
-      "mechanism": "Small-cap coin shows significant outperformance vs BTC (RS > 5%) with volume + OI confirmation. Direction is REGIME-DEPENDENT: range → LONG (real accumulation), trend_down → SHORT (dead cat bounce fade), trend_up → SKIP (no edge). High frequency complement to Deleveraging Reversal.",
+      "mechanism": "RS > 5% with volume + OI confirmation. Direction: range→LONG, trend_down→SHORT, trend_up→SKIP.",
       "latest_paper": {
         "data": "500 symbols 1h, 1002 timestamps (41d)",
         "universe": "volume_rank 20-100",
         "entry_mode": "current_close",
         "hold_bars": 2,
-        "cost_9bps": {
-          "n_trades": 311,
-          "net_bps": 16800,
-          "pf": 1.27,
-          "cost_to_gross_pct": 14,
-          "hit_rate": 0.486
-        },
+        "cost_9bps": { "n_trades": 311, "net_bps": 16800, "pf": 1.27, "hit_rate": 0.486, "cost_to_gross_pct": 14 },
         "regime_breakdown": {
-          "range_long": { "n": 259, "net_9bps": 10070, "hit": 0.46, "logic": "real accumulation in sideways market" },
+          "range_long": { "n": 259, "net_9bps": 10070, "hit": 0.46, "logic": "real accumulation in sideways" },
           "trend_down_short": { "n": 52, "net_9bps": 6730, "hit": 0.64, "logic": "dead cat bounce in downtrend" }
-        },
-        "key_insight": "RS shocks in range are real accumulation (long wins). RS shocks in trend_down are dead cat bounces (short wins). Trend_up has no edge. This is the mirror image of Deleveraging Reversal's regime behavior."
+        }
       },
-      "gates": [
-        "RS > 5% (symbol_ret - btc_ret)",
-        "volume_z > 2.0",
-        "oi_delta_z > 0.5 (new money entering)",
-        "close_location > 0.50 (not fading)",
-        "|funding_z| < 2.5 (not a crowded trade)",
-        "event_score > 0.60",
-        "btc_ret_1h > -1% (BTC not crashing)",
-        "skip trend_up/panic_down/chop regimes",
-        "cooldown 8 bars per symbol"
-      ],
-      "promotion_requirements": [
-        "Shadow for 2-4 weeks before tiny_live",
-        "Validate regime-dependent direction holds out-of-sample",
-        "Monitor correlation with Deleveraging Reversal (<0.3 target)",
-        "Test parameter stability across tighter RS thresholds"
-      ],
+      "gates": ["RS > 5%", "volume_z > 2.0", "oi_delta_z > 0.5", "close_location > 0.50", "|funding_z| < 2.5", "event_score > 0.60", "btc_ret_1h > -1%", "skip trend_up/panic_down/chop", "cooldown 8 bars"],
       "killed": false,
       "last_updated": "2026-06-04T10:00:00Z"
+    },
+    "OIShockAbsorptionV1": {
+      "status": "SHADOW_CANDIDATE",
+      "version": "1.0",
+      "family": "small_cap_event_alpha",
+      "role": "small_cap_event_alpha",
+      "direction": "long_only",
+      "mechanism": "OI surge (oi_delta_z > 2.5) + price failure at range LOW (close_loc < 0.4) → new SHORTS trapped → squeeze → LONG. Short side KILLED — long flushes at range highs are not mechanical enough.",
+      "latest_paper": {
+        "data": "500 symbols 1h, 1002 timestamps (41d)",
+        "universe": "volume_rank 20-100",
+        "entry_mode": "current_close",
+        "hold_bars": 2,
+        "cost_9bps": { "n_trades": 115, "net_bps": 7728, "pf": 1.72, "hit_rate": 0.452, "cost_to_gross_pct": 12 },
+        "regime_breakdown": {
+          "range": { "n": 89, "net_9bps": 7422, "hit": 0.43 },
+          "trend_down": { "n": 14, "net_9bps": 517, "hit": 0.64 },
+          "trend_up": { "n": 12, "net_9bps": -211, "hit": 0.42 }
+        },
+        "key_insight": "Direction asymmetry: short squeezes work (shorts MUST buy), long flushes don't (value buyers absorb). Only LONG from trapped shorts at range lows is viable."
+      },
+      "gates": [
+        "oi_delta_z > 2.5",
+        "volume_z > 1.5",
+        "close_loc < 0.4 (trapped shorts at range low)",
+        "price failure: abs(ret_15m) < 1% OR abs(ret_1h) < 2%",
+        "skip panic_down/chop regimes",
+        "allow_short=False (dead side, asymmetry confirmed)",
+        "cooldown 8 bars per symbol"
+      ],
+      "killed": false,
+      "last_updated": "2026-06-04T10:30:00Z"
     }
   },
   "shadow_candidates": [
     "SmallCapDeleveragingReversalV1",
-    "RelativeStrengthShockV1"
+    "RelativeStrengthShockV1",
+    "OIShockAbsorptionV1"
   ],
   "event_family_summary": {
-    "total_events": 2,
-    "combined_net_9bps": 20149,
-    "combined_trades": 345,
-    "complementarity": "Deleveraging (low freq, high PF, OI-collapse events) + RS Shock (high freq, medium PF, RS events) — non-overlapping triggers, both profitable in trend_down via different mechanisms"
+    "total_event_types": 3,
+    "combined_net_9bps": 27877,
+    "combined_trades": 460,
+    "breakdown": {
+      "DeleveragingReversal": { "trades": 34, "pf": 2.61, "net": 3349, "role": "low-freq high-PF anchor" },
+      "RelativeStrengthShock": { "trades": 311, "pf": 1.27, "net": 16800, "role": "high-freq volume driver" },
+      "OIShockAbsorption": { "trades": 115, "pf": 1.72, "net": 7728, "role": "mid-freq squeeze hunter" }
+    },
+    "complementarity": "Three non-overlapping triggers: OI collapse (deleveraging), RS divergence (relative strength), OI surge at lows (absorption). All profitable in trend_down via different mechanisms. Only RS Shock uses short direction."
   },
-  "last_updated": "2026-06-04T10:00:00Z"
+  "last_updated": "2026-06-04T10:30:00Z"
 }
