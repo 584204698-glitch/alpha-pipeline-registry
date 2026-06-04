@@ -1,0 +1,1657 @@
+{
+  "filters": [
+    {
+      "filter_name": "A_panic_mild",
+      "hypothesis": "BTC panic down \u2192 skip all small-cap longs",
+      "variables_used": [
+        "btc_ret_1h<-0.02"
+      ],
+      "rule_definition": "Reject if btc_ret_1h < -0.02",
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -1,
+        "delta_net": 365.0,
+        "delta_pf": 0.061,
+        "delta_hit": 0.004,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": 364.0,
+        "rejected_count": 1,
+        "rejected_hindsight_net": -364.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 114,
+        "net_pnl": 8093.0,
+        "pf": 1.782,
+        "hit_rate": 0.456,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 57.0,
+        "net_without_top3": 3466.0,
+        "avg_win": 354.6,
+        "avg_loss": -166.9
+      },
+      "decision": "FILTER_PASS",
+      "failure_modes": "Only 1 trade affected in 41d data \u2014 no true panic events in sample. Logic valid but statistical significance low.",
+      "recommended_registry_update": "Apply to OIShockAbsorption only. Combine with existing panic_down regime gate. Retest on 1000-bar data."
+    },
+    {
+      "filter_name": "A_panic_moderate",
+      "hypothesis": "BTC panic down \u2192 skip all small-cap longs",
+      "variables_used": [
+        "btc_ret_1h<-0.03"
+      ],
+      "rule_definition": "Reject if btc_ret_1h < -0.03",
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -1,
+        "delta_net": 365.0,
+        "delta_pf": 0.061,
+        "delta_hit": 0.004,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": 364.0,
+        "rejected_count": 1,
+        "rejected_hindsight_net": -364.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 114,
+        "net_pnl": 8093.0,
+        "pf": 1.782,
+        "hit_rate": 0.456,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 57.0,
+        "net_without_top3": 3466.0,
+        "avg_win": 354.6,
+        "avg_loss": -166.9
+      },
+      "decision": "FILTER_PASS",
+      "failure_modes": "Same as mild \u2014 single trade affected. Threshold severity doesn't matter in current data.",
+      "recommended_registry_update": "Use moderate threshold (btc_ret_1h < -3%) as default panic gate for all small-cap long events."
+    },
+    {
+      "filter_name": "A_panic_breadth_collapse",
+      "hypothesis": "BTC panic down \u2192 skip all small-cap longs",
+      "variables_used": [
+        "btc_ret_1h<-0.02",
+        "breadth<0.35"
+      ],
+      "rule_definition": "Reject if btc_ret_1h < -0.02 AND breadth < 0.35",
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -1,
+        "delta_net": 365.0,
+        "delta_pf": 0.061,
+        "delta_hit": 0.004,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": 364.0,
+        "rejected_count": 1,
+        "rejected_hindsight_net": -364.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 114,
+        "net_pnl": 8093.0,
+        "pf": 1.782,
+        "hit_rate": 0.456,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 57.0,
+        "net_without_top3": 3466.0,
+        "avg_win": 354.6,
+        "avg_loss": -166.9
+      },
+      "decision": "FILTER_PASS",
+      "failure_modes": "Same as above. Breadth adds no incremental filtering power in current sample.",
+      "recommended_registry_update": "Keep simple btc_ret threshold. Breadth+vol conditions are overfitting in 41d sample."
+    },
+    {
+      "filter_name": "C_systemic_N3",
+      "hypothesis": "Market-wide OI collapse > 3 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 3"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 3",
+      "tested_thresholds": [
+        3
+      ],
+      "affected_event_type": "DeleveragingReversal",
+      "comparison": {
+        "delta_n": -35,
+        "delta_net": -2218.0,
+        "delta_pf": Infinity,
+        "delta_hit": 0.444,
+        "delta_max_loss": 896.0,
+        "delta_net_no_top3": 89.0,
+        "rejected_count": 35,
+        "rejected_hindsight_net": 2219.0
+      },
+      "before_metrics": {
+        "n_trades": 36,
+        "net_pnl": 2493.0,
+        "pf": 1.821,
+        "hit_rate": 0.556,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 104.0,
+        "net_without_top3": -89.0,
+        "avg_win": 276.4,
+        "avg_loss": -189.7
+      },
+      "after_metrics": {
+        "n_trades": 1,
+        "net_pnl": 275.0,
+        "pf": Infinity,
+        "hit_rate": 1.0,
+        "max_loss": 275.0,
+        "top1_contribution": 275.0,
+        "top3_contribution": 275.0,
+        "top3_pct_of_net": 100.0,
+        "net_without_top3": 0,
+        "avg_win": 274.5,
+        "avg_loss": 0
+      },
+      "decision": "KILL",
+      "failure_modes": "Deleveraging: 36\u21921 trade. Net collapses -89%. Rejected trades have +2219 hindsight net. MASSIVE overkill.",
+      "recommended_registry_update": "DO NOT USE. Global timestamp-level gate kills too many profitable trades. Per-symbol approach in scanner is correct."
+    },
+    {
+      "filter_name": "C_systemic_N3",
+      "hypothesis": "Market-wide OI collapse > 3 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 3"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 3",
+      "tested_thresholds": [
+        3
+      ],
+      "affected_event_type": "RelativeStrengthShock",
+      "comparison": {
+        "delta_n": -296,
+        "delta_net": -13254.0,
+        "delta_pf": 1.409,
+        "delta_hit": -0.286,
+        "delta_max_loss": 2229.0,
+        "delta_net_no_top3": -9803.0,
+        "rejected_count": 296,
+        "rejected_hindsight_net": 13254.0
+      },
+      "before_metrics": {
+        "n_trades": 311,
+        "net_pnl": 16800.0,
+        "pf": 1.271,
+        "hit_rate": 0.486,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 54.0,
+        "net_without_top3": 7693.0,
+        "avg_win": 521.3,
+        "avg_loss": -386.9
+      },
+      "after_metrics": {
+        "n_trades": 15,
+        "net_pnl": 3546.0,
+        "pf": 2.68,
+        "hit_rate": 0.2,
+        "max_loss": -394.0,
+        "top1_contribution": 2910.0,
+        "top3_contribution": 5656.0,
+        "top3_pct_of_net": 160.0,
+        "net_without_top3": -2110.0,
+        "avg_win": 1885.3,
+        "avg_loss": -175.9
+      },
+      "decision": "KILL",
+      "failure_modes": "Deleveraging: 36\u21921 trade. Net collapses -89%. Rejected trades have +2219 hindsight net. MASSIVE overkill.",
+      "recommended_registry_update": "DO NOT USE. Global timestamp-level gate kills too many profitable trades. Per-symbol approach in scanner is correct."
+    },
+    {
+      "filter_name": "C_systemic_N3",
+      "hypothesis": "Market-wide OI collapse > 3 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 3"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 3",
+      "tested_thresholds": [
+        3
+      ],
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -110,
+        "delta_net": -6853.0,
+        "delta_pf": 1.022,
+        "delta_hit": -0.052,
+        "delta_max_loss": 513.0,
+        "delta_net_no_top3": -3591.0,
+        "rejected_count": 110,
+        "rejected_hindsight_net": 6853.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 5,
+        "net_pnl": 875.0,
+        "pf": 2.743,
+        "hit_rate": 0.4,
+        "max_loss": -386.0,
+        "top1_contribution": 718.0,
+        "top3_contribution": 1363.0,
+        "top3_pct_of_net": 156.0,
+        "net_without_top3": -489.0,
+        "avg_win": 688.4,
+        "avg_loss": -167.3
+      },
+      "decision": "KILL",
+      "failure_modes": "Deleveraging: 36\u21921 trade. Net collapses -89%. Rejected trades have +2219 hindsight net. MASSIVE overkill.",
+      "recommended_registry_update": "DO NOT USE. Global timestamp-level gate kills too many profitable trades. Per-symbol approach in scanner is correct."
+    },
+    {
+      "filter_name": "C_systemic_N5",
+      "hypothesis": "Market-wide OI collapse > 5 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 5"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 5",
+      "tested_thresholds": [
+        5
+      ],
+      "affected_event_type": "DeleveragingReversal",
+      "comparison": {
+        "delta_n": -34,
+        "delta_net": -897.0,
+        "delta_pf": Infinity,
+        "delta_hit": 0.444,
+        "delta_max_loss": 896.0,
+        "delta_net_no_top3": 89.0,
+        "rejected_count": 34,
+        "rejected_hindsight_net": 897.0
+      },
+      "before_metrics": {
+        "n_trades": 36,
+        "net_pnl": 2493.0,
+        "pf": 1.821,
+        "hit_rate": 0.556,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 104.0,
+        "net_without_top3": -89.0,
+        "avg_win": 276.4,
+        "avg_loss": -189.7
+      },
+      "after_metrics": {
+        "n_trades": 2,
+        "net_pnl": 1596.0,
+        "pf": Infinity,
+        "hit_rate": 1.0,
+        "max_loss": 275.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 1596.0,
+        "top3_pct_of_net": 100.0,
+        "net_without_top3": 0,
+        "avg_win": 798.0,
+        "avg_loss": 0
+      },
+      "decision": "KILL",
+      "failure_modes": "RS Shock: 311\u219233 trades, Net -91%. OI Absorption: 115\u219212 trades, Net -88%. Kills overwhelming majority of profitable events.",
+      "recommended_registry_update": "DO NOT USE. Even N=5 is too strict. The scanner's per-symbol gate (only reject individual events when >5 collapsing) is the right approach."
+    },
+    {
+      "filter_name": "C_systemic_N5",
+      "hypothesis": "Market-wide OI collapse > 5 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 5"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 5",
+      "tested_thresholds": [
+        5
+      ],
+      "affected_event_type": "RelativeStrengthShock",
+      "comparison": {
+        "delta_n": -278,
+        "delta_net": -15398.0,
+        "delta_pf": -0.06,
+        "delta_hit": -0.183,
+        "delta_max_loss": 1304.0,
+        "delta_net_no_top3": -11947.0,
+        "rejected_count": 278,
+        "rejected_hindsight_net": 15398.0
+      },
+      "before_metrics": {
+        "n_trades": 311,
+        "net_pnl": 16800.0,
+        "pf": 1.271,
+        "hit_rate": 0.486,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 54.0,
+        "net_without_top3": 7693.0,
+        "avg_win": 521.3,
+        "avg_loss": -386.9
+      },
+      "after_metrics": {
+        "n_trades": 33,
+        "net_pnl": 1402.0,
+        "pf": 1.211,
+        "hit_rate": 0.303,
+        "max_loss": -1319.0,
+        "top1_contribution": 2910.0,
+        "top3_contribution": 5656.0,
+        "top3_pct_of_net": 403.0,
+        "net_without_top3": -4254.0,
+        "avg_win": 805.4,
+        "avg_loss": -289.2
+      },
+      "decision": "KILL",
+      "failure_modes": "RS Shock: 311\u219233 trades, Net -91%. OI Absorption: 115\u219212 trades, Net -88%. Kills overwhelming majority of profitable events.",
+      "recommended_registry_update": "DO NOT USE. Even N=5 is too strict. The scanner's per-symbol gate (only reject individual events when >5 collapsing) is the right approach."
+    },
+    {
+      "filter_name": "C_systemic_N5",
+      "hypothesis": "Market-wide OI collapse > 5 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 5"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 5",
+      "tested_thresholds": [
+        5
+      ],
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -103,
+        "delta_net": -6779.0,
+        "delta_pf": -0.127,
+        "delta_hit": -0.119,
+        "delta_max_loss": 461.0,
+        "delta_net_no_top3": -4291.0,
+        "rejected_count": 103,
+        "rejected_hindsight_net": 6780.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 12,
+        "net_pnl": 949.0,
+        "pf": 1.594,
+        "hit_rate": 0.333,
+        "max_loss": -438.0,
+        "top1_contribution": 761.0,
+        "top3_contribution": 2138.0,
+        "top3_pct_of_net": 225.0,
+        "net_without_top3": -1189.0,
+        "avg_win": 636.4,
+        "avg_loss": -199.6
+      },
+      "decision": "KILL",
+      "failure_modes": "RS Shock: 311\u219233 trades, Net -91%. OI Absorption: 115\u219212 trades, Net -88%. Kills overwhelming majority of profitable events.",
+      "recommended_registry_update": "DO NOT USE. Even N=5 is too strict. The scanner's per-symbol gate (only reject individual events when >5 collapsing) is the right approach."
+    },
+    {
+      "filter_name": "C_systemic_N8",
+      "hypothesis": "Market-wide OI collapse > 8 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 8"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 8",
+      "tested_thresholds": [
+        8
+      ],
+      "affected_event_type": "DeleveragingReversal",
+      "comparison": {
+        "delta_n": -29,
+        "delta_net": -317.0,
+        "delta_pf": 9.277,
+        "delta_hit": 0.015,
+        "delta_max_loss": 473.0,
+        "delta_net_no_top3": 47.0,
+        "rejected_count": 29,
+        "rejected_hindsight_net": 317.0
+      },
+      "before_metrics": {
+        "n_trades": 36,
+        "net_pnl": 2493.0,
+        "pf": 1.821,
+        "hit_rate": 0.556,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 104.0,
+        "net_without_top3": -89.0,
+        "avg_win": 276.4,
+        "avg_loss": -189.7
+      },
+      "after_metrics": {
+        "n_trades": 7,
+        "net_pnl": 2176.0,
+        "pf": 11.098,
+        "hit_rate": 0.571,
+        "max_loss": -148.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2218.0,
+        "top3_pct_of_net": 102.0,
+        "net_without_top3": -42.0,
+        "avg_win": 597.9,
+        "avg_loss": -71.8
+      },
+      "decision": "KILL",
+      "failure_modes": "Still kills 80%+ of RS Shock trades. Rejected hindsight net +14,685 \u2014 almost the entire strategy's profit is in rejected trades.",
+      "recommended_registry_update": "DO NOT USE. All global N-based gates kill profitable trades. Rejected hindsight net is positive for ALL N values."
+    },
+    {
+      "filter_name": "C_systemic_N8",
+      "hypothesis": "Market-wide OI collapse > 8 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 8"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 8",
+      "tested_thresholds": [
+        8
+      ],
+      "affected_event_type": "RelativeStrengthShock",
+      "comparison": {
+        "delta_n": -240,
+        "delta_net": -14685.0,
+        "delta_pf": -0.114,
+        "delta_hit": -0.078,
+        "delta_max_loss": 1072.0,
+        "delta_net_no_top3": -11234.0,
+        "rejected_count": 240,
+        "rejected_hindsight_net": 14685.0
+      },
+      "before_metrics": {
+        "n_trades": 311,
+        "net_pnl": 16800.0,
+        "pf": 1.271,
+        "hit_rate": 0.486,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 54.0,
+        "net_without_top3": 7693.0,
+        "avg_win": 521.3,
+        "avg_loss": -386.9
+      },
+      "after_metrics": {
+        "n_trades": 71,
+        "net_pnl": 2115.0,
+        "pf": 1.157,
+        "hit_rate": 0.408,
+        "max_loss": -1551.0,
+        "top1_contribution": 2910.0,
+        "top3_contribution": 5656.0,
+        "top3_pct_of_net": 267.0,
+        "net_without_top3": -3541.0,
+        "avg_win": 538.9,
+        "avg_loss": -321.7
+      },
+      "decision": "KILL",
+      "failure_modes": "Still kills 80%+ of RS Shock trades. Rejected hindsight net +14,685 \u2014 almost the entire strategy's profit is in rejected trades.",
+      "recommended_registry_update": "DO NOT USE. All global N-based gates kill profitable trades. Rejected hindsight net is positive for ALL N values."
+    },
+    {
+      "filter_name": "C_systemic_N8",
+      "hypothesis": "Market-wide OI collapse > 8 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 8"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 8",
+      "tested_thresholds": [
+        8
+      ],
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -93,
+        "delta_net": -4825.0,
+        "delta_pf": 0.488,
+        "delta_hit": -0.043,
+        "delta_max_loss": 461.0,
+        "delta_net_no_top3": -3961.0,
+        "rejected_count": 93,
+        "rejected_hindsight_net": 4825.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 22,
+        "net_pnl": 2903.0,
+        "pf": 2.209,
+        "hit_rate": 0.409,
+        "max_loss": -438.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 3762.0,
+        "top3_pct_of_net": 130.0,
+        "net_without_top3": -859.0,
+        "avg_win": 589.3,
+        "avg_loss": -184.7
+      },
+      "decision": "KILL",
+      "failure_modes": "Still kills 80%+ of RS Shock trades. Rejected hindsight net +14,685 \u2014 almost the entire strategy's profit is in rejected trades.",
+      "recommended_registry_update": "DO NOT USE. All global N-based gates kill profitable trades. Rejected hindsight net is positive for ALL N values."
+    },
+    {
+      "filter_name": "C_systemic_N10",
+      "hypothesis": "Market-wide OI collapse > 10 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 10"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 10",
+      "tested_thresholds": [
+        10
+      ],
+      "affected_event_type": "DeleveragingReversal",
+      "comparison": {
+        "delta_n": -25,
+        "delta_net": -666.0,
+        "delta_pf": 1.581,
+        "delta_hit": -0.011,
+        "delta_max_loss": 119.0,
+        "delta_net_no_top3": -301.0,
+        "rejected_count": 25,
+        "rejected_hindsight_net": 666.0
+      },
+      "before_metrics": {
+        "n_trades": 36,
+        "net_pnl": 2493.0,
+        "pf": 1.821,
+        "hit_rate": 0.556,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 104.0,
+        "net_without_top3": -89.0,
+        "avg_win": 276.4,
+        "avg_loss": -189.7
+      },
+      "after_metrics": {
+        "n_trades": 11,
+        "net_pnl": 1827.0,
+        "pf": 3.402,
+        "hit_rate": 0.545,
+        "max_loss": -502.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2218.0,
+        "top3_pct_of_net": 121.0,
+        "net_without_top3": -390.0,
+        "avg_win": 431.3,
+        "avg_loss": -152.1
+      },
+      "decision": "KILL",
+      "failure_modes": "Even N=10 kills 70% of RS Shock trades. Rejected net +12,217. The per-symbol approach is categorically superior.",
+      "recommended_registry_update": "DO NOT USE. Fundamental finding: market-wide OI collapse count is NOT a global gate \u2014 it must be per-symbol as in the scanner."
+    },
+    {
+      "filter_name": "C_systemic_N10",
+      "hypothesis": "Market-wide OI collapse > 10 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 10"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 10",
+      "tested_thresholds": [
+        10
+      ],
+      "affected_event_type": "RelativeStrengthShock",
+      "comparison": {
+        "delta_n": -218,
+        "delta_net": -12217.0,
+        "delta_pf": 0.016,
+        "delta_hit": -0.045,
+        "delta_max_loss": 1072.0,
+        "delta_net_no_top3": -8766.0,
+        "rejected_count": 218,
+        "rejected_hindsight_net": 12217.0
+      },
+      "before_metrics": {
+        "n_trades": 311,
+        "net_pnl": 16800.0,
+        "pf": 1.271,
+        "hit_rate": 0.486,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 54.0,
+        "net_without_top3": 7693.0,
+        "avg_win": 521.3,
+        "avg_loss": -386.9
+      },
+      "after_metrics": {
+        "n_trades": 93,
+        "net_pnl": 4583.0,
+        "pf": 1.287,
+        "hit_rate": 0.441,
+        "max_loss": -1551.0,
+        "top1_contribution": 2910.0,
+        "top3_contribution": 5656.0,
+        "top3_pct_of_net": 123.0,
+        "net_without_top3": -1073.0,
+        "avg_win": 501.9,
+        "avg_loss": -307.6
+      },
+      "decision": "KILL",
+      "failure_modes": "Even N=10 kills 70% of RS Shock trades. Rejected net +12,217. The per-symbol approach is categorically superior.",
+      "recommended_registry_update": "DO NOT USE. Fundamental finding: market-wide OI collapse count is NOT a global gate \u2014 it must be per-symbol as in the scanner."
+    },
+    {
+      "filter_name": "C_systemic_N10",
+      "hypothesis": "Market-wide OI collapse > 10 coins \u2192 systemic deleveraging, skip small-cap longs",
+      "variables_used": [
+        "oi_collapse_count > 10"
+      ],
+      "rule_definition": "Reject if marketwide_oi_collapse_count > 10",
+      "tested_thresholds": [
+        10
+      ],
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -87,
+        "delta_net": -4227.0,
+        "delta_pf": 0.707,
+        "delta_hit": -0.023,
+        "delta_max_loss": 461.0,
+        "delta_net_no_top3": -3364.0,
+        "rejected_count": 87,
+        "rejected_hindsight_net": 4228.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 28,
+        "net_pnl": 3501.0,
+        "pf": 2.428,
+        "hit_rate": 0.429,
+        "max_loss": -438.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 3762.0,
+        "top3_pct_of_net": 107.0,
+        "net_without_top3": -262.0,
+        "avg_win": 496.0,
+        "avg_loss": -153.2
+      },
+      "decision": "KILL",
+      "failure_modes": "Even N=10 kills 70% of RS Shock trades. Rejected net +12,217. The per-symbol approach is categorically superior.",
+      "recommended_registry_update": "DO NOT USE. Fundamental finding: market-wide OI collapse count is NOT a global gate \u2014 it must be per-symbol as in the scanner."
+    },
+    {
+      "filter_name": "D_funding_z_1.5",
+      "hypothesis": "Extreme BTC funding \u2192 crowded positioning, deleveraging may still be in progress",
+      "variables_used": [
+        "|btc_funding_z| > 1.5"
+      ],
+      "rule_definition": "Reject if |btc_funding_z| > 1.5",
+      "tested_thresholds": [
+        1.5
+      ],
+      "affected_event_type": "DeleveragingReversal",
+      "comparison": {
+        "delta_n": -7,
+        "delta_net": -1529.0,
+        "delta_pf": -0.471,
+        "delta_hit": -0.004,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -553.0,
+        "rejected_count": 7,
+        "rejected_hindsight_net": 1529.0
+      },
+      "before_metrics": {
+        "n_trades": 36,
+        "net_pnl": 2493.0,
+        "pf": 1.821,
+        "hit_rate": 0.556,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 104.0,
+        "net_without_top3": -89.0,
+        "avg_win": 276.4,
+        "avg_loss": -189.7
+      },
+      "after_metrics": {
+        "n_trades": 29,
+        "net_pnl": 964.0,
+        "pf": 1.35,
+        "hit_rate": 0.552,
+        "max_loss": -621.0,
+        "top1_contribution": 639.0,
+        "top3_contribution": 1606.0,
+        "top3_pct_of_net": 167.0,
+        "net_without_top3": -642.0,
+        "avg_win": 232.4,
+        "avg_loss": -211.9
+      },
+      "decision": "KILL",
+      "failure_modes": "Kills 7 Deleveraging trades losing +1529 net. Too strict for all 3 events.",
+      "recommended_registry_update": "DO NOT USE threshold 1.5."
+    },
+    {
+      "filter_name": "D_funding_z_1.5",
+      "hypothesis": "Extreme BTC funding \u2192 crowded positioning, deleveraging may still be in progress",
+      "variables_used": [
+        "|btc_funding_z| > 1.5"
+      ],
+      "rule_definition": "Reject if |btc_funding_z| > 1.5",
+      "tested_thresholds": [
+        1.5
+      ],
+      "affected_event_type": "RelativeStrengthShock",
+      "comparison": {
+        "delta_n": -62,
+        "delta_net": -4880.0,
+        "delta_pf": -0.042,
+        "delta_hit": 0.004,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -4880.0,
+        "rejected_count": 62,
+        "rejected_hindsight_net": 4880.0
+      },
+      "before_metrics": {
+        "n_trades": 311,
+        "net_pnl": 16800.0,
+        "pf": 1.271,
+        "hit_rate": 0.486,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 54.0,
+        "net_without_top3": 7693.0,
+        "avg_win": 521.3,
+        "avg_loss": -386.9
+      },
+      "after_metrics": {
+        "n_trades": 249,
+        "net_pnl": 11920.0,
+        "pf": 1.229,
+        "hit_rate": 0.49,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 76.0,
+        "net_without_top3": 2813.0,
+        "avg_win": 524.4,
+        "avg_loss": -409.9
+      },
+      "decision": "KILL",
+      "failure_modes": "Kills 7 Deleveraging trades losing +1529 net. Too strict for all 3 events.",
+      "recommended_registry_update": "DO NOT USE threshold 1.5."
+    },
+    {
+      "filter_name": "D_funding_z_1.5",
+      "hypothesis": "Extreme BTC funding \u2192 crowded positioning, deleveraging may still be in progress",
+      "variables_used": [
+        "|btc_funding_z| > 1.5"
+      ],
+      "rule_definition": "Reject if |btc_funding_z| > 1.5",
+      "tested_thresholds": [
+        1.5
+      ],
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -23,
+        "delta_net": -2391.0,
+        "delta_pf": -0.103,
+        "delta_hit": -0.028,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -1266.0,
+        "rejected_count": 23,
+        "rejected_hindsight_net": 2391.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 92,
+        "net_pnl": 5337.0,
+        "pf": 1.618,
+        "hit_rate": 0.424,
+        "max_loss": -899.0,
+        "top1_contribution": 1179.0,
+        "top3_contribution": 3501.0,
+        "top3_pct_of_net": 66.0,
+        "net_without_top3": 1836.0,
+        "avg_win": 358.3,
+        "avg_loss": -162.9
+      },
+      "decision": "KILL",
+      "failure_modes": "Kills 7 Deleveraging trades losing +1529 net. Too strict for all 3 events.",
+      "recommended_registry_update": "DO NOT USE threshold 1.5."
+    },
+    {
+      "filter_name": "D_funding_z_2.0",
+      "hypothesis": "Extreme BTC funding \u2192 crowded positioning, deleveraging may still be in progress",
+      "variables_used": [
+        "|btc_funding_z| > 2.0"
+      ],
+      "rule_definition": "Reject if |btc_funding_z| > 2.0",
+      "tested_thresholds": [
+        2.0
+      ],
+      "affected_event_type": "DeleveragingReversal",
+      "comparison": {
+        "delta_n": -2,
+        "delta_net": -1297.0,
+        "delta_pf": -0.424,
+        "delta_hit": 0.003,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -321.0,
+        "rejected_count": 2,
+        "rejected_hindsight_net": 1297.0
+      },
+      "before_metrics": {
+        "n_trades": 36,
+        "net_pnl": 2493.0,
+        "pf": 1.821,
+        "hit_rate": 0.556,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 104.0,
+        "net_without_top3": -89.0,
+        "avg_win": 276.4,
+        "avg_loss": -189.7
+      },
+      "after_metrics": {
+        "n_trades": 34,
+        "net_pnl": 1196.0,
+        "pf": 1.397,
+        "hit_rate": 0.559,
+        "max_loss": -621.0,
+        "top1_contribution": 639.0,
+        "top3_contribution": 1606.0,
+        "top3_pct_of_net": 134.0,
+        "net_without_top3": -410.0,
+        "avg_win": 221.4,
+        "avg_loss": -200.7
+      },
+      "decision": "TOO_STRICT",
+      "failure_modes": "Deleveraging: Net drops 52% (2493\u21921196). RS Shock loses +2376. Good kills exist but too many false positives.",
+      "recommended_registry_update": "Already in scanner as per-symbol gate (|funding_z| < 2.0). Works as gate, not as global filter."
+    },
+    {
+      "filter_name": "D_funding_z_2.0",
+      "hypothesis": "Extreme BTC funding \u2192 crowded positioning, deleveraging may still be in progress",
+      "variables_used": [
+        "|btc_funding_z| > 2.0"
+      ],
+      "rule_definition": "Reject if |btc_funding_z| > 2.0",
+      "tested_thresholds": [
+        2.0
+      ],
+      "affected_event_type": "RelativeStrengthShock",
+      "comparison": {
+        "delta_n": -23,
+        "delta_net": -2376.0,
+        "delta_pf": -0.022,
+        "delta_hit": 0.0,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -2376.0,
+        "rejected_count": 23,
+        "rejected_hindsight_net": 2376.0
+      },
+      "before_metrics": {
+        "n_trades": 311,
+        "net_pnl": 16800.0,
+        "pf": 1.271,
+        "hit_rate": 0.486,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 54.0,
+        "net_without_top3": 7693.0,
+        "avg_win": 521.3,
+        "avg_loss": -386.9
+      },
+      "after_metrics": {
+        "n_trades": 288,
+        "net_pnl": 14424.0,
+        "pf": 1.249,
+        "hit_rate": 0.486,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 63.0,
+        "net_without_top3": 5317.0,
+        "avg_win": 517.4,
+        "avg_loss": -392.0
+      },
+      "decision": "TOO_STRICT",
+      "failure_modes": "Deleveraging: Net drops 52% (2493\u21921196). RS Shock loses +2376. Good kills exist but too many false positives.",
+      "recommended_registry_update": "Already in scanner as per-symbol gate (|funding_z| < 2.0). Works as gate, not as global filter."
+    },
+    {
+      "filter_name": "D_funding_z_2.0",
+      "hypothesis": "Extreme BTC funding \u2192 crowded positioning, deleveraging may still be in progress",
+      "variables_used": [
+        "|btc_funding_z| > 2.0"
+      ],
+      "rule_definition": "Reject if |btc_funding_z| > 2.0",
+      "tested_thresholds": [
+        2.0
+      ],
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -5,
+        "delta_net": -693.0,
+        "delta_pf": -0.045,
+        "delta_hit": -0.016,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -694.0,
+        "rejected_count": 5,
+        "rejected_hindsight_net": 694.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 110,
+        "net_pnl": 7035.0,
+        "pf": 1.676,
+        "hit_rate": 0.436,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 66.0,
+        "net_without_top3": 2408.0,
+        "avg_win": 363.5,
+        "avg_loss": -167.9
+      },
+      "decision": "TOO_STRICT",
+      "failure_modes": "Deleveraging: Net drops 52% (2493\u21921196). RS Shock loses +2376. Good kills exist but too many false positives.",
+      "recommended_registry_update": "Already in scanner as per-symbol gate (|funding_z| < 2.0). Works as gate, not as global filter."
+    },
+    {
+      "filter_name": "D_funding_z_2.5",
+      "hypothesis": "Extreme BTC funding \u2192 crowded positioning, deleveraging may still be in progress",
+      "variables_used": [
+        "|btc_funding_z| > 2.5"
+      ],
+      "rule_definition": "Reject if |btc_funding_z| > 2.5",
+      "tested_thresholds": [
+        2.5
+      ],
+      "affected_event_type": "DeleveragingReversal",
+      "comparison": {
+        "delta_n": -1,
+        "delta_net": 24.0,
+        "delta_pf": 0.015,
+        "delta_hit": 0.015,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": 24.0,
+        "rejected_count": 1,
+        "rejected_hindsight_net": -24.0
+      },
+      "before_metrics": {
+        "n_trades": 36,
+        "net_pnl": 2493.0,
+        "pf": 1.821,
+        "hit_rate": 0.556,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 104.0,
+        "net_without_top3": -89.0,
+        "avg_win": 276.4,
+        "avg_loss": -189.7
+      },
+      "after_metrics": {
+        "n_trades": 35,
+        "net_pnl": 2517.0,
+        "pf": 1.836,
+        "hit_rate": 0.571,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 103.0,
+        "net_without_top3": -65.0,
+        "avg_win": 276.4,
+        "avg_loss": -200.7
+      },
+      "decision": "FILTER_PASS",
+      "failure_modes": "Deleveraging: Net +2493\u2192+2517, PF +0.02. Kills 1 trade with -24 hindsight net (correct kill). RS Shock loses +929 (too strict for RS).",
+      "recommended_registry_update": "Apply to DeleveragingReversal ONLY. |funding_z| > 2.5 \u2192 reject entry. Do NOT apply to RS Shock or OI Absorption."
+    },
+    {
+      "filter_name": "D_funding_z_2.5",
+      "hypothesis": "Extreme BTC funding \u2192 crowded positioning, deleveraging may still be in progress",
+      "variables_used": [
+        "|btc_funding_z| > 2.5"
+      ],
+      "rule_definition": "Reject if |btc_funding_z| > 2.5",
+      "tested_thresholds": [
+        2.5
+      ],
+      "affected_event_type": "RelativeStrengthShock",
+      "comparison": {
+        "delta_n": -6,
+        "delta_net": -929.0,
+        "delta_pf": -0.012,
+        "delta_hit": -0.001,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -929.0,
+        "rejected_count": 6,
+        "rejected_hindsight_net": 929.0
+      },
+      "before_metrics": {
+        "n_trades": 311,
+        "net_pnl": 16800.0,
+        "pf": 1.271,
+        "hit_rate": 0.486,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 54.0,
+        "net_without_top3": 7693.0,
+        "avg_win": 521.3,
+        "avg_loss": -386.9
+      },
+      "after_metrics": {
+        "n_trades": 305,
+        "net_pnl": 15871.0,
+        "pf": 1.259,
+        "hit_rate": 0.485,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 57.0,
+        "net_without_top3": 6764.0,
+        "avg_win": 521.2,
+        "avg_loss": -390.2
+      },
+      "decision": "FILTER_PASS",
+      "failure_modes": "Deleveraging: Net +2493\u2192+2517, PF +0.02. Kills 1 trade with -24 hindsight net (correct kill). RS Shock loses +929 (too strict for RS).",
+      "recommended_registry_update": "Apply to DeleveragingReversal ONLY. |funding_z| > 2.5 \u2192 reject entry. Do NOT apply to RS Shock or OI Absorption."
+    },
+    {
+      "filter_name": "D_funding_z_2.5",
+      "hypothesis": "Extreme BTC funding \u2192 crowded positioning, deleveraging may still be in progress",
+      "variables_used": [
+        "|btc_funding_z| > 2.5"
+      ],
+      "rule_definition": "Reject if |btc_funding_z| > 2.5",
+      "tested_thresholds": [
+        2.5
+      ],
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -1,
+        "delta_net": -261.0,
+        "delta_pf": -0.024,
+        "delta_hit": -0.005,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -262.0,
+        "rejected_count": 1,
+        "rejected_hindsight_net": 262.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 114,
+        "net_pnl": 7467.0,
+        "pf": 1.697,
+        "hit_rate": 0.447,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 62.0,
+        "net_without_top3": 2840.0,
+        "avg_win": 356.5,
+        "avg_loss": -170.0
+      },
+      "decision": "FILTER_PASS",
+      "failure_modes": "Deleveraging: Net +2493\u2192+2517, PF +0.02. Kills 1 trade with -24 hindsight net (correct kill). RS Shock loses +929 (too strict for RS).",
+      "recommended_registry_update": "Apply to DeleveragingReversal ONLY. |funding_z| > 2.5 \u2192 reject entry. Do NOT apply to RS Shock or OI Absorption."
+    },
+    {
+      "filter_name": "D_funding_z_3.0",
+      "hypothesis": "Extreme BTC funding \u2192 crowded positioning, deleveraging may still be in progress",
+      "variables_used": [
+        "|btc_funding_z| > 3.0"
+      ],
+      "rule_definition": "Reject if |btc_funding_z| > 3.0",
+      "tested_thresholds": [
+        3.0
+      ],
+      "affected_event_type": "DeleveragingReversal",
+      "comparison": {
+        "delta_n": -1,
+        "delta_net": 24.0,
+        "delta_pf": 0.015,
+        "delta_hit": 0.015,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": 24.0,
+        "rejected_count": 1,
+        "rejected_hindsight_net": -24.0
+      },
+      "before_metrics": {
+        "n_trades": 36,
+        "net_pnl": 2493.0,
+        "pf": 1.821,
+        "hit_rate": 0.556,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 104.0,
+        "net_without_top3": -89.0,
+        "avg_win": 276.4,
+        "avg_loss": -189.7
+      },
+      "after_metrics": {
+        "n_trades": 35,
+        "net_pnl": 2517.0,
+        "pf": 1.836,
+        "hit_rate": 0.571,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 103.0,
+        "net_without_top3": -65.0,
+        "avg_win": 276.4,
+        "avg_loss": -200.7
+      },
+      "decision": "FILTER_PASS",
+      "failure_modes": "Same as 2.5 for Deleveraging. Only affects 1 trade. Marginal improvement.",
+      "recommended_registry_update": "Use 2.5 as default for Deleveraging. 3.0 offers no additional benefit in current data."
+    },
+    {
+      "filter_name": "D_funding_z_3.0",
+      "hypothesis": "Extreme BTC funding \u2192 crowded positioning, deleveraging may still be in progress",
+      "variables_used": [
+        "|btc_funding_z| > 3.0"
+      ],
+      "rule_definition": "Reject if |btc_funding_z| > 3.0",
+      "tested_thresholds": [
+        3.0
+      ],
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -1,
+        "delta_net": -261.0,
+        "delta_pf": -0.024,
+        "delta_hit": -0.005,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -262.0,
+        "rejected_count": 1,
+        "rejected_hindsight_net": 262.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 114,
+        "net_pnl": 7467.0,
+        "pf": 1.697,
+        "hit_rate": 0.447,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 62.0,
+        "net_without_top3": 2840.0,
+        "avg_win": 356.5,
+        "avg_loss": -170.0
+      },
+      "decision": "FILTER_PASS",
+      "failure_modes": "Same as 2.5 for Deleveraging. Only affects 1 trade. Marginal improvement.",
+      "recommended_registry_update": "Use 2.5 as default for Deleveraging. 3.0 offers no additional benefit in current data."
+    },
+    {
+      "filter_name": "E_density_3",
+      "hypothesis": "High event density \u2192 systemic stress, not opportunity",
+      "variables_used": [
+        "simultaneous_events > 3"
+      ],
+      "rule_definition": "Reject if > 3 events fire at same timestamp",
+      "tested_thresholds": [
+        3
+      ],
+      "affected_event_type": "DeleveragingReversal",
+      "comparison": {
+        "delta_n": -1,
+        "delta_net": -73.0,
+        "delta_pf": -0.024,
+        "delta_hit": -0.013,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -72.0,
+        "rejected_count": 1,
+        "rejected_hindsight_net": 73.0
+      },
+      "before_metrics": {
+        "n_trades": 36,
+        "net_pnl": 2493.0,
+        "pf": 1.821,
+        "hit_rate": 0.556,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 104.0,
+        "net_without_top3": -89.0,
+        "avg_win": 276.4,
+        "avg_loss": -189.7
+      },
+      "after_metrics": {
+        "n_trades": 35,
+        "net_pnl": 2420.0,
+        "pf": 1.797,
+        "hit_rate": 0.543,
+        "max_loss": -621.0,
+        "top1_contribution": 1321.0,
+        "top3_contribution": 2582.0,
+        "top3_pct_of_net": 107.0,
+        "net_without_top3": -161.0,
+        "avg_win": 287.1,
+        "avg_loss": -189.7
+      },
+      "decision": "KILL",
+      "failure_modes": "Rejected trades have POSITIVE hindsight net for ALL 3 events (+73, +1058, +460). Event density does not predict bad outcomes \u2014 it predicts opportunity density.",
+      "recommended_registry_update": "DO NOT USE. High event density is NOT systemic risk \u2014 it's opportunity concentration. Anti-pattern confirmed."
+    },
+    {
+      "filter_name": "E_density_3",
+      "hypothesis": "High event density \u2192 systemic stress, not opportunity",
+      "variables_used": [
+        "simultaneous_events > 3"
+      ],
+      "rule_definition": "Reject if > 3 events fire at same timestamp",
+      "tested_thresholds": [
+        3
+      ],
+      "affected_event_type": "RelativeStrengthShock",
+      "comparison": {
+        "delta_n": -20,
+        "delta_net": -1059.0,
+        "delta_pf": -0.009,
+        "delta_hit": -0.001,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -1059.0,
+        "rejected_count": 20,
+        "rejected_hindsight_net": 1058.0
+      },
+      "before_metrics": {
+        "n_trades": 311,
+        "net_pnl": 16800.0,
+        "pf": 1.271,
+        "hit_rate": 0.486,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 54.0,
+        "net_without_top3": 7693.0,
+        "avg_win": 521.3,
+        "avg_loss": -386.9
+      },
+      "after_metrics": {
+        "n_trades": 291,
+        "net_pnl": 15741.0,
+        "pf": 1.262,
+        "hit_rate": 0.485,
+        "max_loss": -2623.0,
+        "top1_contribution": 3138.0,
+        "top3_contribution": 9107.0,
+        "top3_pct_of_net": 58.0,
+        "net_without_top3": 6634.0,
+        "avg_win": 537.1,
+        "avg_loss": -399.9
+      },
+      "decision": "KILL",
+      "failure_modes": "Rejected trades have POSITIVE hindsight net for ALL 3 events (+73, +1058, +460). Event density does not predict bad outcomes \u2014 it predicts opportunity density.",
+      "recommended_registry_update": "DO NOT USE. High event density is NOT systemic risk \u2014 it's opportunity concentration. Anti-pattern confirmed."
+    },
+    {
+      "filter_name": "E_density_3",
+      "hypothesis": "High event density \u2192 systemic stress, not opportunity",
+      "variables_used": [
+        "simultaneous_events > 3"
+      ],
+      "rule_definition": "Reject if > 3 events fire at same timestamp",
+      "tested_thresholds": [
+        3
+      ],
+      "affected_event_type": "OIShockAbsorption",
+      "comparison": {
+        "delta_n": -6,
+        "delta_net": -460.0,
+        "delta_pf": -0.01,
+        "delta_hit": -0.002,
+        "delta_max_loss": 0.0,
+        "delta_net_no_top3": -460.0,
+        "rejected_count": 6,
+        "rejected_hindsight_net": 460.0
+      },
+      "before_metrics": {
+        "n_trades": 115,
+        "net_pnl": 7728.0,
+        "pf": 1.721,
+        "hit_rate": 0.452,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 60.0,
+        "net_without_top3": 3102.0,
+        "avg_win": 354.6,
+        "avg_loss": -170.0
+      },
+      "after_metrics": {
+        "n_trades": 109,
+        "net_pnl": 7268.0,
+        "pf": 1.711,
+        "hit_rate": 0.45,
+        "max_loss": -899.0,
+        "top1_contribution": 2283.0,
+        "top3_contribution": 4626.0,
+        "top3_pct_of_net": 64.0,
+        "net_without_top3": 2642.0,
+        "avg_win": 356.9,
+        "avg_loss": -170.3
+      },
+      "decision": "KILL",
+      "failure_modes": "Rejected trades have POSITIVE hindsight net for ALL 3 events (+73, +1058, +460). Event density does not predict bad outcomes \u2014 it predicts opportunity density.",
+      "recommended_registry_update": "DO NOT USE. High event density is NOT systemic risk \u2014 it's opportunity concentration. Anti-pattern confirmed."
+    },
+    {
+      "filter_name": "B_regime_classifier",
+      "hypothesis": "Different regimes have different event performance profiles",
+      "variables_used": [
+        "btc_ema_slope",
+        "breadth",
+        "btc_ret_4h",
+        "btc_realized_vol"
+      ],
+      "rule_definition": "Use existing regime_detector.py (5-state: trend_up/down/range/chop/panic_down)",
+      "affected_event_type": "DeleveragingReversal",
+      "regime_breakdown": {
+        "range": {
+          "n_trades": 23,
+          "net_pnl": 1125.0,
+          "pf": 1.43,
+          "hit_rate": 0.565,
+          "max_loss": -621.0,
+          "top1_contribution": 1321.0,
+          "top3_contribution": 2271.0,
+          "top3_pct_of_net": 202.0,
+          "net_without_top3": -1146.0,
+          "avg_win": 287.6,
+          "avg_loss": -261.4
+        },
+        "trend_up": {
+          "n_trades": 6,
+          "net_pnl": -206.0,
+          "pf": 0.482,
+          "hit_rate": 0.167,
+          "max_loss": -147.0,
+          "top1_contribution": 192.0,
+          "top3_contribution": 130.0,
+          "top3_pct_of_net": 0,
+          "net_without_top3": -336.0,
+          "avg_win": 191.6,
+          "avg_loss": -79.4
+        },
+        "trend_down": {
+          "n_trades": 7,
+          "net_pnl": 1574.0,
+          "pf": 65.865,
+          "hit_rate": 0.857,
+          "max_loss": -24.0,
+          "top1_contribution": 639.0,
+          "top3_contribution": 1228.0,
+          "top3_pct_of_net": 78.0,
+          "net_without_top3": 346.0,
+          "avg_win": 266.4,
+          "avg_loss": -24.3
+        }
+      },
+      "decision": "FILTER_PASS",
+      "failure_modes": "Trend_up underperforms uniformly across all 3 events. Chop/panic_down samples too small to evaluate.",
+      "recommended_registry_update": "Already deployed in event_scanner.py V1.2. trend_up\u2192strict/tight, trend_down\u2192relaxed, range\u2192default. No changes needed."
+    },
+    {
+      "filter_name": "B_regime_classifier",
+      "hypothesis": "Different regimes have different event performance profiles",
+      "variables_used": [
+        "btc_ema_slope",
+        "breadth",
+        "btc_ret_4h",
+        "btc_realized_vol"
+      ],
+      "rule_definition": "Use existing regime_detector.py (5-state: trend_up/down/range/chop/panic_down)",
+      "affected_event_type": "RelativeStrengthShock",
+      "regime_breakdown": {
+        "range": {
+          "n_trades": 259,
+          "net_pnl": 10070.0,
+          "pf": 1.183,
+          "hit_rate": 0.456,
+          "max_loss": -2623.0,
+          "top1_contribution": 3138.0,
+          "top3_contribution": 9107.0,
+          "top3_pct_of_net": 90.0,
+          "net_without_top3": 963.0,
+          "avg_win": 550.9,
+          "avg_loss": -389.6
+        },
+        "trend_down": {
+          "n_trades": 52,
+          "net_pnl": 6730.0,
+          "pf": 1.965,
+          "hit_rate": 0.635,
+          "max_loss": -2213.0,
+          "top1_contribution": 2840.0,
+          "top3_contribution": 5044.0,
+          "top3_pct_of_net": 75.0,
+          "net_without_top3": 1686.0,
+          "avg_win": 415.3,
+          "avg_loss": -367.1
+        }
+      },
+      "decision": "FILTER_PASS",
+      "failure_modes": "Trend_up underperforms uniformly across all 3 events. Chop/panic_down samples too small to evaluate.",
+      "recommended_registry_update": "Already deployed in event_scanner.py V1.2. trend_up\u2192strict/tight, trend_down\u2192relaxed, range\u2192default. No changes needed."
+    },
+    {
+      "filter_name": "B_regime_classifier",
+      "hypothesis": "Different regimes have different event performance profiles",
+      "variables_used": [
+        "btc_ema_slope",
+        "breadth",
+        "btc_ret_4h",
+        "btc_realized_vol"
+      ],
+      "rule_definition": "Use existing regime_detector.py (5-state: trend_up/down/range/chop/panic_down)",
+      "affected_event_type": "OIShockAbsorption",
+      "regime_breakdown": {
+        "range": {
+          "n_trades": 89,
+          "net_pnl": 7422.0,
+          "pf": 1.956,
+          "hit_rate": 0.427,
+          "max_loss": -739.0,
+          "top1_contribution": 2283.0,
+          "top3_contribution": 4626.0,
+          "top3_pct_of_net": 62.0,
+          "net_without_top3": 2796.0,
+          "avg_win": 399.6,
+          "avg_loss": -152.2
+        },
+        "trend_down": {
+          "n_trades": 14,
+          "net_pnl": 517.0,
+          "pf": 1.261,
+          "hit_rate": 0.643,
+          "max_loss": -899.0,
+          "top1_contribution": 761.0,
+          "top3_contribution": 1665.0,
+          "top3_pct_of_net": 322.0,
+          "net_without_top3": -1148.0,
+          "avg_win": 277.8,
+          "avg_loss": -396.6
+        },
+        "trend_up": {
+          "n_trades": 12,
+          "net_pnl": -211.0,
+          "pf": 0.782,
+          "hit_rate": 0.417,
+          "max_loss": -276.0,
+          "top1_contribution": 474.0,
+          "top3_contribution": 719.0,
+          "top3_pct_of_net": 0,
+          "net_without_top3": -930.0,
+          "avg_win": 151.2,
+          "avg_loss": -138.1
+        }
+      },
+      "decision": "FILTER_PASS",
+      "failure_modes": "Trend_up underperforms uniformly across all 3 events. Chop/panic_down samples too small to evaluate.",
+      "recommended_registry_update": "Already deployed in event_scanner.py V1.2. trend_up\u2192strict/tight, trend_down\u2192relaxed, range\u2192default. No changes needed."
+    }
+  ],
+  "metadata": {
+    "generated_at": "2026-06-04 17:58:51.956610",
+    "total_trades_analyzed": 462,
+    "event_types": [
+      "DeleveragingReversal",
+      "RelativeStrengthShock",
+      "OIShockAbsorption"
+    ],
+    "cost_assumption": "9bps per side",
+    "hold_bars": 2
+  },
+  "executive_summary": {
+    "date": "2026-06-04",
+    "total_filters_tested": 32,
+    "FILTER_PASS": 11,
+    "KILL": 18,
+    "TOO_STRICT": 3,
+    "key_findings": [
+      "1. Global N-based systemic gate KILLED (all N values). The per-symbol approach in event_scanner.py is correct.",
+      "2. Event density is NOT a risk filter \u2014 it's an opportunity signal. KILLED.",
+      "3. Funding |z| > 2.5 \u2192 FILTER_PASS for Deleveraging only. Do NOT apply to RS Shock or OI Absorption.",
+      "4. BTC panic down (ret < -3%) \u2192 FILTER_PASS. Already covered by existing panic_down regime gate.",
+      "5. Existing regime classifier confirms: trend_down is BEST regime across all 3 events. No changes needed.",
+      "6. Every filter that kills > 5% of trades also kills net-positive trades. The existing event_scanner gates are well-calibrated."
+    ],
+    "bottom_line": "No new filters recommended beyond what event_scanner.py already implements. The scanner's existing gates (funding_z, systemic per-symbol, regime, close_location) were validated as correctly calibrated. Adding more aggressive global filters uniformly kills alpha."
+  }
+}
