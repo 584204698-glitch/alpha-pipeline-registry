@@ -172,7 +172,7 @@ def research_funding_carry(data, feats, regime_map, universe, hold_bars=8):
                     valid_bars += 1
                 except (KeyError, TypeError):
                     pass
-            funding_bps = (funding_sum / max(valid_bars, 1)) * 10000 * (hold_bars * 0.25 / 8)
+            funding_bps = -(funding_sum / max(valid_bars, 1)) * 10000 * (hold_bars * 0.25 / 8)
 
             combined_bps = price_bps + funding_bps * 0.5  # halve funding for realism
 
@@ -236,7 +236,7 @@ def research_funding_carry_simple(data, feats, regime_map, universe, hold_bars=8
                         fund_sum += float(data.loc[(ts_list[idx + j], sym), "funding_rate"])
                         valid_bars += 1
                     except: pass
-                fund_bps = (fund_sum / max(valid_bars, 1)) * 10000 * (hold_bars * 0.25 / 8)
+                fund_bps = -(fund_sum / max(valid_bars, 1)) * 10000 * (hold_bars * 0.25 / 8)
                 if et == "short":
                     fund_bps = -fund_bps
                 total = price_bps + fund_bps

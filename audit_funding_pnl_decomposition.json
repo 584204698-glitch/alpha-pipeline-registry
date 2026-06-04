@@ -1,0 +1,11 @@
+{
+  "n_trades": 172,
+  "price_sum": 807.6,
+  "funding_sum": 29386.8,
+  "total_sum": 30194.4,
+  "price_mean": 4.7,
+  "funding_mean": 170.85,
+  "price_contribution_pct": 2.7,
+  "funding_contribution_pct": 97.3,
+  "price_funding_corr": 0.088
+}

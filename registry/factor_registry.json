@@ -182,25 +182,67 @@
       ],
       "killed": false,
       "last_updated": "2026-06-04T11:00:00Z"
+    },
+    "FundingCarryEUV1": {
+      "status": "shadow_candidate",
+      "version": "1.0",
+      "role": "session_gated_funding_carry",
+      "direction": "long_only",
+      "priority": "medium",
+      "live_allowed": false,
+      "alpha_type": "funding_carry",
+      "mechanism": "Extreme negative funding → long 3h during EU session (07-17 UTC). 97.3% PnL from funding carry. Genuine crowding repair — shorts pay longs to exit.",
+      "session_gate": "EU (07-17 UTC)",
+      "latest_paper": {
+        "universe": "volume_rank 20-100",
+        "hold_bars": 12,
+        "session": "07-17 UTC",
+        "funding_threshold_std": -2.5,
+        "n_trades": 259,
+        "net_9bps": 68489,
+        "pf": 2.30,
+        "net_no_top3_9bps": 46478,
+        "price_contribution_pct": 2.7,
+        "funding_contribution_pct": 97.3
+      },
+      "audit_results": {
+        "timestamp": "NO_LEAKAGE",
+        "session": "SESSION_GATE_VALIDATED",
+        "threshold": "THRESHOLD_STABLE",
+        "overlap": "INDEPENDENT_ALPHA (1.2%)",
+        "concentration": "MODERATE (net_without_top5=+3,835)"
+      },
+      "gates": [
+        "funding_z < -2.5",
+        "session == 07-17 UTC",
+        "btc_regime != panic_down",
+        "oi_delta_z > -2.0"
+      ],
+      "killed": false,
+      "last_updated": "2026-06-04T13:00:00Z"
     }
   },
   "shadow_candidates": [
     "SmallCapDeleveragingReversalV1",
     "RelativeStrengthShockV1",
-    "OIShockAbsorptionV1"
+    "OIShockAbsorptionV1",
+    "FundingCarryEUV1"
   ],
   "event_family_summary": {
-    "total_event_types": 3,
+    "total_event_types": 4,
+    "price_events": 3,
+    "funding_carry_events": 1,
     "all_live_allowed": false,
     "all_shadow_only": true,
-    "combined_trades": 462,
-    "combined_net_9bps": 27021,
+    "combined_trades": 721,
+    "combined_net_9bps": 95510,
     "audit_date": "2026-06-04",
-    "audit_conclusion": "All 3 pass cost stress. All 3 FAIL extreme contribution. 2 of 3 have time-slice weaknesses. NONE ready for live — all require shadow observation before tiny_live consideration.",
+    "audit_conclusion": "4 shadow candidates. 3 price event alphas + 1 independent funding carry alpha (97.3% funding-driven, 1.2% overlap). Funding Carry is first genuinely new income source type.",
     "event_priority_for_conflict_resolution": [
       "1. Deleveraging Reversal (highest priority)",
       "2. OI Shock Absorption (short squeeze)",
-      "3. RS Shock (lowest priority)"
+      "3. RS Shock (lowest priority)",
+      "4. Funding Carry EU (independent — no conflict with above)"
     ],
     "conflict_rule": "If multiple events fire on same symbol+timestamp with different directions → SKIP ALL. If same direction → accept highest-priority event."
   },

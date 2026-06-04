@@ -53,14 +53,32 @@
         "btc_ret_floor_filter",
         "regime_skip_filter"
       ],
-      "range_regime_long_restriction": "shadow_only \u2014 requires volume+OI+BTC confirmation"
+      "range_regime_long_restriction": "shadow_only — requires volume+OI+BTC confirmation"
+    },
+    "FundingCarryEUV1": {
+      "status": "shadow_candidate",
+      "tiny_live_allowed": false,
+      "priority": 4,
+      "alpha_type": "funding_carry",
+      "direction": "long_only",
+      "hold_bars": 12,
+      "session_gate": "07-17 UTC",
+      "enabled_gates": [
+        "funding_z < -2.5",
+        "session == 07-17 UTC",
+        "btc_regime != panic_down",
+        "oi_delta_z > -2.0"
+      ],
+      "independent_alpha": true,
+      "overlap_with_price_events": "1.2%"
     }
   },
   "conflict_resolution": {
     "priority_order": [
       "DeleveragingReversal",
       "OIShockAbsorption",
-      "RelativeStrengthShock"
+      "RelativeStrengthShock",
+      "FundingCarryEU"
     ],
     "direction_conflict_rule": "SKIP_ALL",
     "same_direction_rule": "accept_highest_priority"

@@ -66,13 +66,31 @@
         "skip trend_up/panic_down/chop"
       ],
       "range_regime_restriction": "shadow-only — requires volume+OI+BTC confirmation"
+    },
+    "FundingCarryEUV1": {
+      "status": "shadow_candidate",
+      "live_allowed": false,
+      "direction": "long_only",
+      "hold_bars": 12,
+      "priority": 4,
+      "alpha_type": "funding_carry",
+      "session_gate": "07-17 UTC",
+      "independent_alpha": true,
+      "enabled": true,
+      "gates": [
+        "funding_z < -2.5",
+        "session == 07-17 UTC",
+        "btc_regime != panic_down",
+        "oi_delta_z > -2.0"
+      ]
     }
   },
   "conflict_resolution": {
     "priority_order": [
       "DeleveragingReversal",
       "OIShockAbsorption",
-      "RelativeStrengthShock"
+      "RelativeStrengthShock",
+      "FundingCarryEU"
     ],
     "direction_conflict_rule": "SKIP_ALL",
     "same_direction_rule": "accept_highest_priority"

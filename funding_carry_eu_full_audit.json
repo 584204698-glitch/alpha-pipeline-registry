@@ -1,0 +1,415 @@
+{
+  "audit_0_timestamp": "NEEDS_INVESTIGATION",
+  "audit_2_session": {
+    "06-14": {
+      "n_trades": 177,
+      "price_sum": 24021.1,
+      "funding_sum": 37236.2,
+      "cost_9bps": {
+        "net_bps": 58071.0,
+        "pf": 2.504,
+        "hit_rate": 0.554,
+        "top3": 22011.0,
+        "net_no_top3": 36060.0,
+        "max_loss": -9712.0
+      },
+      "cost_12bps": {
+        "net_bps": 57009.0,
+        "pf": 2.459,
+        "hit_rate": 0.554,
+        "top3": 21993.0,
+        "net_no_top3": 35016.0,
+        "max_loss": -9718.0
+      },
+      "cost_15bps": {
+        "net_bps": 55947.0,
+        "pf": 2.414,
+        "hit_rate": 0.537,
+        "top3": 21975.0,
+        "net_no_top3": 33972.0,
+        "max_loss": -9724.0
+      }
+    },
+    "07-15": {
+      "n_trades": 177,
+      "price_sum": 24021.1,
+      "funding_sum": 37236.2,
+      "cost_9bps": {
+        "net_bps": 58071.0,
+        "pf": 2.504,
+        "hit_rate": 0.554,
+        "top3": 22011.0,
+        "net_no_top3": 36060.0,
+        "max_loss": -9712.0
+      },
+      "cost_12bps": {
+        "net_bps": 57009.0,
+        "pf": 2.459,
+        "hit_rate": 0.554,
+        "top3": 21993.0,
+        "net_no_top3": 35016.0,
+        "max_loss": -9718.0
+      },
+      "cost_15bps": {
+        "net_bps": 55947.0,
+        "pf": 2.414,
+        "hit_rate": 0.537,
+        "top3": 21975.0,
+        "net_no_top3": 33972.0,
+        "max_loss": -9724.0
+      }
+    },
+    "08-16": {
+      "n_trades": 172,
+      "price_sum": 807.6,
+      "funding_sum": 29386.8,
+      "cost_9bps": {
+        "net_bps": 27098.0,
+        "pf": 1.863,
+        "hit_rate": 0.541,
+        "top3": 17157.0,
+        "net_no_top3": 9942.0,
+        "max_loss": -3905.0
+      },
+      "cost_12bps": {
+        "net_bps": 26066.0,
+        "pf": 1.818,
+        "hit_rate": 0.535,
+        "top3": 17139.0,
+        "net_no_top3": 8928.0,
+        "max_loss": -3911.0
+      },
+      "cost_15bps": {
+        "net_bps": 25034.0,
+        "pf": 1.774,
+        "hit_rate": 0.529,
+        "top3": 17121.0,
+        "net_no_top3": 7914.0,
+        "max_loss": -3917.0
+      }
+    },
+    "09-17": {
+      "n_trades": 172,
+      "price_sum": 807.6,
+      "funding_sum": 29386.8,
+      "cost_9bps": {
+        "net_bps": 27098.0,
+        "pf": 1.863,
+        "hit_rate": 0.541,
+        "top3": 17157.0,
+        "net_no_top3": 9942.0,
+        "max_loss": -3905.0
+      },
+      "cost_12bps": {
+        "net_bps": 26066.0,
+        "pf": 1.818,
+        "hit_rate": 0.535,
+        "top3": 17139.0,
+        "net_no_top3": 8928.0,
+        "max_loss": -3911.0
+      },
+      "cost_15bps": {
+        "net_bps": 25034.0,
+        "pf": 1.774,
+        "hit_rate": 0.529,
+        "top3": 17121.0,
+        "net_no_top3": 7914.0,
+        "max_loss": -3917.0
+      }
+    },
+    "10-18": {
+      "n_trades": 172,
+      "price_sum": 807.6,
+      "funding_sum": 29386.8,
+      "cost_9bps": {
+        "net_bps": 27098.0,
+        "pf": 1.863,
+        "hit_rate": 0.541,
+        "top3": 17157.0,
+        "net_no_top3": 9942.0,
+        "max_loss": -3905.0
+      },
+      "cost_12bps": {
+        "net_bps": 26066.0,
+        "pf": 1.818,
+        "hit_rate": 0.535,
+        "top3": 17139.0,
+        "net_no_top3": 8928.0,
+        "max_loss": -3911.0
+      },
+      "cost_15bps": {
+        "net_bps": 25034.0,
+        "pf": 1.774,
+        "hit_rate": 0.529,
+        "top3": 17121.0,
+        "net_no_top3": 7914.0,
+        "max_loss": -3917.0
+      }
+    },
+    "08-14": {
+      "n_trades": 90,
+      "price_sum": 3601.4,
+      "funding_sum": 14698.9,
+      "cost_9bps": {
+        "net_bps": 16680.0,
+        "pf": 1.963,
+        "hit_rate": 0.5,
+        "top3": 16712.0,
+        "net_no_top3": -32.0,
+        "max_loss": -1870.0
+      },
+      "cost_12bps": {
+        "net_bps": 16140.0,
+        "pf": 1.917,
+        "hit_rate": 0.5,
+        "top3": 16694.0,
+        "net_no_top3": -554.0,
+        "max_loss": -1876.0
+      },
+      "cost_15bps": {
+        "net_bps": 15600.0,
+        "pf": 1.873,
+        "hit_rate": 0.489,
+        "top3": 16676.0,
+        "net_no_top3": -1076.0,
+        "max_loss": -1882.0
+      }
+    },
+    "09-15": {
+      "n_trades": 90,
+      "price_sum": 3601.4,
+      "funding_sum": 14698.9,
+      "cost_9bps": {
+        "net_bps": 16680.0,
+        "pf": 1.963,
+        "hit_rate": 0.5,
+        "top3": 16712.0,
+        "net_no_top3": -32.0,
+        "max_loss": -1870.0
+      },
+      "cost_12bps": {
+        "net_bps": 16140.0,
+        "pf": 1.917,
+        "hit_rate": 0.5,
+        "top3": 16694.0,
+        "net_no_top3": -554.0,
+        "max_loss": -1876.0
+      },
+      "cost_15bps": {
+        "net_bps": 15600.0,
+        "pf": 1.873,
+        "hit_rate": 0.489,
+        "top3": 16676.0,
+        "net_no_top3": -1076.0,
+        "max_loss": -1882.0
+      }
+    },
+    "07-17": {
+      "n_trades": 259,
+      "price_sum": 21227.3,
+      "funding_sum": 51924.1,
+      "cost_9bps": {
+        "net_bps": 68489.0,
+        "pf": 2.3,
+        "hit_rate": 0.564,
+        "top3": 22011.0,
+        "net_no_top3": 46478.0,
+        "max_loss": -9712.0
+      },
+      "cost_12bps": {
+        "net_bps": 66935.0,
+        "pf": 2.255,
+        "hit_rate": 0.56,
+        "top3": 21993.0,
+        "net_no_top3": 44942.0,
+        "max_loss": -9718.0
+      },
+      "cost_15bps": {
+        "net_bps": 65381.0,
+        "pf": 2.21,
+        "hit_rate": 0.548,
+        "top3": 21975.0,
+        "net_no_top3": 43406.0,
+        "max_loss": -9724.0
+      }
+    }
+  },
+  "audit_3_threshold": {
+    "fz<-2.0": {
+      "n_trades": 330,
+      "price_sum": 11649.8,
+      "funding_sum": 36848.5,
+      "cost_9bps": {
+        "net_bps": 42558.0,
+        "pf": 1.865,
+        "hit_rate": 0.545,
+        "top3": 17157.0,
+        "net_no_top3": 25402.0,
+        "max_loss": -3905.0
+      },
+      "cost_12bps": {
+        "net_bps": 40578.0,
+        "pf": 1.81,
+        "hit_rate": 0.536,
+        "top3": 17139.0,
+        "net_no_top3": 23440.0,
+        "max_loss": -3911.0
+      },
+      "cost_15bps": {
+        "net_bps": 38598.0,
+        "pf": 1.756,
+        "hit_rate": 0.53,
+        "top3": 17121.0,
+        "net_no_top3": 21478.0,
+        "max_loss": -3917.0
+      }
+    },
+    "fz<-2.25": {
+      "n_trades": 246,
+      "price_sum": 6841.5,
+      "funding_sum": 32900.1,
+      "cost_9bps": {
+        "net_bps": 35314.0,
+        "pf": 1.91,
+        "hit_rate": 0.553,
+        "top3": 17157.0,
+        "net_no_top3": 18157.0,
+        "max_loss": -3905.0
+      },
+      "cost_12bps": {
+        "net_bps": 33838.0,
+        "pf": 1.858,
+        "hit_rate": 0.549,
+        "top3": 17139.0,
+        "net_no_top3": 16699.0,
+        "max_loss": -3911.0
+      },
+      "cost_15bps": {
+        "net_bps": 32362.0,
+        "pf": 1.807,
+        "hit_rate": 0.541,
+        "top3": 17121.0,
+        "net_no_top3": 15241.0,
+        "max_loss": -3917.0
+      }
+    },
+    "fz<-2.5": {
+      "n_trades": 172,
+      "price_sum": 807.6,
+      "funding_sum": 29386.8,
+      "cost_9bps": {
+        "net_bps": 27098.0,
+        "pf": 1.863,
+        "hit_rate": 0.541,
+        "top3": 17157.0,
+        "net_no_top3": 9942.0,
+        "max_loss": -3905.0
+      },
+      "cost_12bps": {
+        "net_bps": 26066.0,
+        "pf": 1.818,
+        "hit_rate": 0.535,
+        "top3": 17139.0,
+        "net_no_top3": 8928.0,
+        "max_loss": -3911.0
+      },
+      "cost_15bps": {
+        "net_bps": 25034.0,
+        "pf": 1.774,
+        "hit_rate": 0.529,
+        "top3": 17121.0,
+        "net_no_top3": 7914.0,
+        "max_loss": -3917.0
+      }
+    },
+    "fz<-2.75": {
+      "n_trades": 120,
+      "price_sum": 2365.8,
+      "funding_sum": 23211.5,
+      "cost_9bps": {
+        "net_bps": 23417.0,
+        "pf": 2.095,
+        "hit_rate": 0.517,
+        "top3": 15796.0,
+        "net_no_top3": 7621.0,
+        "max_loss": -1870.0
+      },
+      "cost_12bps": {
+        "net_bps": 22697.0,
+        "pf": 2.044,
+        "hit_rate": 0.517,
+        "top3": 15778.0,
+        "net_no_top3": 6919.0,
+        "max_loss": -1876.0
+      },
+      "cost_15bps": {
+        "net_bps": 21977.0,
+        "pf": 1.995,
+        "hit_rate": 0.517,
+        "top3": 15760.0,
+        "net_no_top3": 6217.0,
+        "max_loss": -1882.0
+      }
+    },
+    "fz<-3.0": {
+      "n_trades": 94,
+      "price_sum": 3873.0,
+      "funding_sum": 20614.5,
+      "cost_9bps": {
+        "net_bps": 22796.0,
+        "pf": 2.231,
+        "hit_rate": 0.479,
+        "top3": 15796.0,
+        "net_no_top3": 6999.0,
+        "max_loss": -1870.0
+      },
+      "cost_12bps": {
+        "net_bps": 22232.0,
+        "pf": 2.181,
+        "hit_rate": 0.479,
+        "top3": 15778.0,
+        "net_no_top3": 6453.0,
+        "max_loss": -1876.0
+      },
+      "cost_15bps": {
+        "net_bps": 21668.0,
+        "pf": 2.134,
+        "hit_rate": 0.479,
+        "top3": 15760.0,
+        "net_no_top3": 5907.0,
+        "max_loss": -1882.0
+      }
+    },
+    "fz<-3.5": {
+      "n_trades": 53,
+      "price_sum": 1800.9,
+      "funding_sum": 14842.9,
+      "cost_9bps": {
+        "net_bps": 15690.0,
+        "pf": 2.34,
+        "hit_rate": 0.491,
+        "top3": 14537.0,
+        "net_no_top3": 1153.0,
+        "max_loss": -1870.0
+      },
+      "cost_12bps": {
+        "net_bps": 15372.0,
+        "pf": 2.295,
+        "hit_rate": 0.491,
+        "top3": 14519.0,
+        "net_no_top3": 853.0,
+        "max_loss": -1876.0
+      },
+      "cost_15bps": {
+        "net_bps": 15054.0,
+        "pf": 2.251,
+        "hit_rate": 0.491,
+        "top3": 14501.0,
+        "net_no_top3": 553.0,
+        "max_loss": -1882.0
+      }
+    }
+  },
+  "audit_4_overlap": null,
+  "audit_5_concentration": null
+}
