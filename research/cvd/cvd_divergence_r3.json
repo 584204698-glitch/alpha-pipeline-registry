@@ -1,0 +1,1867 @@
+{
+  "version": "v1.0_round3",
+  "timestamp": "2026-06-04 22:18:04.193687+00:00",
+  "best_key": "V5_z-3.0_h3",
+  "results": {
+    "V3_z-2.3_cl0.4_h3": {
+      "n": 3499,
+      "label": "V3_z-2.3_cl0.4_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": -1486.4,
+        "pf": 0.995,
+        "hit": 0.488,
+        "mean_win": 161.7,
+        "mean_loss": -155.2
+      },
+      "cost6bps": {
+        "net": -8484.4,
+        "pf": 0.97,
+        "hit": 0.479,
+        "mean_win": 162.8,
+        "mean_loss": -154.5
+      },
+      "cost9bps": {
+        "net": -18981.4,
+        "pf": 0.934,
+        "hit": 0.471,
+        "mean_win": 162.7,
+        "mean_loss": -155.0
+      },
+      "cost12bps": {
+        "net": -29478.4,
+        "pf": 0.899,
+        "hit": 0.457,
+        "mean_win": 164.5,
+        "mean_loss": -154.1
+      },
+      "cost15bps": {
+        "net": -39975.4,
+        "pf": 0.866,
+        "hit": 0.444,
+        "mean_win": 166.2,
+        "mean_loss": -153.5
+      },
+      "top3_contrib": 135526.4,
+      "top3_pct": 1083.4,
+      "net_wo_top3_9bps": -152941.8,
+      "reverse_net12": -54497.6,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:ALLUSDT": 20,
+        "Binance:RAVEUSDT": 18,
+        "Binance:FOLKSUSDT": 17,
+        "Binance:EWJUSDT": 16,
+        "Binance:BUSDT": 15
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 3499,
+          "net12": -29478.4
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.3_cl0.4_h6": {
+      "n": 3492,
+      "label": "V3_z-2.3_cl0.4_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 5343.2,
+        "pf": 1.014,
+        "hit": 0.467,
+        "mean_win": 229.9,
+        "mean_loss": -198.9
+      },
+      "cost6bps": {
+        "net": -1640.8,
+        "pf": 0.996,
+        "hit": 0.461,
+        "mean_win": 230.9,
+        "mean_loss": -198.6
+      },
+      "cost9bps": {
+        "net": -12116.8,
+        "pf": 0.968,
+        "hit": 0.449,
+        "mean_win": 234.0,
+        "mean_loss": -197.3
+      },
+      "cost12bps": {
+        "net": -22592.8,
+        "pf": 0.941,
+        "hit": 0.44,
+        "mean_win": 235.9,
+        "mean_loss": -197.0
+      },
+      "cost15bps": {
+        "net": -33068.8,
+        "pf": 0.915,
+        "hit": 0.434,
+        "mean_win": 236.3,
+        "mean_loss": -197.8
+      },
+      "top3_contrib": 197589.5,
+      "top3_pct": 1023.2,
+      "net_wo_top3_9bps": -208140.3,
+      "reverse_net12": -61215.2,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:ALLUSDT": 20,
+        "Binance:RAVEUSDT": 18,
+        "Binance:FOLKSUSDT": 17,
+        "Binance:EWJUSDT": 16,
+        "Binance:BUSDT": 15
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 3492,
+          "net12": -22592.8
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.3_cl0.5_h3": {
+      "n": 2616,
+      "label": "V3_z-2.3_cl0.5_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": 10086.1,
+        "pf": 1.049,
+        "hit": 0.488,
+        "mean_win": 168.3,
+        "mean_loss": -152.7
+      },
+      "cost6bps": {
+        "net": 4854.1,
+        "pf": 1.023,
+        "hit": 0.48,
+        "mean_win": 168.9,
+        "mean_loss": -152.4
+      },
+      "cost9bps": {
+        "net": -2993.9,
+        "pf": 0.986,
+        "hit": 0.47,
+        "mean_win": 169.5,
+        "mean_loss": -152.6
+      },
+      "cost12bps": {
+        "net": -10841.9,
+        "pf": 0.95,
+        "hit": 0.456,
+        "mean_win": 171.8,
+        "mean_loss": -151.4
+      },
+      "cost15bps": {
+        "net": -18689.9,
+        "pf": 0.915,
+        "hit": 0.443,
+        "mean_win": 173.8,
+        "mean_loss": -150.9
+      },
+      "top3_contrib": 108019.2,
+      "top3_pct": 525.6,
+      "net_wo_top3_9bps": -109843.1,
+      "reverse_net12": -51942.1,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:ALLUSDT": 20,
+        "Binance:1INCHUSDT": 14,
+        "Binance:AVGOUSDT": 13,
+        "Binance:BUSDT": 13,
+        "Binance:EWJUSDT": 13
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 2616,
+          "net12": -10841.9
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.3_cl0.5_h6": {
+      "n": 2610,
+      "label": "V3_z-2.3_cl0.5_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 27007.5,
+        "pf": 1.1,
+        "hit": 0.471,
+        "mean_win": 241.8,
+        "mean_loss": -195.6
+      },
+      "cost6bps": {
+        "net": 21787.5,
+        "pf": 1.08,
+        "hit": 0.466,
+        "mean_win": 242.4,
+        "mean_loss": -195.8
+      },
+      "cost9bps": {
+        "net": 13957.5,
+        "pf": 1.05,
+        "hit": 0.454,
+        "mean_win": 245.7,
+        "mean_loss": -194.5
+      },
+      "cost12bps": {
+        "net": 6127.5,
+        "pf": 1.022,
+        "hit": 0.447,
+        "mean_win": 246.6,
+        "mean_loss": -194.9
+      },
+      "cost15bps": {
+        "net": -1702.5,
+        "pf": 0.994,
+        "hit": 0.44,
+        "mean_win": 247.5,
+        "mean_loss": -195.5
+      },
+      "top3_contrib": 161894.4,
+      "top3_pct": 432.3,
+      "net_wo_top3_9bps": -146766.9,
+      "reverse_net12": -68767.5,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:ALLUSDT": 20,
+        "Binance:1INCHUSDT": 14,
+        "Binance:AVGOUSDT": 13,
+        "Binance:BUSDT": 13,
+        "Binance:EWJUSDT": 13
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 2610,
+          "net12": 6127.5
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.3_cl0.6_h3": {
+      "n": 1904,
+      "label": "V3_z-2.3_cl0.6_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": 9900.9,
+        "pf": 1.067,
+        "hit": 0.482,
+        "mean_win": 171.2,
+        "mean_loss": -149.0
+      },
+      "cost6bps": {
+        "net": 6092.9,
+        "pf": 1.041,
+        "hit": 0.475,
+        "mean_win": 171.6,
+        "mean_loss": -149.1
+      },
+      "cost9bps": {
+        "net": 380.9,
+        "pf": 1.003,
+        "hit": 0.464,
+        "mean_win": 172.5,
+        "mean_loss": -149.1
+      },
+      "cost12bps": {
+        "net": -5331.1,
+        "pf": 0.966,
+        "hit": 0.45,
+        "mean_win": 174.9,
+        "mean_loss": -148.2
+      },
+      "cost15bps": {
+        "net": -11043.1,
+        "pf": 0.93,
+        "hit": 0.438,
+        "mean_win": 176.7,
+        "mean_loss": -148.0
+      },
+      "top3_contrib": 77832.3,
+      "top3_pct": 444.3,
+      "net_wo_top3_9bps": -76596.3,
+      "reverse_net12": -40364.9,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:ALLUSDT": 12,
+        "Binance:BLUAIUSDT": 10,
+        "Binance:AINUSDT": 10,
+        "Binance:HOODUSDT": 10,
+        "Binance:KERNELUSDT": 10
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 1904,
+          "net12": -5331.1
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.3_cl0.6_h6": {
+      "n": 1900,
+      "label": "V3_z-2.3_cl0.6_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 21226.4,
+        "pf": 1.107,
+        "hit": 0.468,
+        "mean_win": 246.8,
+        "mean_loss": -196.0
+      },
+      "cost6bps": {
+        "net": 17426.4,
+        "pf": 1.087,
+        "hit": 0.463,
+        "mean_win": 247.3,
+        "mean_loss": -196.3
+      },
+      "cost9bps": {
+        "net": 11726.4,
+        "pf": 1.058,
+        "hit": 0.452,
+        "mean_win": 250.6,
+        "mean_loss": -195.1
+      },
+      "cost12bps": {
+        "net": 6026.4,
+        "pf": 1.029,
+        "hit": 0.444,
+        "mean_win": 252.0,
+        "mean_loss": -195.3
+      },
+      "cost15bps": {
+        "net": 326.4,
+        "pf": 1.002,
+        "hit": 0.436,
+        "mean_win": 253.6,
+        "mean_loss": -195.6
+      },
+      "top3_contrib": 118965.5,
+      "top3_pct": 412.7,
+      "net_wo_top3_9bps": -106384.0,
+      "reverse_net12": -51626.4,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:ALLUSDT": 12,
+        "Binance:BLUAIUSDT": 10,
+        "Binance:AINUSDT": 10,
+        "Binance:HOODUSDT": 10,
+        "Binance:KERNELUSDT": 10
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 1900,
+          "net12": 6026.4
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.5_cl0.4_h3": {
+      "n": 1784,
+      "label": "V3_z-2.5_cl0.4_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": -10129.7,
+        "pf": 0.934,
+        "hit": 0.493,
+        "mean_win": 164.1,
+        "mean_loss": -171.0
+      },
+      "cost6bps": {
+        "net": -13697.7,
+        "pf": 0.912,
+        "hit": 0.485,
+        "mean_win": 164.9,
+        "mean_loss": -170.1
+      },
+      "cost9bps": {
+        "net": -19049.7,
+        "pf": 0.88,
+        "hit": 0.479,
+        "mean_win": 164.0,
+        "mean_loss": -171.1
+      },
+      "cost12bps": {
+        "net": -24401.7,
+        "pf": 0.849,
+        "hit": 0.465,
+        "mean_win": 165.9,
+        "mean_loss": -169.6
+      },
+      "cost15bps": {
+        "net": -29753.7,
+        "pf": 0.82,
+        "hit": 0.453,
+        "mean_win": 167.2,
+        "mean_loss": -168.9
+      },
+      "top3_contrib": 70028.0,
+      "top3_pct": 2339.2,
+      "net_wo_top3_9bps": -88276.7,
+      "reverse_net12": -18414.3,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:EWJUSDT": 14,
+        "Binance:AVGOUSDT": 12,
+        "Binance:ALLUSDT": 12,
+        "Binance:AWEUSDT": 10,
+        "Binance:SKRUSDT": 10
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 1784,
+          "net12": -24401.7
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.5_cl0.4_h6": {
+      "n": 1779,
+      "label": "V3_z-2.5_cl0.4_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 6376.3,
+        "pf": 1.033,
+        "hit": 0.471,
+        "mean_win": 239.4,
+        "mean_loss": -206.4
+      },
+      "cost6bps": {
+        "net": 2818.3,
+        "pf": 1.014,
+        "hit": 0.465,
+        "mean_win": 240.6,
+        "mean_loss": -206.0
+      },
+      "cost9bps": {
+        "net": -2518.7,
+        "pf": 0.987,
+        "hit": 0.451,
+        "mean_win": 244.8,
+        "mean_loss": -203.9
+      },
+      "cost12bps": {
+        "net": -7855.7,
+        "pf": 0.961,
+        "hit": 0.442,
+        "mean_win": 247.0,
+        "mean_loss": -203.4
+      },
+      "cost15bps": {
+        "net": -13192.7,
+        "pf": 0.936,
+        "hit": 0.435,
+        "mean_win": 247.8,
+        "mean_loss": -204.0
+      },
+      "top3_contrib": 108010.2,
+      "top3_pct": 800.5,
+      "net_wo_top3_9bps": -109736.9,
+      "reverse_net12": -34840.3,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:EWJUSDT": 14,
+        "Binance:AVGOUSDT": 12,
+        "Binance:ALLUSDT": 12,
+        "Binance:AWEUSDT": 10,
+        "Binance:SKRUSDT": 10
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 1779,
+          "net12": -7855.7
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.5_cl0.5_h3": {
+      "n": 1314,
+      "label": "V3_z-2.5_cl0.5_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": -3264.1,
+        "pf": 0.972,
+        "hit": 0.492,
+        "mean_win": 172.3,
+        "mean_loss": -172.1
+      },
+      "cost6bps": {
+        "net": -5892.1,
+        "pf": 0.949,
+        "hit": 0.486,
+        "mean_win": 172.7,
+        "mean_loss": -171.8
+      },
+      "cost9bps": {
+        "net": -9834.1,
+        "pf": 0.917,
+        "hit": 0.479,
+        "mean_win": 172.2,
+        "mean_loss": -172.5
+      },
+      "cost12bps": {
+        "net": -13776.1,
+        "pf": 0.885,
+        "hit": 0.463,
+        "mean_win": 174.8,
+        "mean_loss": -170.5
+      },
+      "cost15bps": {
+        "net": -17718.1,
+        "pf": 0.855,
+        "hit": 0.451,
+        "mean_win": 176.5,
+        "mean_loss": -169.7
+      },
+      "top3_contrib": 55277.6,
+      "top3_pct": 2775.1,
+      "net_wo_top3_9bps": -64526.7,
+      "reverse_net12": -17759.9,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:ALLUSDT": 12,
+        "Binance:AVGOUSDT": 11,
+        "Binance:EWJUSDT": 11,
+        "Binance:BUSDT": 8,
+        "Binance:AGTUSDT": 8
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 1314,
+          "net12": -13776.1
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.5_cl0.5_h6": {
+      "n": 1310,
+      "label": "V3_z-2.5_cl0.5_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 16739.0,
+        "pf": 1.118,
+        "hit": 0.477,
+        "mean_win": 253.3,
+        "mean_loss": -206.7
+      },
+      "cost6bps": {
+        "net": 14119.0,
+        "pf": 1.099,
+        "hit": 0.47,
+        "mean_win": 255.0,
+        "mean_loss": -206.0
+      },
+      "cost9bps": {
+        "net": 10189.0,
+        "pf": 1.07,
+        "hit": 0.457,
+        "mean_win": 259.2,
+        "mean_loss": -204.0
+      },
+      "cost12bps": {
+        "net": 6259.0,
+        "pf": 1.043,
+        "hit": 0.449,
+        "mean_win": 261.0,
+        "mean_loss": -203.9
+      },
+      "cost15bps": {
+        "net": 2329.0,
+        "pf": 1.016,
+        "hit": 0.442,
+        "mean_win": 262.1,
+        "mean_loss": -204.4
+      },
+      "top3_contrib": 87123.8,
+      "top3_pct": 396.4,
+      "net_wo_top3_9bps": -76349.8,
+      "reverse_net12": -37699.0,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:ALLUSDT": 12,
+        "Binance:AVGOUSDT": 11,
+        "Binance:EWJUSDT": 11,
+        "Binance:BUSDT": 8,
+        "Binance:AGTUSDT": 8
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 1310,
+          "net12": 6259.0
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.5_cl0.6_h3": {
+      "n": 944,
+      "label": "V3_z-2.5_cl0.6_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": -2916.5,
+        "pf": 0.964,
+        "hit": 0.487,
+        "mean_win": 171.3,
+        "mean_loss": -168.8
+      },
+      "cost6bps": {
+        "net": -4804.5,
+        "pf": 0.942,
+        "hit": 0.482,
+        "mean_win": 171.1,
+        "mean_loss": -169.0
+      },
+      "cost9bps": {
+        "net": -7636.5,
+        "pf": 0.909,
+        "hit": 0.474,
+        "mean_win": 171.2,
+        "mean_loss": -169.3
+      },
+      "cost12bps": {
+        "net": -10468.5,
+        "pf": 0.878,
+        "hit": 0.46,
+        "mean_win": 173.2,
+        "mean_loss": -168.0
+      },
+      "cost15bps": {
+        "net": -13300.5,
+        "pf": 0.847,
+        "hit": 0.446,
+        "mean_win": 175.5,
+        "mean_loss": -166.7
+      },
+      "top3_contrib": 38334.4,
+      "top3_pct": 4459.9,
+      "net_wo_top3_9bps": -45547.9,
+      "reverse_net12": -12187.5,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:AGTUSDT": 8,
+        "Binance:AVGOUSDT": 8,
+        "Binance:EWJUSDT": 8,
+        "Binance:FRAXUSDT": 7,
+        "Binance:ALLUSDT": 7
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 944,
+          "net12": -10468.5
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.5_cl0.6_h6": {
+      "n": 940,
+      "label": "V3_z-2.5_cl0.6_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 1918.9,
+        "pf": 1.018,
+        "hit": 0.467,
+        "mean_win": 245.2,
+        "mean_loss": -211.1
+      },
+      "cost6bps": {
+        "net": 38.9,
+        "pf": 1.0,
+        "hit": 0.461,
+        "mean_win": 246.6,
+        "mean_loss": -210.6
+      },
+      "cost9bps": {
+        "net": -2781.1,
+        "pf": 0.974,
+        "hit": 0.448,
+        "mean_win": 250.6,
+        "mean_loss": -208.7
+      },
+      "cost12bps": {
+        "net": -5601.1,
+        "pf": 0.949,
+        "hit": 0.439,
+        "mean_win": 252.5,
+        "mean_loss": -208.5
+      },
+      "cost15bps": {
+        "net": -8421.1,
+        "pf": 0.924,
+        "hit": 0.431,
+        "mean_win": 254.4,
+        "mean_loss": -208.3
+      },
+      "top3_contrib": 58620.2,
+      "top3_pct": 1032.3,
+      "net_wo_top3_9bps": -60978.3,
+      "reverse_net12": -16958.9,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:AGTUSDT": 8,
+        "Binance:AVGOUSDT": 8,
+        "Binance:EWJUSDT": 8,
+        "Binance:FRAXUSDT": 7,
+        "Binance:ALLUSDT": 7
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 940,
+          "net12": -5601.1
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.8_cl0.4_h3": {
+      "n": 512,
+      "label": "V3_z-2.8_cl0.4_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": 7613.0,
+        "pf": 1.167,
+        "hit": 0.523,
+        "mean_win": 198.6,
+        "mean_loss": -187.0
+      },
+      "cost6bps": {
+        "net": 6589.0,
+        "pf": 1.143,
+        "hit": 0.51,
+        "mean_win": 201.9,
+        "mean_loss": -183.7
+      },
+      "cost9bps": {
+        "net": 5053.0,
+        "pf": 1.108,
+        "hit": 0.504,
+        "mean_win": 201.2,
+        "mean_loss": -184.5
+      },
+      "cost12bps": {
+        "net": 3517.0,
+        "pf": 1.074,
+        "hit": 0.494,
+        "mean_win": 202.2,
+        "mean_loss": -183.9
+      },
+      "cost15bps": {
+        "net": 1981.0,
+        "pf": 1.041,
+        "hit": 0.482,
+        "mean_win": 204.1,
+        "mean_loss": -182.7
+      },
+      "top3_contrib": 26570.1,
+      "top3_pct": 275.0,
+      "net_wo_top3_9bps": -21292.1,
+      "reverse_net12": -15805.0,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:AVGOUSDT": 6,
+        "Binance:EWJUSDT": 6,
+        "Binance:BUSDT": 5,
+        "Binance:ALLUSDT": 5,
+        "Binance:1000000BOBUSDT": 4
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 512,
+          "net12": 3517.0
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.8_cl0.4_h6": {
+      "n": 512,
+      "label": "V3_z-2.8_cl0.4_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 7962.5,
+        "pf": 1.133,
+        "hit": 0.48,
+        "mean_win": 275.1,
+        "mean_loss": -224.5
+      },
+      "cost6bps": {
+        "net": 6938.5,
+        "pf": 1.115,
+        "hit": 0.475,
+        "mean_win": 276.5,
+        "mean_loss": -224.0
+      },
+      "cost9bps": {
+        "net": 5402.5,
+        "pf": 1.088,
+        "hit": 0.459,
+        "mean_win": 282.9,
+        "mean_loss": -220.5
+      },
+      "cost12bps": {
+        "net": 3866.5,
+        "pf": 1.062,
+        "hit": 0.451,
+        "mean_win": 284.8,
+        "mean_loss": -220.3
+      },
+      "cost15bps": {
+        "net": 2330.5,
+        "pf": 1.037,
+        "hit": 0.447,
+        "mean_win": 284.3,
+        "mean_loss": -221.8
+      },
+      "top3_contrib": 37930.4,
+      "top3_pct": 378.9,
+      "net_wo_top3_9bps": -32302.9,
+      "reverse_net12": -16154.5,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:AVGOUSDT": 6,
+        "Binance:EWJUSDT": 6,
+        "Binance:BUSDT": 5,
+        "Binance:ALLUSDT": 5,
+        "Binance:1000000BOBUSDT": 4
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 512,
+          "net12": 3866.5
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.8_cl0.5_h3": {
+      "n": 378,
+      "label": "V3_z-2.8_cl0.5_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": 11600.6,
+        "pf": 1.4,
+        "hit": 0.516,
+        "mean_win": 208.1,
+        "mean_loss": -158.3
+      },
+      "cost6bps": {
+        "net": 10844.6,
+        "pf": 1.37,
+        "hit": 0.503,
+        "mean_win": 211.5,
+        "mean_loss": -156.1
+      },
+      "cost9bps": {
+        "net": 9710.6,
+        "pf": 1.325,
+        "hit": 0.497,
+        "mean_win": 210.7,
+        "mean_loss": -157.4
+      },
+      "cost12bps": {
+        "net": 8576.6,
+        "pf": 1.281,
+        "hit": 0.495,
+        "mean_win": 208.9,
+        "mean_loss": -159.6
+      },
+      "cost15bps": {
+        "net": 7442.6,
+        "pf": 1.24,
+        "hit": 0.481,
+        "mean_win": 211.5,
+        "mean_loss": -158.5
+      },
+      "top3_contrib": 20785.9,
+      "top3_pct": 158.5,
+      "net_wo_top3_9bps": -10913.3,
+      "reverse_net12": -17648.6,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:AVGOUSDT": 6,
+        "Binance:EWJUSDT": 6,
+        "Binance:ALLUSDT": 5,
+        "Binance:BUSDT": 4,
+        "Binance:QCOMUSDT": 4
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 378,
+          "net12": 8576.6
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.8_cl0.5_h6": {
+      "n": 378,
+      "label": "V3_z-2.8_cl0.5_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 12765.7,
+        "pf": 1.326,
+        "hit": 0.479,
+        "mean_win": 286.9,
+        "mean_loss": -198.8
+      },
+      "cost6bps": {
+        "net": 12009.7,
+        "pf": 1.304,
+        "hit": 0.471,
+        "mean_win": 289.7,
+        "mean_loss": -197.8
+      },
+      "cost9bps": {
+        "net": 10875.7,
+        "pf": 1.271,
+        "hit": 0.455,
+        "mean_win": 296.8,
+        "mean_loss": -195.0
+      },
+      "cost12bps": {
+        "net": 9741.7,
+        "pf": 1.239,
+        "hit": 0.45,
+        "mean_win": 297.2,
+        "mean_loss": -196.1
+      },
+      "cost15bps": {
+        "net": 8607.7,
+        "pf": 1.208,
+        "hit": 0.444,
+        "mean_win": 297.8,
+        "mean_loss": -197.2
+      },
+      "top3_contrib": 29536.5,
+      "top3_pct": 206.9,
+      "net_wo_top3_9bps": -18498.8,
+      "reverse_net12": -18813.7,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:AVGOUSDT": 6,
+        "Binance:EWJUSDT": 6,
+        "Binance:ALLUSDT": 5,
+        "Binance:BUSDT": 4,
+        "Binance:QCOMUSDT": 4
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 378,
+          "net12": 9741.7
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.8_cl0.6_h3": {
+      "n": 264,
+      "label": "V3_z-2.8_cl0.6_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": 3769.6,
+        "pf": 1.165,
+        "hit": 0.5,
+        "mean_win": 201.3,
+        "mean_loss": -172.7
+      },
+      "cost6bps": {
+        "net": 3241.6,
+        "pf": 1.141,
+        "hit": 0.492,
+        "mean_win": 202.4,
+        "mean_loss": -172.1
+      },
+      "cost9bps": {
+        "net": 2449.6,
+        "pf": 1.104,
+        "hit": 0.485,
+        "mean_win": 202.5,
+        "mean_loss": -172.6
+      },
+      "cost12bps": {
+        "net": 1657.6,
+        "pf": 1.069,
+        "hit": 0.481,
+        "mean_win": 201.1,
+        "mean_loss": -174.3
+      },
+      "cost15bps": {
+        "net": 865.6,
+        "pf": 1.036,
+        "hit": 0.466,
+        "mean_win": 204.5,
+        "mean_loss": -172.3
+      },
+      "top3_contrib": 13386.4,
+      "top3_pct": 277.4,
+      "net_wo_top3_9bps": -10819.7,
+      "reverse_net12": -7993.6,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:EWJUSDT": 5,
+        "Binance:AVGOUSDT": 4,
+        "Binance:STRKUSDT": 3,
+        "Binance:BUSDT": 3,
+        "Binance:LUNA2USDT": 3
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 264,
+          "net12": 1657.6
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-2.8_cl0.6_h6": {
+      "n": 264,
+      "label": "V3_z-2.8_cl0.6_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 1478.5,
+        "pf": 1.046,
+        "hit": 0.451,
+        "mean_win": 281.1,
+        "mean_loss": -220.5
+      },
+      "cost6bps": {
+        "net": 950.5,
+        "pf": 1.029,
+        "hit": 0.443,
+        "mean_win": 283.9,
+        "mean_loss": -219.5
+      },
+      "cost9bps": {
+        "net": 158.5,
+        "pf": 1.005,
+        "hit": 0.428,
+        "mean_win": 290.9,
+        "mean_loss": -216.6
+      },
+      "cost12bps": {
+        "net": -633.5,
+        "pf": 0.981,
+        "hit": 0.424,
+        "mean_win": 290.5,
+        "mean_loss": -218.2
+      },
+      "cost15bps": {
+        "net": -1425.5,
+        "pf": 0.958,
+        "hit": 0.417,
+        "mean_win": 292.7,
+        "mean_loss": -218.4
+      },
+      "top3_contrib": 18590.8,
+      "top3_pct": 733.5,
+      "net_wo_top3_9bps": -18315.3,
+      "reverse_net12": -5702.5,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:EWJUSDT": 5,
+        "Binance:AVGOUSDT": 4,
+        "Binance:STRKUSDT": 3,
+        "Binance:BUSDT": 3,
+        "Binance:LUNA2USDT": 3
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 264,
+          "net12": -633.5
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-3.0_cl0.4_h3": {
+      "n": 152,
+      "label": "V3_z-3.0_cl0.4_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": 7414.9,
+        "pf": 1.517,
+        "hit": 0.586,
+        "mean_win": 244.4,
+        "mean_loss": -227.5
+      },
+      "cost6bps": {
+        "net": 7110.9,
+        "pf": 1.492,
+        "hit": 0.566,
+        "mean_win": 250.9,
+        "mean_loss": -219.1
+      },
+      "cost9bps": {
+        "net": 6654.9,
+        "pf": 1.454,
+        "hit": 0.559,
+        "mean_win": 250.8,
+        "mean_loss": -218.8
+      },
+      "cost12bps": {
+        "net": 6198.9,
+        "pf": 1.417,
+        "hit": 0.546,
+        "mean_win": 253.8,
+        "mean_loss": -215.4
+      },
+      "cost15bps": {
+        "net": 5742.9,
+        "pf": 1.381,
+        "hit": 0.539,
+        "mean_win": 253.9,
+        "mean_loss": -215.4
+      },
+      "top3_contrib": 9946.5,
+      "top3_pct": 124.0,
+      "net_wo_top3_9bps": -3228.6,
+      "reverse_net12": -9846.9,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:BUSDT": 4,
+        "Binance:TAUSDT": 4,
+        "Binance:AVGOUSDT": 3,
+        "Binance:NFPUSDT": 3,
+        "Binance:ALCHUSDT": 3
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 152,
+          "net12": 6198.9
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-3.0_cl0.4_h6": {
+      "n": 152,
+      "label": "V3_z-3.0_cl0.4_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 5599.5,
+        "pf": 1.273,
+        "hit": 0.526,
+        "mean_win": 326.5,
+        "mean_loss": -285.0
+      },
+      "cost6bps": {
+        "net": 5295.5,
+        "pf": 1.256,
+        "hit": 0.52,
+        "mean_win": 328.6,
+        "mean_loss": -283.1
+      },
+      "cost9bps": {
+        "net": 4839.5,
+        "pf": 1.232,
+        "hit": 0.513,
+        "mean_win": 329.8,
+        "mean_loss": -282.2
+      },
+      "cost12bps": {
+        "net": 4383.5,
+        "pf": 1.208,
+        "hit": 0.513,
+        "mean_win": 326.8,
+        "mean_loss": -285.2
+      },
+      "cost15bps": {
+        "net": 3927.5,
+        "pf": 1.184,
+        "hit": 0.507,
+        "mean_win": 328.1,
+        "mean_loss": -284.4
+      },
+      "top3_contrib": 13206.4,
+      "top3_pct": 212.7,
+      "net_wo_top3_9bps": -8303.8,
+      "reverse_net12": -8031.5,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:BUSDT": 4,
+        "Binance:TAUSDT": 4,
+        "Binance:AVGOUSDT": 3,
+        "Binance:NFPUSDT": 3,
+        "Binance:ALCHUSDT": 3
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 152,
+          "net12": 4383.5
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-3.0_cl0.5_h3": {
+      "n": 119,
+      "label": "V3_z-3.0_cl0.5_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": 9087.9,
+        "pf": 2.208,
+        "hit": 0.571,
+        "mean_win": 244.3,
+        "mean_loss": -147.5
+      },
+      "cost6bps": {
+        "net": 8849.9,
+        "pf": 2.16,
+        "hit": 0.555,
+        "mean_win": 249.7,
+        "mean_loss": -143.9
+      },
+      "cost9bps": {
+        "net": 8492.9,
+        "pf": 2.09,
+        "hit": 0.546,
+        "mean_win": 250.5,
+        "mean_loss": -144.2
+      },
+      "cost12bps": {
+        "net": 8135.9,
+        "pf": 2.023,
+        "hit": 0.546,
+        "mean_win": 247.5,
+        "mean_loss": -147.2
+      },
+      "cost15bps": {
+        "net": 7778.9,
+        "pf": 1.959,
+        "hit": 0.538,
+        "mean_win": 248.3,
+        "mean_loss": -147.5
+      },
+      "top3_contrib": 6867.1,
+      "top3_pct": 71.8,
+      "net_wo_top3_9bps": 1670.7,
+      "reverse_net12": -10991.9,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:AVGOUSDT": 3,
+        "Binance:BUSDT": 3,
+        "Binance:DEXEUSDT": 3,
+        "Binance:EWJUSDT": 3,
+        "Binance:BLUAIUSDT": 2
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 119,
+          "net12": 8135.9
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-3.0_cl0.5_h6": {
+      "n": 119,
+      "label": "V3_z-3.0_cl0.5_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 7529.4,
+        "pf": 1.682,
+        "hit": 0.529,
+        "mean_win": 294.8,
+        "mean_loss": -197.2
+      },
+      "cost6bps": {
+        "net": 7291.4,
+        "pf": 1.654,
+        "hit": 0.521,
+        "mean_win": 297.5,
+        "mean_loss": -195.7
+      },
+      "cost9bps": {
+        "net": 6934.4,
+        "pf": 1.612,
+        "hit": 0.513,
+        "mean_win": 299.4,
+        "mean_loss": -195.3
+      },
+      "cost12bps": {
+        "net": 6577.4,
+        "pf": 1.572,
+        "hit": 0.513,
+        "mean_win": 296.4,
+        "mean_loss": -198.3
+      },
+      "cost15bps": {
+        "net": 6220.4,
+        "pf": 1.533,
+        "hit": 0.504,
+        "mean_win": 298.3,
+        "mean_loss": -197.9
+      },
+      "top3_contrib": 9122.6,
+      "top3_pct": 114.0,
+      "net_wo_top3_9bps": -2143.2,
+      "reverse_net12": -9433.4,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:AVGOUSDT": 3,
+        "Binance:BUSDT": 3,
+        "Binance:DEXEUSDT": 3,
+        "Binance:EWJUSDT": 3,
+        "Binance:BLUAIUSDT": 2
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 119,
+          "net12": 6577.4
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-3.0_cl0.6_h3": {
+      "n": 79,
+      "label": "V3_z-3.0_cl0.6_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": 6163.4,
+        "pf": 2.225,
+        "hit": 0.557,
+        "mean_win": 254.5,
+        "mean_loss": -143.8
+      },
+      "cost6bps": {
+        "net": 6005.4,
+        "pf": 2.177,
+        "hit": 0.544,
+        "mean_win": 258.3,
+        "mean_loss": -141.8
+      },
+      "cost9bps": {
+        "net": 5768.4,
+        "pf": 2.107,
+        "hit": 0.532,
+        "mean_win": 261.4,
+        "mean_loss": -140.9
+      },
+      "cost12bps": {
+        "net": 5531.4,
+        "pf": 2.039,
+        "hit": 0.532,
+        "mean_win": 258.4,
+        "mean_loss": -143.9
+      },
+      "cost15bps": {
+        "net": 5294.4,
+        "pf": 1.974,
+        "hit": 0.532,
+        "mean_win": 255.4,
+        "mean_loss": -146.9
+      },
+      "top3_contrib": 3934.2,
+      "top3_pct": 60.7,
+      "net_wo_top3_9bps": 1861.2,
+      "reverse_net12": -7427.4,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:EWJUSDT": 3,
+        "Binance:BUSDT": 2,
+        "Binance:LUNA2USDT": 2,
+        "Binance:ALCHUSDT": 2,
+        "Binance:SCRUSDT": 2
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 79,
+          "net12": 5531.4
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V3_z-3.0_cl0.6_h6": {
+      "n": 79,
+      "label": "V3_z-3.0_cl0.6_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 3612.7,
+        "pf": 1.446,
+        "hit": 0.519,
+        "mean_win": 285.5,
+        "mean_loss": -213.0
+      },
+      "cost6bps": {
+        "net": 3454.7,
+        "pf": 1.423,
+        "hit": 0.519,
+        "mean_win": 283.5,
+        "mean_loss": -215.0
+      },
+      "cost9bps": {
+        "net": 3217.7,
+        "pf": 1.388,
+        "hit": 0.506,
+        "mean_win": 287.6,
+        "mean_loss": -212.4
+      },
+      "cost12bps": {
+        "net": 2980.7,
+        "pf": 1.355,
+        "hit": 0.506,
+        "mean_win": 284.6,
+        "mean_loss": -215.4
+      },
+      "cost15bps": {
+        "net": 2743.7,
+        "pf": 1.322,
+        "hit": 0.494,
+        "mean_win": 288.8,
+        "mean_loss": -213.0
+      },
+      "top3_contrib": 5238.5,
+      "top3_pct": 133.3,
+      "net_wo_top3_9bps": -1993.8,
+      "reverse_net12": -4876.7,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:EWJUSDT": 3,
+        "Binance:BUSDT": 2,
+        "Binance:LUNA2USDT": 2,
+        "Binance:ALCHUSDT": 2,
+        "Binance:SCRUSDT": 2
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 79,
+          "net12": 2980.7
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V5_z-2.8_h2": {
+      "n": 1251,
+      "label": "V5_z-2.8_h2",
+      "hold": 2,
+      "cost4bps": {
+        "net": 12041.9,
+        "pf": 1.109,
+        "hit": 0.5,
+        "mean_win": 196.6,
+        "mean_loss": -177.0
+      },
+      "cost6bps": {
+        "net": 9539.9,
+        "pf": 1.085,
+        "hit": 0.492,
+        "mean_win": 197.8,
+        "mean_loss": -176.2
+      },
+      "cost9bps": {
+        "net": 5786.9,
+        "pf": 1.051,
+        "hit": 0.476,
+        "mean_win": 201.4,
+        "mean_loss": -173.8
+      },
+      "cost12bps": {
+        "net": 2033.9,
+        "pf": 1.018,
+        "hit": 0.468,
+        "mean_win": 201.4,
+        "mean_loss": -174.4
+      },
+      "cost15bps": {
+        "net": -1719.1,
+        "pf": 0.985,
+        "hit": 0.455,
+        "mean_win": 204.4,
+        "mean_loss": -173.0
+      },
+      "top3_contrib": 66849.0,
+      "top3_pct": 392.2,
+      "net_wo_top3_9bps": -60504.1,
+      "reverse_net12": -32057.9,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:BUSDT": 11,
+        "Binance:AVGOUSDT": 9,
+        "Binance:EWJUSDT": 8,
+        "Binance:BCHUSDT": 8,
+        "Binance:1000000BOBUSDT": 7
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 1251,
+          "net12": 2033.9
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V5_z-2.8_h3": {
+      "n": 1250,
+      "label": "V5_z-2.8_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": 16227.8,
+        "pf": 1.13,
+        "hit": 0.521,
+        "mean_win": 216.1,
+        "mean_loss": -207.8
+      },
+      "cost6bps": {
+        "net": 13727.8,
+        "pf": 1.109,
+        "hit": 0.514,
+        "mean_win": 217.1,
+        "mean_loss": -206.7
+      },
+      "cost9bps": {
+        "net": 9977.8,
+        "pf": 1.078,
+        "hit": 0.503,
+        "mean_win": 218.6,
+        "mean_loss": -205.3
+      },
+      "cost12bps": {
+        "net": 6227.8,
+        "pf": 1.048,
+        "hit": 0.498,
+        "mean_win": 218.0,
+        "mean_loss": -206.0
+      },
+      "cost15bps": {
+        "net": 2477.8,
+        "pf": 1.019,
+        "hit": 0.49,
+        "mean_win": 218.6,
+        "mean_loss": -205.8
+      },
+      "top3_contrib": 72489.0,
+      "top3_pct": 341.5,
+      "net_wo_top3_9bps": -61953.2,
+      "reverse_net12": -36227.8,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:BUSDT": 11,
+        "Binance:AVGOUSDT": 9,
+        "Binance:EWJUSDT": 8,
+        "Binance:BCHUSDT": 8,
+        "Binance:1000000BOBUSDT": 7
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 1250,
+          "net12": 6227.8
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V5_z-2.8_h6": {
+      "n": 1248,
+      "label": "V5_z-2.8_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 13203.2,
+        "pf": 1.084,
+        "hit": 0.499,
+        "mean_win": 274.7,
+        "mean_loss": -252.7
+      },
+      "cost6bps": {
+        "net": 10707.2,
+        "pf": 1.067,
+        "hit": 0.494,
+        "mean_win": 275.4,
+        "mean_loss": -252.3
+      },
+      "cost9bps": {
+        "net": 6963.2,
+        "pf": 1.043,
+        "hit": 0.483,
+        "mean_win": 278.7,
+        "mean_loss": -249.8
+      },
+      "cost12bps": {
+        "net": 3219.2,
+        "pf": 1.02,
+        "hit": 0.475,
+        "mean_win": 280.4,
+        "mean_loss": -249.0
+      },
+      "cost15bps": {
+        "net": -524.8,
+        "pf": 0.997,
+        "hit": 0.47,
+        "mean_win": 280.3,
+        "mean_loss": -249.7
+      },
+      "top3_contrib": 90190.0,
+      "top3_pct": 495.7,
+      "net_wo_top3_9bps": -82668.8,
+      "reverse_net12": -33171.2,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:BUSDT": 11,
+        "Binance:AVGOUSDT": 9,
+        "Binance:EWJUSDT": 8,
+        "Binance:BCHUSDT": 8,
+        "Binance:1000000BOBUSDT": 7
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 1248,
+          "net12": 3219.2
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V5_z-3.0_h2": {
+      "n": 346,
+      "label": "V5_z-3.0_h2",
+      "hold": 2,
+      "cost4bps": {
+        "net": 10788.2,
+        "pf": 1.272,
+        "hit": 0.503,
+        "mean_win": 290.3,
+        "mean_loss": -230.9
+      },
+      "cost6bps": {
+        "net": 10096.2,
+        "pf": 1.252,
+        "hit": 0.497,
+        "mean_win": 291.6,
+        "mean_loss": -230.3
+      },
+      "cost9bps": {
+        "net": 9058.2,
+        "pf": 1.223,
+        "hit": 0.48,
+        "mean_win": 299.1,
+        "mean_loss": -225.5
+      },
+      "cost12bps": {
+        "net": 8020.2,
+        "pf": 1.195,
+        "hit": 0.471,
+        "mean_win": 301.6,
+        "mean_loss": -224.8
+      },
+      "cost15bps": {
+        "net": 6982.2,
+        "pf": 1.167,
+        "hit": 0.462,
+        "mean_win": 304.2,
+        "mean_loss": -224.2
+      },
+      "top3_contrib": 30210.0,
+      "top3_pct": 248.2,
+      "net_wo_top3_9bps": -20998.8,
+      "reverse_net12": -16324.2,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:BUSDT": 7,
+        "Binance:AVGOUSDT": 5,
+        "Binance:TAUSDT": 5,
+        "Binance:NFPUSDT": 4,
+        "Binance:1000000BOBUSDT": 4
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 346,
+          "net12": 8020.2
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V5_z-3.0_h3": {
+      "n": 346,
+      "label": "V5_z-3.0_h3",
+      "hold": 3,
+      "cost4bps": {
+        "net": 13013.8,
+        "pf": 1.305,
+        "hit": 0.535,
+        "mean_win": 301.2,
+        "mean_loss": -265.3
+      },
+      "cost6bps": {
+        "net": 12321.8,
+        "pf": 1.286,
+        "hit": 0.526,
+        "mean_win": 304.2,
+        "mean_loss": -262.4
+      },
+      "cost9bps": {
+        "net": 11283.8,
+        "pf": 1.259,
+        "hit": 0.514,
+        "mean_win": 308.0,
+        "mean_loss": -259.1
+      },
+      "cost12bps": {
+        "net": 10245.8,
+        "pf": 1.233,
+        "hit": 0.509,
+        "mean_win": 308.4,
+        "mean_loss": -259.1
+      },
+      "cost15bps": {
+        "net": 9207.8,
+        "pf": 1.207,
+        "hit": 0.503,
+        "mean_win": 309.0,
+        "mean_loss": -259.0
+      },
+      "top3_contrib": 31005.1,
+      "top3_pct": 215.3,
+      "net_wo_top3_9bps": -19568.3,
+      "reverse_net12": -18549.8,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:BUSDT": 7,
+        "Binance:AVGOUSDT": 5,
+        "Binance:TAUSDT": 5,
+        "Binance:NFPUSDT": 4,
+        "Binance:1000000BOBUSDT": 4
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 346,
+          "net12": 10245.8
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    },
+    "V5_z-3.0_h6": {
+      "n": 346,
+      "label": "V5_z-3.0_h6",
+      "hold": 6,
+      "cost4bps": {
+        "net": 5564.7,
+        "pf": 1.102,
+        "hit": 0.503,
+        "mean_win": 345.8,
+        "mean_loss": -317.4
+      },
+      "cost6bps": {
+        "net": 4872.7,
+        "pf": 1.089,
+        "hit": 0.497,
+        "mean_win": 347.8,
+        "mean_loss": -315.8
+      },
+      "cost9bps": {
+        "net": 3834.7,
+        "pf": 1.069,
+        "hit": 0.491,
+        "mean_win": 348.8,
+        "mean_loss": -315.2
+      },
+      "cost12bps": {
+        "net": 2796.7,
+        "pf": 1.05,
+        "hit": 0.488,
+        "mean_win": 347.9,
+        "mean_loss": -316.4
+      },
+      "cost15bps": {
+        "net": 1758.7,
+        "pf": 1.031,
+        "hit": 0.48,
+        "mean_win": 351.2,
+        "mean_loss": -314.1
+      },
+      "top3_contrib": 32118.0,
+      "top3_pct": 462.2,
+      "net_wo_top3_9bps": -28130.3,
+      "reverse_net12": -11100.7,
+      "reverse_warning": "False",
+      "top_symbols": {
+        "Binance:BUSDT": 7,
+        "Binance:AVGOUSDT": 5,
+        "Binance:TAUSDT": 5,
+        "Binance:NFPUSDT": 4,
+        "Binance:1000000BOBUSDT": 4
+      },
+      "regime_split": {
+        "no_panic": {
+          "n": 346,
+          "net12": 2796.7
+        },
+        "btc_panic": {
+          "n": 0,
+          "net12": 0
+        }
+      }
+    }
+  }
+}

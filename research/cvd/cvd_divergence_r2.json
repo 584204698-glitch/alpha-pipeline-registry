@@ -1,0 +1,90 @@
+{
+  "version": "v1.0_round2",
+  "timestamp": "2026-06-04 22:17:17.640989+00:00",
+  "results": {
+    "V1_cvd_z_lt_neg25": {
+      "n_events": 4342,
+      "best": {
+        "n": 4329,
+        "net12": -45787.4,
+        "pf": 1.019,
+        "hit": 0.5,
+        "top3_contrib": 161132.9,
+        "net_wo_top3_9bps": -191989.3,
+        "net9": -32800.4,
+        "net15": -58774.4
+      },
+      "best_key": "long_h2"
+    },
+    "V2_cvd_z_lt_neg25_ret_gt_neg1pct": {
+      "n_events": 2110,
+      "best": {
+        "n": 2108,
+        "net12": -27954.4,
+        "pf": 0.985,
+        "hit": 0.464,
+        "top3_contrib": 87851.6,
+        "net_wo_top3_9bps": -108537.0,
+        "net9": -21630.4,
+        "net15": -34278.4
+      },
+      "best_key": "long_h2"
+    },
+    "V3_cvd_z_lt_neg25_close_loc_gt_05": {
+      "n_events": 1315,
+      "best": {
+        "n": 1310,
+        "net12": 6259.0,
+        "pf": 1.158,
+        "hit": 0.484,
+        "top3_contrib": 87123.8,
+        "net_wo_top3_9bps": -76349.8,
+        "net9": 10189.0,
+        "net15": 2329.0
+      },
+      "best_key": "long_h6"
+    },
+    "V4_cvd_z_lt_neg25_vol_z_gt_1": {
+      "n_events": 2788,
+      "best": {
+        "n": 2776,
+        "net12": -8001.4,
+        "pf": 1.113,
+        "hit": 0.517,
+        "top3_contrib": 120039.3,
+        "net_wo_top3_9bps": -118470.7,
+        "net9": 326.6,
+        "net15": -16329.4
+      },
+      "best_key": "long_h2"
+    },
+    "V5_cvd_z_lt_neg30": {
+      "n_events": 347,
+      "best": {
+        "n": 346,
+        "net12": 10245.8,
+        "pf": 1.342,
+        "hit": 0.538,
+        "top3_contrib": 31005.1,
+        "net_wo_top3_9bps": -19568.3,
+        "net9": 11283.8,
+        "net15": 9207.8
+      },
+      "best_key": "long_h3"
+    },
+    "V6_absorption_top1pct": {
+      "n_events": 4716,
+      "best": {
+        "n": 4680,
+        "net12": -7543.8,
+        "pf": 1.108,
+        "hit": 0.495,
+        "top3_contrib": 225801.3,
+        "net_wo_top3_9bps": -217199.1,
+        "net9": 6496.2,
+        "net15": -21583.8
+      },
+      "best_key": "long_h6"
+    }
+  }
+}

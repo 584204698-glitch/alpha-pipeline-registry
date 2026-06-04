@@ -1,0 +1,68 @@
+{
+  "version": "v1.0",
+  "timestamp": "2026-06-04 22:00:32.396661+00:00",
+  "data_shape": [
+    471576,
+    10
+  ],
+  "columns": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "open_interest",
+    "funding_rate",
+    "taker_buy_volume",
+    "taker_sell_volume",
+    "taker_volume"
+  ],
+  "checks": {
+    "column_taker_buy_volume": {
+      "exists": true,
+      "dtype": "float64"
+    },
+    "column_taker_sell_volume": {
+      "exists": true,
+      "dtype": "float64"
+    },
+    "missing_rate": {
+      "taker_buy": 0.0,
+      "taker_sell": 0.0
+    },
+    "zero_rate": {
+      "taker_buy": 0.0,
+      "taker_sell": 0.0
+    },
+    "taker_to_volume_ratio": {
+      "mean": 1.0,
+      "median": 1.0,
+      "p10": 1.0,
+      "p90": 1.0,
+      "pct_in_0_2": 1.0,
+      "pct_0": 0.0
+    },
+    "buy_ratio": {
+      "mean": 0.4887,
+      "pct_in_0_1": 1.0,
+      "pct_eq_0": 0.0,
+      "pct_eq_1": 0.0,
+      "pct_gt_1": 0.0
+    },
+    "cvd_return_correlation": {
+      "n_symbols": 200,
+      "mean": 0.5118,
+      "median": 0.532,
+      "std": 0.1305,
+      "pct_significant_positive": 0.985,
+      "pct_significant_negative": 0.0
+    },
+    "symbol_cvd_synchronization": {
+      "mean_cross_corr": 0.6023,
+      "max_cross_corr": 0.9903,
+      "pct_gt_0_8": 0.4632,
+      "interpretation": "WARNING: high synchronization \u2014 CVD may not be independent across symbols"
+    },
+    "verdict": "DATA_PASS"
+  }
+}

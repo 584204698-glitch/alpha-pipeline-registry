@@ -1,0 +1,20 @@
+{
+  "oi": {
+    "OI_up_Price_down": {
+      "n": 39651,
+      "best_net12": -519713.4
+    },
+    "OI_up_Price_flat": {
+      "n": 63816,
+      "best_net12": -832100.1
+    },
+    "OI_down_Price_up": {
+      "n": 46736,
+      "best_net12": -249612.0
+    },
+    "OI_down_Price_flat": {
+      "n": 76756,
+      "best_net12": -917785.6
+    }
+  }
+}

@@ -27,10 +27,10 @@ import pandas as pd
 # ── Helpers ──────────────────────────────────────────
 
 def _roll_z(series, window=12):  # was 48 for 15m bars
-    """Per-symbol rolling z-score."""
+    """Per-symbol rolling z-score (1h bars)."""
     g = series.groupby(level="symbol")
-    mean = g.transform(lambda s: s.rolling(window, min_periods=8).mean())
-    std = g.transform(lambda s: s.rolling(window, min_periods=8).std()).replace(0, np.nan)
+    mean = g.transform(lambda s: s.rolling(window, min_periods=4).mean())
+    std = g.transform(lambda s: s.rolling(window, min_periods=4).std()).replace(0, np.nan)
     return ((series - mean) / std).fillna(0.0)
 
 

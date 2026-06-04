@@ -58,8 +58,14 @@ def generate_historical_signals(data: pd.DataFrame) -> list[dict]:
         for s in scanner.scan(ts):
             d = s.__dict__ if hasattr(s, '__dict__') else (s if isinstance(s, dict) else {})
             sym = d.get("symbol", "")
+            state = d.get("state", "")
             if sym not in universe:
                 continue
+            # Only take CONFIRMED or QUALIFIED events (not REJECTED/watched)
+            from event_scanner import EventState
+            if isinstance(state, EventState):
+                if state in (EventState.REJECTED, EventState.WATCH):
+                    continue
             signals.append({
                 "timestamp": str(ts),
                 "symbol": sym,
@@ -116,8 +122,14 @@ def generate_historical_signals(data: pd.DataFrame) -> list[dict]:
         for s in fc_scanner.scan(ts):
             d = s.__dict__ if hasattr(s, '__dict__') else (s if isinstance(s, dict) else {})
             sym = d.get("symbol", "")
+            state = d.get("state", "")
             if sym not in universe:
                 continue
+            # Only SHADOW_SIGNAL events (not REJECTED)
+            from funding_carry_scanner import EventState as FCEventState
+            if isinstance(state, FCEventState):
+                if state != FCEventState.SHADOW_SIGNAL:
+                    continue
             signals.append({
                 "timestamp": str(ts),
                 "symbol": sym,
