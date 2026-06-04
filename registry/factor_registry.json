@@ -259,8 +259,21 @@
       "FILTER_PASS": 11,
       "KILL": 18,
       "TOO_STRICT": 3,
-      "key_finding": "Adding global filters (N-based systemic gate, event density, funding extreme) uniformly kills alpha. The per-symbol gate approach in event_scanner.py is the correct implementation.",
+      "key_finding": "Adding global filters uniformly kills alpha. Per-symbol gate approach is correct.",
       "report": "large_cap_regime_filter_report.json"
+    },
+    "MultiCapStrategyResearch": {
+      "status": "completed",
+      "date": "2026-06-04",
+      "decision": "current_universe_optimal",
+      "conclusion": "Event alpha exists ONLY in rank 16-100 (mid-cap by volume). Large-cap events dead. True small-cap (rank 101+) is noise.",
+      "layer_results": {
+        "Large-Cap (rank 1-15)": { "trades": 21, "net": -179, "verdict": "KILL — regime/filter only" },
+        "Mid-Cap (rank 16-100)": { "trades": 490, "net": 27383, "verdict": "PAPER_PASS — event alpha confirmed" },
+        "Small-Cap (rank 101+)": { "trades": 1615, "net": -29378, "verdict": "KILL — too noisy/illiquid" }
+      },
+      "recommendation": "Keep current rank 20-100 universe. Do NOT expand to rank 101+. Expanding to rank 16 adds marginal benefit (4 coins, 30 trades).",
+      "report": "multi_cap_strategy_report.json"
     }
   },
   "scanner_config": {

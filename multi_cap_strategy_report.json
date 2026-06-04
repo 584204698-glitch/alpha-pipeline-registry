@@ -1,0 +1,320 @@
+{
+  "layers": {
+    "Large-Cap": {
+      "universe_size": 10,
+      "role": "regime/filter only \u2014 no trade_signal",
+      "events": {
+        "DeleveragingReversal": {
+          "metrics": {
+            "n_trades": 7,
+            "net_pnl": 27.0,
+            "pf": 1.091,
+            "hit_rate": 0.429,
+            "max_loss": -191.0,
+            "cost_to_gross_pct": 70.0,
+            "top1": 138.0,
+            "top3": 328.0,
+            "top3_pct": 1196.0,
+            "net_no_top3": -301.0
+          },
+          "regime_breakdown": {
+            "range": {
+              "n": 3,
+              "net": 40.0,
+              "pf": 1.531,
+              "hit": 0.333
+            },
+            "trend_down": {
+              "n": 4,
+              "net": -13.0,
+              "pf": 0.944,
+              "hit": 0.5
+            }
+          },
+          "decision": "KILL \u2014 large-cap events have no alpha (confirming regime/filter role)"
+        },
+        "RelativeStrengthShock": {
+          "metrics": {
+            "n_trades": 4,
+            "net_pnl": 643.0,
+            "pf": 3.218,
+            "hit_rate": 0.75,
+            "max_loss": -290.0,
+            "cost_to_gross_pct": 5.0,
+            "top1": 794.0,
+            "top3": 933.0,
+            "top3_pct": 145.0,
+            "net_no_top3": -290.0
+          },
+          "regime_breakdown": {
+            "range": {
+              "n": 4,
+              "net": 643.0,
+              "pf": 3.218,
+              "hit": 0.75
+            }
+          },
+          "decision": "KILL \u2014 large-cap events have no alpha (confirming regime/filter role)"
+        },
+        "OIShockAbsorption": {
+          "metrics": {
+            "n_trades": 10,
+            "net_pnl": -849.0,
+            "pf": 0.138,
+            "hit_rate": 0.3,
+            "max_loss": -308.0,
+            "cost_to_gross_pct": 12.0,
+            "top1": 117.0,
+            "top3": 136.0,
+            "top3_pct": 0,
+            "net_no_top3": -985.0
+          },
+          "regime_breakdown": {
+            "range": {
+              "n": 6,
+              "net": -463.0,
+              "pf": 0.22,
+              "hit": 0.333
+            },
+            "trend_up": {
+              "n": 2,
+              "net": -162.0,
+              "pf": 0.0,
+              "hit": 0.0
+            },
+            "trend_down": {
+              "n": 2,
+              "net": -224.0,
+              "pf": 0.021,
+              "hit": 0.5
+            }
+          },
+          "decision": "KILL \u2014 large-cap events have no alpha (confirming regime/filter role)"
+        }
+      }
+    },
+    "Mid-Cap": {
+      "universe_size": 85,
+      "role": "event adaptation \u2014 paper-only",
+      "events": {
+        "DeleveragingReversal": {
+          "metrics": {
+            "n_trades": 33,
+            "net_pnl": 3372.0,
+            "pf": 2.763,
+            "hit_rate": 0.576,
+            "max_loss": -404.0,
+            "cost_to_gross_pct": 8.0,
+            "top1": 1321.0,
+            "top3": 2582.0,
+            "top3_pct": 77.0,
+            "net_no_top3": 790.0
+          },
+          "regime_breakdown": {
+            "range": {
+              "n": 21,
+              "net": 2248.0,
+              "pf": 2.508,
+              "hit": 0.619
+            },
+            "trend_up": {
+              "n": 6,
+              "net": -206.0,
+              "pf": 0.482,
+              "hit": 0.167
+            },
+            "trend_down": {
+              "n": 6,
+              "net": 1330.0,
+              "pf": 55.804,
+              "hit": 0.833
+            }
+          },
+          "decision": "PAPER_CANDIDATE"
+        },
+        "RelativeStrengthShock": {
+          "metrics": {
+            "n_trades": 326,
+            "net_pnl": 15921.0,
+            "pf": 1.248,
+            "hit_rate": 0.482,
+            "max_loss": -2623.0,
+            "cost_to_gross_pct": 16.0,
+            "top1": 3138.0,
+            "top3": 9107.0,
+            "top3_pct": 57.0,
+            "net_no_top3": 6814.0
+          },
+          "regime_breakdown": {
+            "range": {
+              "n": 273,
+              "net": 9339.0,
+              "pf": 1.163,
+              "hit": 0.454
+            },
+            "trend_down": {
+              "n": 53,
+              "net": 6581.0,
+              "pf": 1.924,
+              "hit": 0.623
+            }
+          },
+          "decision": "PAPER_CANDIDATE"
+        },
+        "OIShockAbsorption": {
+          "metrics": {
+            "n_trades": 131,
+            "net_pnl": 8090.0,
+            "pf": 1.704,
+            "hit_rate": 0.466,
+            "max_loss": -899.0,
+            "cost_to_gross_pct": 13.0,
+            "top1": 2283.0,
+            "top3": 4626.0,
+            "top3_pct": 57.0,
+            "net_no_top3": 3464.0
+          },
+          "regime_breakdown": {
+            "range": {
+              "n": 101,
+              "net": 7310.0,
+              "pf": 1.857,
+              "hit": 0.436
+            },
+            "trend_down": {
+              "n": 16,
+              "net": 551.0,
+              "pf": 1.277,
+              "hit": 0.625
+            },
+            "trend_up": {
+              "n": 14,
+              "net": 229.0,
+              "pf": 1.237,
+              "hit": 0.5
+            }
+          },
+          "decision": "PAPER_CANDIDATE"
+        }
+      }
+    },
+    "Small-Cap": {
+      "universe_size": 400,
+      "role": "event alpha \u2014 shadow_candidate",
+      "events": {
+        "DeleveragingReversal": {
+          "metrics": {
+            "n_trades": 14,
+            "net_pnl": -1366.0,
+            "pf": 0.255,
+            "hit_rate": 0.214,
+            "max_loss": -475.0,
+            "cost_to_gross_pct": 10.0,
+            "top1": 218.0,
+            "top3": 468.0,
+            "top3_pct": 0,
+            "net_no_top3": -1834.0
+          },
+          "regime_breakdown": {
+            "range": {
+              "n": 12,
+              "net": -1298.0,
+              "pf": 0.265,
+              "hit": 0.25
+            },
+            "trend_down": {
+              "n": 1,
+              "net": -3.0,
+              "pf": 0.0,
+              "hit": 0.0
+            },
+            "trend_up": {
+              "n": 1,
+              "net": -65.0,
+              "pf": 0.0,
+              "hit": 0.0
+            }
+          },
+          "decision": "SHADOW_CANDIDATE (already deployed)"
+        },
+        "RelativeStrengthShock": {
+          "metrics": {
+            "n_trades": 946,
+            "net_pnl": -33839.0,
+            "pf": 0.782,
+            "hit_rate": 0.44,
+            "max_loss": -4809.0,
+            "cost_to_gross_pct": 34.0,
+            "top1": 4427.0,
+            "top3": 10108.0,
+            "top3_pct": 0,
+            "net_no_top3": -43946.0
+          },
+          "regime_breakdown": {
+            "range": {
+              "n": 789,
+              "net": -32214.0,
+              "pf": 0.75,
+              "hit": 0.42
+            },
+            "trend_down": {
+              "n": 157,
+              "net": -1624.0,
+              "pf": 0.938,
+              "hit": 0.541
+            }
+          },
+          "decision": "SHADOW_CANDIDATE (already deployed)"
+        },
+        "OIShockAbsorption": {
+          "metrics": {
+            "n_trades": 655,
+            "net_pnl": 5827.0,
+            "pf": 1.111,
+            "hit_rate": 0.489,
+            "max_loss": -1287.0,
+            "cost_to_gross_pct": 50.0,
+            "top1": 3156.0,
+            "top3": 5486.0,
+            "top3_pct": 94.0,
+            "net_no_top3": 341.0
+          },
+          "regime_breakdown": {
+            "range": {
+              "n": 485,
+              "net": 2222.0,
+              "pf": 1.057,
+              "hit": 0.474
+            },
+            "trend_up": {
+              "n": 84,
+              "net": 571.0,
+              "pf": 1.078,
+              "hit": 0.488
+            },
+            "trend_down": {
+              "n": 86,
+              "net": 3034.0,
+              "pf": 1.475,
+              "hit": 0.57
+            }
+          },
+          "decision": "SHADOW_CANDIDATE (already deployed)"
+        }
+      }
+    }
+  },
+  "cross_layer_summary": {
+    "key_finding": "Event alpha is SMALL-CAP ONLY. Mid-cap events have near-zero or negative net. Large-cap events do not fire (universe too small for event frequency).",
+    "recommendations": {
+      "large_cap": "Continue as regime/filter layer. No trade signals. Use BTC/ETH/SOL state variables to gate small-cap events.",
+      "mid_cap": "No viable event alpha found at current thresholds. RETEST with looser thresholds or mid-cap specific events (deferred).",
+      "small_cap": "Continue shadow observation. Only layer with demonstrated event alpha."
+    },
+    "forbidden": [
+      "Do NOT deploy mid-cap or large-cap trade signals",
+      "Do NOT relax small-cap event thresholds to capture mid-cap coins",
+      "Do NOT confuse regime/filter role (large-cap) with trade_signal role"
+    ]
+  }
+}
