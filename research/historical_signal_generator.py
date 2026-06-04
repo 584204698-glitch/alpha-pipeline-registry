@@ -20,95 +20,114 @@ from execution_simulator import (
 )
 
 
-def generate_historical_signals(data: pd.DataFrame) -> list[dict]:
-    """Run all 4 scanners across full history, output signal list."""
-    signals = []
+def load_universe() -> set[str]:
+    with open(ROOT / "registry" / "live" / "event_universe.json") as f:
+        d = json.load(f)
+    syms = set()
+    def collect(v):
+        if isinstance(v, list): syms.update(v)
+        elif isinstance(v, dict):
+            for vv in v.values(): collect(vv)
+    collect(d)
+    return syms
 
-    # Import scanners (ROOT already in sys.path)
+
+def generate_historical_signals(data: pd.DataFrame) -> list[dict]:
     from event_scanner import DeleveragingEventScanner
     from relative_strength_shock import detect_relative_strength_shock
     from oi_shock_absorption import detect_oi_shock_absorption
     from funding_carry_scanner import FundingCarryScanner
-
     from research.regime_detector import detect_regime_fast
-    regime_map = detect_regime_fast(data)
 
+    signals: list[dict] = []
     ts_unique = sorted(data.index.get_level_values("timestamp").unique())
-    # Only scan bars with enough symbols
-    min_syms = 30
+    universe = load_universe()
+    print(f"  Universe: {len(universe)} symbols, {len(ts_unique)} bars")
 
-    print(f"  Scanning {len(ts_unique)} bars...")
+    # Regime map
+    print("    Computing regime map...")
+    regime_map = detect_regime_fast(data)
+    btc_present = "BTCUSDT" in data.index.get_level_values("symbol")
 
-    # Deleveraging
+    # 1. Deleveraging — per-bar scan
     print("    Deleveraging...")
     scanner = DeleveragingEventScanner(data, regime_map, hold_bars=2)
-    scanner.scan()
-    for s in scanner.signals:
-        d = s.to_dict() if hasattr(s, 'to_dict') else s
-        signals.append({
-            "timestamp": str(d.get("timestamp", d.get("ts", ""))),
-            "symbol": d.get("symbol", ""),
-            "event_type": "DeleveragingReversal",
-            "status": "SHADOW_SIGNAL",
-            "regime": d.get("regime", ""),
-            "direction": d.get("direction", "long"),
-            "event_score": d.get("event_score", d.get("score", 0)),
-            "hold_bars": 2,
-        })
+    for i, ts in enumerate(ts_unique):
+        if i % 200 == 0:
+            print(f"      {i}/{len(ts_unique)}")
+        for s in scanner.scan(ts):
+            d = s.__dict__ if hasattr(s, '__dict__') else (s if isinstance(s, dict) else {})
+            sym = d.get("symbol", "")
+            if sym not in universe:
+                continue
+            signals.append({
+                "timestamp": str(ts),
+                "symbol": sym,
+                "event_type": "DeleveragingReversal",
+                "status": "SHADOW_SIGNAL",
+                "regime": regime_map.get(ts, "unknown"),
+                "direction": "long",
+                "event_score": d.get("event_score", 0),
+                "hold_bars": 2,
+            })
 
-    # RS Shock
-    print("    RS Shock...")
-    rs_events = detect_relative_strength_shock(data, regime_map=regime_map)
-    for ev in rs_events:
-        signals.append({
-            "timestamp": str(ev["timestamp"]),
-            "symbol": ev["symbol"],
-            "event_type": "RelativeStrengthShock",
-            "status": "SHADOW_SIGNAL",
-            "regime": ev.get("regime", ""),
-            "direction": ev.get("direction", "long"),
-            "event_score": ev.get("event_score", 0),
-            "hold_bars": 2,
-        })
-
-    # OI Shock
+    # 2. OI Shock — scans all at once
     print("    OI Shock...")
-    oi_events = detect_oi_shock_absorption(data)
+    oi_events = detect_oi_shock_absorption(data, universe, btc_regime_map=regime_map)
     for ev in oi_events:
+        sym = ev.get("symbol", "")
+        if sym not in universe:
+            continue
         signals.append({
             "timestamp": str(ev["timestamp"]),
-            "symbol": ev["symbol"],
+            "symbol": sym,
             "event_type": "OIShockAbsorption",
             "status": "SHADOW_SIGNAL",
-            "regime": ev.get("regime", ""),
+            "regime": ev.get("regime", "unknown"),
             "direction": ev.get("direction", "long"),
             "event_score": ev.get("event_score", 0),
             "hold_bars": 2,
         })
 
-    # Funding Carry
-    print("    Funding Carry...")
-    with open(ROOT / "registry" / "live" / "event_universe.json") as f:
-        universe_data = json.load(f)
-        universe = set()
-        for k, v in universe_data.items():
-            if isinstance(v, dict) and "symbols" in v:
-                universe.update(v["symbols"])
-
-    fc_scanner = FundingCarryScanner(data, regime_map, universe)
-    fc_scanner.scan_all()
-    for s in fc_scanner.signals:
-        d = s if isinstance(s, dict) else s.__dict__
+    # 3. RS Shock — scans all at once
+    print("    RS Shock...")
+    rs_events = detect_relative_strength_shock(data, universe, btc_regime_map=regime_map)
+    for ev in rs_events:
+        sym = ev.get("symbol", "")
+        if sym not in universe:
+            continue
         signals.append({
-            "timestamp": str(d.get("timestamp", "")),
-            "symbol": d.get("symbol", ""),
-            "event_type": "FundingCarryEU",
+            "timestamp": str(ev["timestamp"]),
+            "symbol": sym,
+            "event_type": "RelativeStrengthShock",
             "status": "SHADOW_SIGNAL",
-            "regime": d.get("regime", ""),
-            "direction": "long",
-            "event_score": d.get("event_score", d.get("score", 0)),
-            "hold_bars": 12,
+            "regime": ev.get("regime", "unknown"),
+            "direction": ev.get("direction", "long"),
+            "event_score": ev.get("event_score", 0),
+            "hold_bars": 2,
         })
+
+    # 4. Funding Carry — per-bar scan
+    print("    Funding Carry...")
+    fc_scanner = FundingCarryScanner(data, regime_map, universe)
+    for i, ts in enumerate(ts_unique):
+        if i % 200 == 0:
+            print(f"      {i}/{len(ts_unique)}")
+        for s in fc_scanner.scan(ts):
+            d = s.__dict__ if hasattr(s, '__dict__') else (s if isinstance(s, dict) else {})
+            sym = d.get("symbol", "")
+            if sym not in universe:
+                continue
+            signals.append({
+                "timestamp": str(ts),
+                "symbol": sym,
+                "event_type": "FundingCarryEU",
+                "status": "SHADOW_SIGNAL",
+                "regime": regime_map.get(ts, "unknown"),
+                "direction": "long",
+                "event_score": d.get("event_score", 0),
+                "hold_bars": 12,
+            })
 
     # Deduplicate
     seen = set()
@@ -146,7 +165,6 @@ def main():
         return
 
     print("\n[3/3] Running Paper Order Simulator...")
-    # Load cost profile
     cost_path = ROOT / "registry" / "live" / "symbol_cost_profile.json"
     symbol_cost = load_symbol_cost(cost_path)
     if not symbol_cost:
@@ -160,7 +178,6 @@ def main():
                 "total_cost_bps": round(total, 1),
                 "cost_bucket": "medium",
             }
-        # Save it too
         cost_path.parent.mkdir(parents=True, exist_ok=True)
         cost_path.write_text(json.dumps(symbol_cost, indent=2))
 
@@ -169,28 +186,20 @@ def main():
     report_path = ROOT / "logs" / "shadow" / "paper_execution_report.json"
 
     for top_n in TOP_N_MODES:
-        for entry_name, delay_bars in [("scan_HH_15", 1)]:
-            print(f"  {entry_name}_top{top_n} ...")
-            orders, _ = simulate_orders(
-                signals, data, symbol_cost, entry_name, delay_bars, top_n
-            )
-            all_orders.extend(orders)
-
-    # Close entry reference
-    for top_n in TOP_N_MODES:
-        orders, _ = simulate_orders(
-            signals, data, symbol_cost, "close_entry", 0, top_n
-        )
+        print(f"  scan_HH_15_top{top_n} ...")
+        orders, _ = simulate_orders(signals, data, symbol_cost, "scan_HH_15", 1, top_n)
         all_orders.extend(orders)
 
-    # Write orders
-    order_path.parent.mkdir(parents=True, exist_ok=True)
+    for top_n in TOP_N_MODES:
+        print(f"  close_entry_top{top_n} ...")
+        orders, _ = simulate_orders(signals, data, symbol_cost, "close_entry", 0, top_n)
+        all_orders.extend(orders)
+
     with open(order_path, "w") as f:
         for o in all_orders:
             f.write(json.dumps(o.dict, default=str) + "\n")
     print(f"  Orders: {order_path} ({len(all_orders)} entries)")
 
-    # Build report
     ts = data.index.get_level_values("timestamp")
     report = build_report(all_orders, {}, {}, f"{ts.min()} → {ts.max()}")
     report_path.write_text(json.dumps(report, indent=2, default=str))
@@ -201,13 +210,9 @@ def main():
     print(f"Decision: {decision.get('verdict', '?')}")
     for r in decision.get("reasons", []):
         print(f"  • {r}")
-
-    # Quick summary
     primary = report.get("by_top_mode", {}).get("scan_HH_15_1bar_top5", {})
     if primary:
-        print(f"\n  Primary (scan_HH_15_top5):")
-        print(f"    n={primary['n_trades']}, Net={primary['net_pnl_bps']:.0f}bps, PF={primary['pf']:.2f}")
-        print(f"    Hit={primary['hit_rate']:.1%}, net_wo_top3={primary['net_without_top3']:.0f}bps")
+        print(f"\n  n={primary['n_trades']} Net={primary['net_pnl_bps']:.0f}bps PF={primary['pf']:.2f} net_wo_top3={primary['net_without_top3']:.0f}bps")
 
 
 if __name__ == "__main__":

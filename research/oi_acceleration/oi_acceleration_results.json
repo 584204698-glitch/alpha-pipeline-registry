@@ -1,0 +1,141 @@
+{
+  "version": "v1.0",
+  "generated": "2026-06-04 21:04:24.876801+00:00",
+  "n_bars": 1003,
+  "n_signals": 471576,
+  "results": [
+    {
+      "label": "D1: OI\u2193\u52a0\u901f + \u4ef7\u8dcc \u2192 long",
+      "n": 13117,
+      "gross_bps": 137192.3,
+      "net_9bps": 19139.3,
+      "pf": 1.16,
+      "hit_rate": 0.53,
+      "mean_bps": 10.5,
+      "median_bps": 10.4,
+      "top3_contribution_pct": 19.0,
+      "ic": -0.0338
+    },
+    {
+      "label": "D2: OI\u2193\u51cf\u901f + \u4ef7\u8dcc \u2192 long",
+      "n": 106,
+      "gross_bps": 9013.8,
+      "net_9bps": 8059.8,
+      "pf": 1.96,
+      "hit_rate": 0.594,
+      "mean_bps": 85.0,
+      "median_bps": 59.8,
+      "top3_contribution_pct": 96.0,
+      "ic": -0.053
+    },
+    {
+      "label": "U1: OI\u2191\u52a0\u901f + \u4ef7\u6da8 \u2192 long",
+      "n": 201,
+      "gross_bps": 1874.5,
+      "net_9bps": 65.5,
+      "pf": 1.05,
+      "hit_rate": 0.448,
+      "mean_bps": 9.3,
+      "median_bps": -27.6,
+      "top3_contribution_pct": 398.0,
+      "ic": -0.0354
+    },
+    {
+      "label": "U2: OI\u2191\u51cf\u901f + \u4ef7\u6da8 \u2192 long",
+      "n": 13639,
+      "gross_bps": 75923.1,
+      "net_9bps": -46827.9,
+      "pf": 1.06,
+      "hit_rate": 0.459,
+      "mean_bps": 5.6,
+      "median_bps": -12.3,
+      "top3_contribution_pct": 19.0,
+      "ic": -0.0456
+    },
+    {
+      "label": "S1: OI\u2191\u52a0\u901f + \u4ef7\u6da8 \u2192 short (fade)",
+      "n": 201,
+      "gross_bps": -1874.5,
+      "net_9bps": -3683.5,
+      "pf": 0.95,
+      "hit_rate": 0.547,
+      "mean_bps": -9.3,
+      "median_bps": 27.6,
+      "top3_contribution_pct": 430605.0,
+      "ic": -0.0354
+    },
+    {
+      "label": "S2: OI\u2193\u51cf\u901f + \u4ef7\u6da8 \u2192 short",
+      "n": 3,
+      "error": "too few signals"
+    },
+    {
+      "label": "D1 hold=4h",
+      "n": 13096,
+      "gross_bps": 110132.1,
+      "net_9bps": -7731.9,
+      "pf": 1.09,
+      "hit_rate": 0.513,
+      "mean_bps": 8.4,
+      "median_bps": 6.7,
+      "top3_contribution_pct": 25.0,
+      "ic": -0.0429
+    },
+    {
+      "label": "D2 hold=4h",
+      "n": 106,
+      "gross_bps": 4017.0,
+      "net_9bps": 3063.0,
+      "pf": 1.35,
+      "hit_rate": 0.434,
+      "mean_bps": 37.9,
+      "median_bps": -25.7,
+      "top3_contribution_pct": 197.0,
+      "ic": 0.0034
+    },
+    {
+      "label": "Delev + ACCEL_DOWN h=2h",
+      "type": "delev_accel_comparison",
+      "n": 14982,
+      "gross_bps": 170406.5,
+      "net_9bps": 35568.5,
+      "pf": 1.18,
+      "hit_rate": 0.533,
+      "mean_bps": 11.4,
+      "median_bps": 11.0
+    },
+    {
+      "label": "Delev + ACCEL_DOWN h=4h",
+      "type": "delev_accel_comparison",
+      "n": 14953,
+      "gross_bps": 86953.6,
+      "net_9bps": -47623.4,
+      "pf": 1.07,
+      "hit_rate": 0.51,
+      "mean_bps": 5.8,
+      "median_bps": 5.5
+    },
+    {
+      "label": "Delev + ACCEL_UP (decel) h=2h",
+      "type": "delev_accel_comparison",
+      "n": 244,
+      "gross_bps": 14964.2,
+      "net_9bps": 12768.2,
+      "pf": 1.8,
+      "hit_rate": 0.566,
+      "mean_bps": 61.3,
+      "median_bps": 42.6
+    },
+    {
+      "label": "Delev + ACCEL_UP (decel) h=4h",
+      "type": "delev_accel_comparison",
+      "n": 243,
+      "gross_bps": 5399.6,
+      "net_9bps": 3212.6,
+      "pf": 1.22,
+      "hit_rate": 0.432,
+      "mean_bps": 22.2,
+      "median_bps": -25.9
+    }
+  ]
+}
