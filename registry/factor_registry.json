@@ -170,7 +170,8 @@
         "close_loc < 0.4 (trapped shorts at range low)",
         "price failure: abs(ret_15m) < 1% OR abs(ret_1h) < 2%",
         "skip panic_down/chop regimes",
-        "symmetric_trading FORBIDDEN — long_only enforced",
+        "BTC 4h EMA downtrend preferred (PF=2.10 vs 1.20 uptrend) -- cross_event_research",
+        "symmetric_trading FORBIDDEN -- long_only enforced",
         "cooldown 8 bars per symbol"
       ],
       "shadow_requirements": [

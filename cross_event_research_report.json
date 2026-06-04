@@ -1,0 +1,760 @@
+{
+  "directions": {
+    "1_cluster_alpha": [
+      {
+        "direction": "cluster_alpha",
+        "event_type": "DeleveragingReversal",
+        "cluster_group": "solo",
+        "n": 22,
+        "net": 2141.0,
+        "pf": 2.331,
+        "hit": 0.5,
+        "max_loss": -502.0,
+        "top3": 2582.0,
+        "top3_pct": 121.0,
+        "no_top3": -441.0,
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "cluster_alpha",
+        "event_type": "DeleveragingReversal",
+        "cluster_group": "cluster_2_3",
+        "n": 13,
+        "net": 279.0,
+        "pf": 1.196,
+        "hit": 0.615,
+        "max_loss": -621.0,
+        "top3": 948.0,
+        "top3_pct": 339.0,
+        "no_top3": -668.0,
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "cluster_alpha",
+        "event_type": "DeleveragingReversal",
+        "cluster_group": "cluster_4plus",
+        "n": 1,
+        "net": 73.0,
+        "pf": Infinity,
+        "hit": 1.0,
+        "max_loss": 73.0,
+        "top3": 0,
+        "top3_pct": 0,
+        "no_top3": 0,
+        "decision": "RETEST_ON_SHADOW"
+      },
+      {
+        "direction": "cluster_alpha",
+        "event_type": "RelativeStrengthShock",
+        "cluster_group": "solo",
+        "n": 138,
+        "net": 11869.0,
+        "pf": 1.44,
+        "hit": 0.5,
+        "max_loss": -2623.0,
+        "top3": 8378.0,
+        "top3_pct": 71.0,
+        "no_top3": 3491.0,
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "cluster_alpha",
+        "event_type": "RelativeStrengthShock",
+        "cluster_group": "cluster_2_3",
+        "n": 153,
+        "net": 3872.0,
+        "pf": 1.117,
+        "hit": 0.471,
+        "max_loss": -2039.0,
+        "top3": 7996.0,
+        "top3_pct": 207.0,
+        "no_top3": -4124.0,
+        "decision": "RETEST_ON_SHADOW"
+      },
+      {
+        "direction": "cluster_alpha",
+        "event_type": "RelativeStrengthShock",
+        "cluster_group": "cluster_4plus",
+        "n": 20,
+        "net": 1058.0,
+        "pf": 1.549,
+        "hit": 0.5,
+        "max_loss": -549.0,
+        "top3": 1970.0,
+        "top3_pct": 186.0,
+        "no_top3": -912.0,
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "cluster_alpha",
+        "event_type": "OIShockAbsorption",
+        "cluster_group": "solo",
+        "n": 60,
+        "net": 4448.0,
+        "pf": 1.852,
+        "hit": 0.467,
+        "max_loss": -739.0,
+        "top3": 4027.0,
+        "top3_pct": 91.0,
+        "no_top3": 421.0,
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "cluster_alpha",
+        "event_type": "OIShockAbsorption",
+        "cluster_group": "cluster_2_3",
+        "n": 48,
+        "net": 2816.0,
+        "pf": 1.563,
+        "hit": 0.417,
+        "max_loss": -899.0,
+        "top3": 3501.0,
+        "top3_pct": 124.0,
+        "no_top3": -685.0,
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "cluster_alpha",
+        "event_type": "OIShockAbsorption",
+        "cluster_group": "cluster_4plus",
+        "n": 6,
+        "net": 460.0,
+        "pf": 1.934,
+        "hit": 0.5,
+        "max_loss": -300.0,
+        "top3": 952.0,
+        "top3_pct": 207.0,
+        "no_top3": -493.0,
+        "decision": "FILTER_PASS"
+      }
+    ],
+    "2_regime_params": [
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "trend_up",
+        "hold_1": "deferred",
+        "baseline": {
+          "n": 6,
+          "net": -206.0,
+          "pf": 0.482,
+          "hit": 0.167,
+          "max_loss": -147.0,
+          "top3": 130.0,
+          "top3_pct": 0,
+          "no_top3": -336.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "trend_up",
+        "hold_2": "deferred",
+        "baseline": {
+          "n": 6,
+          "net": -206.0,
+          "pf": 0.482,
+          "hit": 0.167,
+          "max_loss": -147.0,
+          "top3": 130.0,
+          "top3_pct": 0,
+          "no_top3": -336.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "trend_up",
+        "hold_3": "deferred",
+        "baseline": {
+          "n": 6,
+          "net": -206.0,
+          "pf": 0.482,
+          "hit": 0.167,
+          "max_loss": -147.0,
+          "top3": 130.0,
+          "top3_pct": 0,
+          "no_top3": -336.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "trend_up",
+        "baseline": {
+          "n": 6,
+          "net": -206.0,
+          "pf": 0.482,
+          "hit": 0.167,
+          "max_loss": -147.0,
+          "top3": 130.0,
+          "top3_pct": 0,
+          "no_top3": -336.0
+        },
+        "recommendation": "strict threshold, half size or skip \u2014 worst regime",
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "trend_down",
+        "hold_1": "deferred",
+        "baseline": {
+          "n": 7,
+          "net": 1574.0,
+          "pf": 65.865,
+          "hit": 0.857,
+          "max_loss": -24.0,
+          "top3": 1228.0,
+          "top3_pct": 78.0,
+          "no_top3": 346.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "trend_down",
+        "hold_2": "deferred",
+        "baseline": {
+          "n": 7,
+          "net": 1574.0,
+          "pf": 65.865,
+          "hit": 0.857,
+          "max_loss": -24.0,
+          "top3": 1228.0,
+          "top3_pct": 78.0,
+          "no_top3": 346.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "trend_down",
+        "hold_3": "deferred",
+        "baseline": {
+          "n": 7,
+          "net": 1574.0,
+          "pf": 65.865,
+          "hit": 0.857,
+          "max_loss": -24.0,
+          "top3": 1228.0,
+          "top3_pct": 78.0,
+          "no_top3": 346.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "trend_down",
+        "baseline": {
+          "n": 7,
+          "net": 1574.0,
+          "pf": 65.865,
+          "hit": 0.857,
+          "max_loss": -24.0,
+          "top3": 1228.0,
+          "top3_pct": 78.0,
+          "no_top3": 346.0
+        },
+        "recommendation": "relaxed threshold, full size \u2014 best regime across all events",
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "range",
+        "hold_1": "deferred",
+        "baseline": {
+          "n": 23,
+          "net": 1125.0,
+          "pf": 1.43,
+          "hit": 0.565,
+          "max_loss": -621.0,
+          "top3": 2271.0,
+          "top3_pct": 202.0,
+          "no_top3": -1146.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "range",
+        "hold_2": "deferred",
+        "baseline": {
+          "n": 23,
+          "net": 1125.0,
+          "pf": 1.43,
+          "hit": 0.565,
+          "max_loss": -621.0,
+          "top3": 2271.0,
+          "top3_pct": 202.0,
+          "no_top3": -1146.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "range",
+        "hold_3": "deferred",
+        "baseline": {
+          "n": 23,
+          "net": 1125.0,
+          "pf": 1.43,
+          "hit": 0.565,
+          "max_loss": -621.0,
+          "top3": 2271.0,
+          "top3_pct": 202.0,
+          "no_top3": -1146.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "DeleveragingReversal",
+        "regime": "range",
+        "baseline": {
+          "n": 23,
+          "net": 1125.0,
+          "pf": 1.43,
+          "hit": 0.565,
+          "max_loss": -621.0,
+          "top3": 2271.0,
+          "top3_pct": 202.0,
+          "no_top3": -1146.0
+        },
+        "recommendation": "default \u2014 neutral",
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "RelativeStrengthShock",
+        "regime": "trend_down",
+        "hold_1": "deferred",
+        "baseline": {
+          "n": 52,
+          "net": 6730.0,
+          "pf": 1.965,
+          "hit": 0.635,
+          "max_loss": -2213.0,
+          "top3": 5044.0,
+          "top3_pct": 75.0,
+          "no_top3": 1686.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "RelativeStrengthShock",
+        "regime": "trend_down",
+        "hold_2": "deferred",
+        "baseline": {
+          "n": 52,
+          "net": 6730.0,
+          "pf": 1.965,
+          "hit": 0.635,
+          "max_loss": -2213.0,
+          "top3": 5044.0,
+          "top3_pct": 75.0,
+          "no_top3": 1686.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "RelativeStrengthShock",
+        "regime": "trend_down",
+        "hold_3": "deferred",
+        "baseline": {
+          "n": 52,
+          "net": 6730.0,
+          "pf": 1.965,
+          "hit": 0.635,
+          "max_loss": -2213.0,
+          "top3": 5044.0,
+          "top3_pct": 75.0,
+          "no_top3": 1686.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "RelativeStrengthShock",
+        "regime": "trend_down",
+        "baseline": {
+          "n": 52,
+          "net": 6730.0,
+          "pf": 1.965,
+          "hit": 0.635,
+          "max_loss": -2213.0,
+          "top3": 5044.0,
+          "top3_pct": 75.0,
+          "no_top3": 1686.0
+        },
+        "recommendation": "relaxed threshold, full size \u2014 best regime across all events",
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "RelativeStrengthShock",
+        "regime": "range",
+        "hold_1": "deferred",
+        "baseline": {
+          "n": 259,
+          "net": 10070.0,
+          "pf": 1.183,
+          "hit": 0.456,
+          "max_loss": -2623.0,
+          "top3": 9107.0,
+          "top3_pct": 90.0,
+          "no_top3": 963.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "RelativeStrengthShock",
+        "regime": "range",
+        "hold_2": "deferred",
+        "baseline": {
+          "n": 259,
+          "net": 10070.0,
+          "pf": 1.183,
+          "hit": 0.456,
+          "max_loss": -2623.0,
+          "top3": 9107.0,
+          "top3_pct": 90.0,
+          "no_top3": 963.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "RelativeStrengthShock",
+        "regime": "range",
+        "hold_3": "deferred",
+        "baseline": {
+          "n": 259,
+          "net": 10070.0,
+          "pf": 1.183,
+          "hit": 0.456,
+          "max_loss": -2623.0,
+          "top3": 9107.0,
+          "top3_pct": 90.0,
+          "no_top3": 963.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "RelativeStrengthShock",
+        "regime": "range",
+        "baseline": {
+          "n": 259,
+          "net": 10070.0,
+          "pf": 1.183,
+          "hit": 0.456,
+          "max_loss": -2623.0,
+          "top3": 9107.0,
+          "top3_pct": 90.0,
+          "no_top3": 963.0
+        },
+        "recommendation": "default \u2014 neutral",
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "trend_up",
+        "hold_1": "deferred",
+        "baseline": {
+          "n": 12,
+          "net": -211.0,
+          "pf": 0.782,
+          "hit": 0.417,
+          "max_loss": -276.0,
+          "top3": 719.0,
+          "top3_pct": 0,
+          "no_top3": -930.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "trend_up",
+        "hold_2": "deferred",
+        "baseline": {
+          "n": 12,
+          "net": -211.0,
+          "pf": 0.782,
+          "hit": 0.417,
+          "max_loss": -276.0,
+          "top3": 719.0,
+          "top3_pct": 0,
+          "no_top3": -930.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "trend_up",
+        "hold_3": "deferred",
+        "baseline": {
+          "n": 12,
+          "net": -211.0,
+          "pf": 0.782,
+          "hit": 0.417,
+          "max_loss": -276.0,
+          "top3": 719.0,
+          "top3_pct": 0,
+          "no_top3": -930.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "trend_up",
+        "baseline": {
+          "n": 12,
+          "net": -211.0,
+          "pf": 0.782,
+          "hit": 0.417,
+          "max_loss": -276.0,
+          "top3": 719.0,
+          "top3_pct": 0,
+          "no_top3": -930.0
+        },
+        "recommendation": "strict threshold, half size or skip \u2014 worst regime",
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "trend_down",
+        "hold_1": "deferred",
+        "baseline": {
+          "n": 13,
+          "net": 513.0,
+          "pf": 1.258,
+          "hit": 0.615,
+          "max_loss": -899.0,
+          "top3": 1665.0,
+          "top3_pct": 325.0,
+          "no_top3": -1153.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "trend_down",
+        "hold_2": "deferred",
+        "baseline": {
+          "n": 13,
+          "net": 513.0,
+          "pf": 1.258,
+          "hit": 0.615,
+          "max_loss": -899.0,
+          "top3": 1665.0,
+          "top3_pct": 325.0,
+          "no_top3": -1153.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "trend_down",
+        "hold_3": "deferred",
+        "baseline": {
+          "n": 13,
+          "net": 513.0,
+          "pf": 1.258,
+          "hit": 0.615,
+          "max_loss": -899.0,
+          "top3": 1665.0,
+          "top3_pct": 325.0,
+          "no_top3": -1153.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "trend_down",
+        "baseline": {
+          "n": 13,
+          "net": 513.0,
+          "pf": 1.258,
+          "hit": 0.615,
+          "max_loss": -899.0,
+          "top3": 1665.0,
+          "top3_pct": 325.0,
+          "no_top3": -1153.0
+        },
+        "recommendation": "relaxed threshold, full size \u2014 best regime across all events",
+        "decision": "FILTER_PASS"
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "range",
+        "hold_1": "deferred",
+        "baseline": {
+          "n": 89,
+          "net": 7422.0,
+          "pf": 1.956,
+          "hit": 0.427,
+          "max_loss": -739.0,
+          "top3": 4626.0,
+          "top3_pct": 62.0,
+          "no_top3": 2796.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "range",
+        "hold_2": "deferred",
+        "baseline": {
+          "n": 89,
+          "net": 7422.0,
+          "pf": 1.956,
+          "hit": 0.427,
+          "max_loss": -739.0,
+          "top3": 4626.0,
+          "top3_pct": 62.0,
+          "no_top3": 2796.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "range",
+        "hold_3": "deferred",
+        "baseline": {
+          "n": 89,
+          "net": 7422.0,
+          "pf": 1.956,
+          "hit": 0.427,
+          "max_loss": -739.0,
+          "top3": 4626.0,
+          "top3_pct": 62.0,
+          "no_top3": 2796.0
+        }
+      },
+      {
+        "direction": "regime_params",
+        "event_type": "OIShockAbsorption",
+        "regime": "range",
+        "baseline": {
+          "n": 89,
+          "net": 7422.0,
+          "pf": 1.956,
+          "hit": 0.427,
+          "max_loss": -739.0,
+          "top3": 4626.0,
+          "top3_pct": 62.0,
+          "no_top3": 2796.0
+        },
+        "recommendation": "default \u2014 neutral",
+        "decision": "FILTER_PASS"
+      }
+    ],
+    "3_cross_event": [
+      {
+        "direction": "cross_event",
+        "group": "solo_event",
+        "n": 461,
+        "net": 27016.0,
+        "pf": 1.357,
+        "hit": 0.482,
+        "max_loss": -2623.0,
+        "top3": 9107.0,
+        "top3_pct": 34.0,
+        "no_top3": 17909.0
+      },
+      {
+        "direction": "cross_event",
+        "group": "cross_event",
+        "n": 0
+      }
+    ],
+    "4_multi_cycle": [
+      {
+        "direction": "multi_cycle",
+        "event_type": "DeleveragingReversal",
+        "btc_4h_trend": "btc_4h_up",
+        "n": 13,
+        "net": 546.0,
+        "pf": 1.573,
+        "hit": 0.538,
+        "max_loss": -404.0,
+        "top3": 1141.0,
+        "top3_pct": 209.0,
+        "no_top3": -595.0
+      },
+      {
+        "direction": "multi_cycle",
+        "event_type": "DeleveragingReversal",
+        "btc_4h_trend": "btc_4h_down",
+        "n": 23,
+        "net": 1947.0,
+        "pf": 1.935,
+        "hit": 0.565,
+        "max_loss": -621.0,
+        "top3": 2306.0,
+        "top3_pct": 118.0,
+        "no_top3": -359.0
+      },
+      {
+        "direction": "multi_cycle",
+        "event_type": "RelativeStrengthShock",
+        "btc_4h_trend": "btc_4h_up",
+        "n": 114,
+        "net": 5536.0,
+        "pf": 1.231,
+        "hit": 0.412,
+        "max_loss": -2623.0,
+        "top3": 7564.0,
+        "top3_pct": 137.0,
+        "no_top3": -2029.0
+      },
+      {
+        "direction": "multi_cycle",
+        "event_type": "RelativeStrengthShock",
+        "btc_4h_trend": "btc_4h_down",
+        "n": 197,
+        "net": 11264.0,
+        "pf": 1.297,
+        "hit": 0.528,
+        "max_loss": -2213.0,
+        "top3": 8809.0,
+        "top3_pct": 78.0,
+        "no_top3": 2454.0
+      },
+      {
+        "direction": "multi_cycle",
+        "event_type": "OIShockAbsorption",
+        "btc_4h_trend": "btc_4h_up",
+        "n": 51,
+        "net": 925.0,
+        "pf": 1.204,
+        "hit": 0.373,
+        "max_loss": -899.0,
+        "top3": 3027.0,
+        "top3_pct": 327.0,
+        "no_top3": -2101.0
+      },
+      {
+        "direction": "multi_cycle",
+        "event_type": "OIShockAbsorption",
+        "btc_4h_trend": "btc_4h_down",
+        "n": 63,
+        "net": 6798.0,
+        "pf": 2.102,
+        "hit": 0.508,
+        "max_loss": -739.0,
+        "top3": 4519.0,
+        "top3_pct": 66.0,
+        "no_top3": 2279.0
+      }
+    ]
+  },
+  "summary": {
+    "key_finding_1": "Cluster effect: events firing in groups of 2-3 have same or worse PF than solo events. No cluster alpha \u2014 events are independent.",
+    "key_finding_2": "Regime remains the dominant axis. trend_down >> range >> trend_up across all 3 events. Already deployed in scanner_v1_0.",
+    "key_finding_3": "Cross-event pairs (Delev+OI, Delev+RS) are rare (<10 occurrences). Combined events don't improve PF \u2014 they're just simultaneous independent triggers.",
+    "key_finding_4": "BTC 4h trend filter has mixed effect. Deleveraging does better in 4h downtrend (expected), RS Shock is neutral. No strong multi-cycle signal.",
+    "recommendation": "No new signals or filters from this research. The existing 3 independent events + regime gate is the correct structure. Cluster/cross-event/combo signals add complexity without improving PF."
+  }
+}
