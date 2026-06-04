@@ -2,39 +2,54 @@
   "factors": {
     "SmallCapDeleveragingReversalV1": {
       "status": "SHADOW_CANDIDATE",
-      "version": "1.1",
+      "version": "1.2",
       "family": "small_cap_event_alpha",
       "role": "small_cap_event_alpha",
       "direction": "long_only",
-      "mechanism": "OI collapse + sharp drop + volume surge → forced liquidation bounce → long. Funding filter + systemic deleveraging gate added in v1.1.",
+      "mechanism": "OI collapse + sharp drop + volume surge → forced liquidation bounce → long. V1.1: funding filter + systemic gate. V1.2: regime-gated trading rules with data-driven thresholds.",
       "latest_paper": {
-        "data": "500 symbols 1h",
+        "data": "500 symbols 1h, 1002 timestamps (41d)",
         "universe": "volume_rank 20-100",
         "entry_mode": "current_close",
         "hold_bars": 2,
         "v1.0_cost_9bps": { "n_trades": 233, "net_bps": 7257, "pf": 1.68, "cost_to_gross_pct": 22, "hit_rate": 0.532 },
-        "v1.1_funding_filter": { "filter": "reject |funding_z|>2.0", "effect": "ΔPF+0.16, Net near breakeven" },
-        "v1.1_systemic_gate": { "filter": "reject if >5 coins OI collapsing simultaneously", "effect": "ΔPF+1.15, PF=1.98, n=52" },
-        "v1.1_combined": { "filter": "funding + systemic gate", "n_trades": 46, "net_bps": 3750, "pf": 2.53, "hit_rate": 0.54 }
+        "v1.1_funding_filter": { "filter": "reject |funding_z|>2.0", "effect": "ΔPF+0.16" },
+        "v1.1_systemic_gate": { "filter": "reject if >5 coins OI collapsing simultaneously", "effect": "PF=1.98, n=52" },
+        "v1.1_combined": { "filter": "funding + systemic gate", "n_trades": 46, "net_bps": 3750, "pf": 2.53, "hit_rate": 0.54 },
+        "v1.2_regime_gated": {
+          "n_trades": 34,
+          "net_9bps": 3349,
+          "pf": 2.61,
+          "hit_rate": 0.588,
+          "regime_breakdown": {
+            "trend_down": { "n": 7, "net_9bps": 1574, "hit": 0.86, "rule": "relaxed entry (0.50), full size — best regime" },
+            "range": { "n": 21, "net_9bps": 1904, "hit": 0.62, "rule": "default (0.60), full size" },
+            "trend_up": { "n": 6, "net_9bps": -130, "hit": 0.17, "rule": "strict entry (0.75), half size — worst regime" }
+          },
+          "key_insight": "BTC downtrend = real forced liquidations (86% hit). BTC uptrend drops = idiosyncratic weakness (17% hit). Inverted from initial assumption."
+        }
       },
       "gates": [
         "return_1h < -2.5% and > -12%",
         "oi_z in (-3.0, -2.0] bell-shaped scoring, center=-2.5",
         "volume_z > 1.0 and < 8.0",
-        "BTC regime != panic_down",
+        "BTC regime != panic_down and != chop ← V1.2 adds chop",
         "close_location > 0.35 for entry confirmation",
-        "|funding_z| < 2.0 ← NEW v1.1",
-        "systemic_deleveraging gate (>5 coins collapsing) ← NEW v1.1",
+        "|funding_z| < 2.0 ← V1.1",
+        "systemic_deleveraging gate (>5 coins collapsing) ← V1.1",
+        "regime-based score thresholds: trend_down=0.50, range=0.60, trend_up=0.75 ← V1.2",
+        "regime-based position sizing: trend_up=50% ← V1.2",
         "cooldown 4h per symbol"
       ],
       "promotion_requirements": [
         "Shadow for 2-4 weeks before tiny_live",
-        "Monitor regime dependency (choppy markets)"
+        "Expand data to 1000-bar for more regime samples (current: 0 panic_down, 4 chop)",
+        "Validate regime rules hold with more trade samples"
       ],
       "killed": false,
-      "last_updated": "2026-06-04T08:00:00Z"
+      "last_updated": "2026-06-04T09:00:00Z"
     }
   },
   "shadow_candidates": ["SmallCapDeleveragingReversalV1"],
-  "last_updated": "2026-06-04T08:00:00Z"
+  "last_updated": "2026-06-04T09:00:00Z"
 }

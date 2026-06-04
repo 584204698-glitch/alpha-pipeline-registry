@@ -82,6 +82,53 @@ class SmallCapUniverse:
         return symbols
 
 
+# ── Regime Rules ─────────────────────────────────────
+
+REGIME_RULES = {
+    "trend_up": {
+        "allow_long": True,
+        "description": "BTC trending up — small-cap drops likely idiosyncratic, fakeouts",
+        "event_score_threshold": 0.75,  # very strict — most are fakeouts
+        "position_pct": 0.5,  # reduced size
+    },
+    "range": {
+        "allow_long": True,
+        "description": "Sideways — default conditions",
+        "event_score_threshold": 0.60,
+        "position_pct": 1.0,
+    },
+    "trend_down": {
+        "allow_long": True,
+        "description": "BTC trending down — prime deleveraging hunting ground",
+        "event_score_threshold": 0.50,  # relaxed — these are real liquidations
+        "position_pct": 1.0,  # full size
+    },
+    "chop": {
+        "allow_long": False,
+        "description": "Directionless high-vol — no trading",
+        "event_score_threshold": 0.99,
+        "position_pct": 0.0,
+    },
+    "panic_down": {
+        "allow_long": False,
+        "description": "Systemic panic — NO longs",
+        "event_score_threshold": 0.99,
+        "position_pct": 0.0,
+    },
+    "unknown": {
+        "allow_long": True,
+        "description": "Unknown regime — default to range rules",
+        "event_score_threshold": 0.60,
+        "position_pct": 1.0,
+    },
+}
+
+
+def get_regime_rule(regime: str) -> dict:
+    """Return trading rule for a given regime label."""
+    return REGIME_RULES.get(regime, REGIME_RULES["range"])
+
+
 # ── Event Scoring ────────────────────────────────────
 
 def score_oi_severity(oi_z: float) -> float:
@@ -341,7 +388,21 @@ class DeleveragingEventScanner:
             # ── Compute event score ──
             score = compute_event_score(oi_z, r1h, vz, btc_r15, btc_reg)
 
-            if score < 0.6:
+            # Get regime-specific threshold and rules
+            regime_rule = get_regime_rule(btc_reg)
+            score_threshold = regime_rule["event_score_threshold"]
+
+            # If regime forbids longs, reject
+            if not regime_rule["allow_long"]:
+                results.append(ScanResult(
+                    symbol=sym, timestamp=ts,
+                    state=EventState.REJECTED,
+                    reject_reason=f"regime={btc_reg} (no longs allowed)",
+                    metrics={"oi_z": oi_z, "ret_1h": r1h, "vol_z": vz, "close_loc": cl, "regime_score_threshold": score_threshold},
+                ))
+                continue
+
+            if score < score_threshold:
                 results.append(ScanResult(
                     symbol=sym, timestamp=ts,
                     state=EventState.WATCH,
@@ -479,6 +540,7 @@ def backtest_scanner(
     btc_regime_map: dict,
     hold_bars: int = 2,
     entry_mode: str = "next_bar_open",  # "next_bar_open" | "current_close" | "confirmed_only"
+    use_regime_rules: bool = True,
 ) -> dict[str, Any]:
     """Run scanner in backtest mode over historical data and compute PnL."""
     scanner = DeleveragingEventScanner(data, btc_regime_map, hold_bars=hold_bars)
@@ -489,8 +551,15 @@ def backtest_scanner(
     for i, ts in enumerate(ts_list):
         results = scanner.scan(ts)
 
+        # Get regime at this timestamp for position sizing
+        current_regime = btc_regime_map.get(ts, "unknown")
+        regime_rule = get_regime_rule(current_regime)
+
         for r in results:
             if r.state == EventState.CONFIRMED:
+                # Apply regime-based position sizing
+                position_pct = regime_rule["position_pct"] if use_regime_rules else 1.0
+
                 # Determine entry method
                 if entry_mode == "current_close":
                     entry_ts = ts
@@ -503,7 +572,7 @@ def backtest_scanner(
                 else:
                     entry_ts = ts
 
-                # Get entry price (use next bar open = next bar close as proxy)
+                # Get entry price
                 try:
                     entry_px = float(data.loc[(entry_ts, r.symbol), "close"])
                 except KeyError:
@@ -523,14 +592,19 @@ def backtest_scanner(
 
                 ret = (exit_px / entry_px) - 1.0
                 gbp = ret * 10000  # gross bps
-                direction_hit = ret > 0  # long only
+
+                # Apply position sizing
+                gbp_sized = gbp * position_pct
 
                 all_trades.append({
                     "symbol": r.symbol,
                     "entry_ts": entry_ts,
                     "exit_ts": exit_ts,
                     "event_score": r.event_score,
-                    "gross_bps": gbp,
+                    "gross_bps": gbp_sized,
+                    "gross_bps_raw": gbp,
+                    "position_pct": position_pct,
+                    "regime": current_regime,
                     "oi_z": r.metrics.get("oi_z", 0),
                     "ret_1h": r.metrics.get("ret_1h", 0),
                 })
@@ -542,7 +616,8 @@ def backtest_scanner(
 
     df = pd.DataFrame(all_trades)
 
-    # Apply cost
+    # Apply cost (charged on position turnover, not scaled by position_pct)
+    # For simplicity, charge full cost per trade
     for cost_bps in [4, 6, 9]:
         df["net_%d" % cost_bps] = df["gross_bps"] - cost_bps
 
@@ -550,7 +625,7 @@ def backtest_scanner(
     for cost_bps in [4, 6, 9]:
         col = "net_%d" % cost_bps
         arr = df[col].values
-        gross = df["gross_bps"].sum()
+        gross = df["gross_bps_raw"].sum()
         net = arr.sum()
         pos = arr[arr > 0].sum()
         neg = abs(arr[arr < 0].sum())
@@ -570,10 +645,23 @@ def backtest_scanner(
             "avg_loss_bps": round(arr[arr < 0].mean(), 1) if (arr < 0).any() else 0,
         }
 
-    # Entry mode comparison
+    # Regime breakdown
+    regime_breakdown = {}
+    for reg in df["regime"].unique():
+        sub = df[df["regime"] == reg]
+        net9 = (sub["gross_bps"] - 9).sum()
+        regime_breakdown[reg] = {
+            "n_trades": len(sub),
+            "net_9bps": round(net9, 0),
+            "hit_rate": round((sub["gross_bps"] - 9 > 0).mean(), 3),
+            "gross_sum": round(sub["gross_bps_raw"].sum(), 0),
+        }
+
     results["entry_mode"] = entry_mode
+    results["use_regime_rules"] = use_regime_rules
     results["unique_symbols"] = int(df["symbol"].nunique())
     results["total_events"] = len(df)
+    results["regime_breakdown"] = regime_breakdown
 
     return results
 
@@ -586,17 +674,30 @@ if __name__ == "__main__":
 
     ROOT = P("/mnt/e/alpha_pipeline")
     from backtest_engine import BacktestEngine
-    from research.regime_detector import detect_regimes
+    from research.regime_detector import detect_regime_fast
 
     engine = BacktestEngine(ROOT)
     data = engine._load_data()
-    regimes = detect_regimes(data)
+    regimes = detect_regime_fast(data)
     regime_map = dict(zip(regimes.index, regimes))
 
-    for mode in ["current_close", "next_bar_open"]:
-        r = backtest_scanner(data, regime_map, hold_bars=2, entry_mode=mode)
-        print("\nEntry mode: %s" % mode)
-        for k, v in sorted(r.items()):
-            if k.startswith("cost_"):
-                print("  %s: n=%d Net=%.0f PF=%.2f C/G=%.0f%% Hit=%.1f%% Med=%.0f" % (
-                    k, v["n_trades"], v["net_bps"], v["pf"], v["cost_to_gross_pct"], v["hit_rate"]*100, v["median_bps"]))
+    # Regime distribution
+    print("Regime distribution:")
+    for reg, cnt in regimes.value_counts().items():
+        print(f"  {reg}: {cnt} ({cnt/len(regimes)*100:.1f}%)")
+
+    print()
+    for use_rules in [False, True]:
+        label = "WITH regime rules" if use_rules else "WITHOUT regime rules"
+        print(f"=== {label} ===")
+        for mode in ["current_close", "next_bar_open"]:
+            r = backtest_scanner(data, regime_map, hold_bars=2, entry_mode=mode, use_regime_rules=use_rules)
+            print(f"  Entry mode: {mode}")
+            for k, v in sorted(r.items()):
+                if k.startswith("cost_"):
+                    print(f"    {k}: n={v['n_trades']} Net={v['net_bps']:+.0f} PF={v['pf']:.2f} C/G={v['cost_to_gross_pct']:.0f}% Hit={v['hit_rate']*100:.1f}% Med={v['median_bps']:+.0f}")
+            if r.get('regime_breakdown'):
+                print(f"    Regime breakdown:")
+                for reg, info in r['regime_breakdown'].items():
+                    print(f"      {reg:12s}: n={info['n_trades']:2d} Net9={info['net_9bps']:+6.0f} Hit={info['hit_rate']*100:.0f}%")
+        print()
