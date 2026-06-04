@@ -231,6 +231,13 @@ class DeleveragingEventScanner:
         vol_std = gv.transform(lambda s: s.rolling(48, min_periods=8).std()).replace(0, np.nan)
         self.vol_z = ((vol - vol_mean) / vol_std).fillna(0.0)
 
+        # Funding z-score (for extreme funding gate)
+        funding = data["funding_rate"]
+        gf = funding.groupby(level="symbol")
+        f_mean = gf.transform(lambda s: s.rolling(24, min_periods=8).mean())
+        f_std = gf.transform(lambda s: s.rolling(24, min_periods=8).std()).replace(0, np.nan)
+        self.funding_z = ((funding - f_mean) / f_std).fillna(0.0)
+
         # Close location
         hl_range = (data["high"] - data["low"]).clip(lower=1e-8)
         self.close_loc = (data["close"] - data["low"]) / hl_range
@@ -261,6 +268,18 @@ class DeleveragingEventScanner:
         btc_reg = self.btc_regime.get(ts, "unknown")
         btc_r15 = float(self.btc_ret_15m.get(ts, 0.0)) if ts in self.btc_ret_15m.index else 0.0
 
+        # Gate 0 (pre-scan): Market-wide OI collapse check
+        # If >5 small-cap coins are having OI collapses simultaneously, this is
+        # systemic deleveraging, not single-coin mispricing → skip all longs.
+        oi_collapse_count = 0
+        for sym in self.small_syms & syms_at_ts:
+            try:
+                if float(self.oi_z.loc[(ts, sym)]) < -1.5:
+                    oi_collapse_count += 1
+            except (KeyError, TypeError):
+                pass
+        systemic_deleveraging = oi_collapse_count > 5
+
         for sym in self.small_syms & syms_at_ts:
             # Skip if in cooldown or active position
             if sym in self.cooldowns or sym in self.active_positions:
@@ -271,6 +290,7 @@ class DeleveragingEventScanner:
                 r1h = float(self.ret_1h.loc[(ts, sym)])
                 vz = float(self.vol_z.loc[(ts, sym)])
                 cl = float(self.close_loc.loc[(ts, sym)])
+                fz = float(self.funding_z.loc[(ts, sym)])
             except (KeyError, TypeError):
                 continue
 
@@ -300,6 +320,14 @@ class DeleveragingEventScanner:
             # Gate 6: Volume not absurd
             elif vz > 8.0:
                 reject = "volume_z > 8 (potential anomaly)"
+
+            # Gate 7: Funding extreme (liquidation may still be ongoing)
+            elif abs(fz) > 2.0:
+                reject = "|funding_z| > 2.0"
+
+            # Gate 8: Systemic deleveraging (too many coins OI-collapsing at once)
+            elif systemic_deleveraging:
+                reject = "systemic_deleveraging (>5 coins OI collapse)"
 
             if reject:
                 results.append(ScanResult(

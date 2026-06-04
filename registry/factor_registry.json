@@ -2,61 +2,39 @@
   "factors": {
     "SmallCapDeleveragingReversalV1": {
       "status": "SHADOW_CANDIDATE",
+      "version": "1.1",
       "family": "small_cap_event_alpha",
       "role": "small_cap_event_alpha",
       "direction": "long_only",
-      "mechanism": "OI collapse + sharp drop + volume surge → forced liquidation bounce → long the reversal",
+      "mechanism": "OI collapse + sharp drop + volume surge → forced liquidation bounce → long. Funding filter + systemic deleveraging gate added in v1.1.",
       "latest_paper": {
         "data": "500 symbols 1h",
         "universe": "volume_rank 20-100",
         "entry_mode": "current_close",
         "hold_bars": 2,
-        "cost_9bps": { "n_trades": 233, "net_bps": 7257, "pf": 1.68, "cost_to_gross_pct": 22, "hit_rate": 0.532, "median_bps": 19 },
-        "cost_6bps": { "n_trades": 233, "net_bps": 7956, "pf": 1.76, "cost_to_gross_pct": 15, "hit_rate": 0.545, "median_bps": 22 },
-        "cost_4bps": { "n_trades": 233, "net_bps": 8422, "pf": 1.82, "cost_to_gross_pct": 10, "hit_rate": 0.549, "median_bps": 24 }
+        "v1.0_cost_9bps": { "n_trades": 233, "net_bps": 7257, "pf": 1.68, "cost_to_gross_pct": 22, "hit_rate": 0.532 },
+        "v1.1_funding_filter": { "filter": "reject |funding_z|>2.0", "effect": "ΔPF+0.16, Net near breakeven" },
+        "v1.1_systemic_gate": { "filter": "reject if >5 coins OI collapsing simultaneously", "effect": "ΔPF+1.15, PF=1.98, n=52" },
+        "v1.1_combined": { "filter": "funding + systemic gate", "n_trades": 46, "net_bps": 3750, "pf": 2.53, "hit_rate": 0.54 }
       },
-      "review_7_checks": {
-        "parameter_plateau": "PASS — 87% of 144 configs Net>0 in plateau region",
-        "direction_decomposition": "PASS — long-only (98.4% events), short side killed",
-        "regime_split": "PASS — BTC panic_down gated",
-        "cost_stress": "PASS — survives 9bps taker",
-        "symbol_attribution": "CAUTION — concentrated in top 5 symbols on old data, improved on 500-symbol data",
-        "time_slicing": "CAUTION — middle period (5/27-31) negative, needs regime filtering",
-        "entry_timing": "PASS — current_close required, next_bar_open destroys alpha"
-      },
-      "event_conditions": {
-        "oi_delta_z": "(-3.0, -2.0] — bell-shaped, center=-2.5 optimal",
-        "return_1h": "< -2.5% and > -12% (not black swan)",
-        "volume_z": "> 1.0 and < 8.0",
-        "btc_regime": "!= panic_down",
-        "close_location": "> 0.35 for entry confirmation",
-        "cooldown": "4 hours per symbol"
-      },
+      "gates": [
+        "return_1h < -2.5% and > -12%",
+        "oi_z in (-3.0, -2.0] bell-shaped scoring, center=-2.5",
+        "volume_z > 1.0 and < 8.0",
+        "BTC regime != panic_down",
+        "close_location > 0.35 for entry confirmation",
+        "|funding_z| < 2.0 ← NEW v1.1",
+        "systemic_deleveraging gate (>5 coins collapsing) ← NEW v1.1",
+        "cooldown 4h per symbol"
+      ],
       "promotion_requirements": [
-        "Regime filter for choppy/low-vol markets where factor underperforms",
         "Shadow for 2-4 weeks before tiny_live",
-        "Monitor symbol concentration in live trading"
+        "Monitor regime dependency (choppy markets)"
       ],
       "killed": false,
-      "last_updated": "2026-06-04T07:00:00Z"
-    },
-    "FundingExtremeFailure": {
-      "status": "FILTER_ONLY",
-      "role": "filter_only",
-      "notes": "High gross but hit rate near random. Use as confirmation filter for Deleveraging Reversal, not standalone signal.",
-      "last_updated": "2026-06-04T07:00:00Z"
-    },
-    "OIShockAbsorption": {
-      "status": "FILTER_ONLY",
-      "role": "filter_only",
-      "notes": "Hit rate ~49%. Use as watchlist trigger, not trade signal. Needs improved direction logic.",
-      "last_updated": "2026-06-04T07:00:00Z"
+      "last_updated": "2026-06-04T08:00:00Z"
     }
   },
-  "killed_families": ["vol_accel_fade_1h", "vol_accel_fade_4h", "continuous_cross_sectional_ranking_1h"],
-  "live_factors": [],
   "shadow_candidates": ["SmallCapDeleveragingReversalV1"],
-  "next_event_types": ["Relative_Strength_Shock", "Absorption_Impact_Failure"],
-  "methodology_version": "v2",
-  "last_updated": "2026-06-04T07:00:00Z"
+  "last_updated": "2026-06-04T08:00:00Z"
 }
