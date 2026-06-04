@@ -1,0 +1,4431 @@
+{
+  "_meta": {
+    "generated_by": "Symbol Alpha Profile Audit",
+    "principle": "4 unified alphas + 81 symbol profiles. No per-symbol custom thresholds.",
+    "rules": "DISABLE if net_negative/pf<1.0. REDUCED_WEIGHT if top1>60% or marginal PF. DISABLE_SYMBOL if spread>15bps or data_quality<85%."
+  },
+  "summary": {
+    "ENABLE_NORMAL": 20,
+    "ENABLE_REDUCED_WEIGHT": 46,
+    "SHADOW_ONLY": 15,
+    "DISABLE_SYMBOL": 0,
+    "total_symbols": 81,
+    "symbols_by_event": {
+      "DeleveragingReversal": {
+        "enabled": 0,
+        "disabled": 79,
+        "reduced": 2
+      },
+      "OIShockAbsorption": {
+        "enabled": 1,
+        "disabled": 67,
+        "reduced": 13
+      },
+      "RelativeStrengthShock": {
+        "enabled": 6,
+        "disabled": 47,
+        "reduced": 28
+      },
+      "FundingCarryEU": {
+        "enabled": 13,
+        "disabled": 35,
+        "reduced": 33
+      }
+    }
+  },
+  "profiles": {
+    "Binance:1000BONKUSDT": {
+      "symbol": "Binance:1000BONKUSDT",
+      "spread_bps_mean": 114.2,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": 249.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 142.7,
+          "avg_loss": 0,
+          "max_loss": 37.0,
+          "top1_pct": 87.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": 322.0,
+          "pf": 2.39,
+          "hit_rate": 0.5,
+          "avg_win": 246.3,
+          "avg_loss": -102.9,
+          "max_loss": -166.0,
+          "top1_pct": 135.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:1000LUNCUSDT": {
+      "symbol": "Binance:1000LUNCUSDT",
+      "spread_bps_mean": 243.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -286.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -268.1,
+          "max_loss": -268.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 11,
+          "net_9bps": 1975.0,
+          "pf": 3.11,
+          "hit_rate": 0.55,
+          "avg_win": 533.7,
+          "avg_loss": -205.9,
+          "max_loss": -412.0,
+          "top1_pct": 41.0,
+          "status": "ENABLE"
+        },
+        "FundingCarryEU": {
+          "n": 3,
+          "net_9bps": 4269.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 1441.0,
+          "avg_loss": 0,
+          "max_loss": 868.0,
+          "top1_pct": 44.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:1000SHIBUSDT": {
+      "symbol": "Binance:1000SHIBUSDT",
+      "spread_bps_mean": 78.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": -245.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -104.7,
+          "max_loss": -200.0,
+          "top1_pct": 5.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": 191.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 56.2,
+          "avg_loss": 0,
+          "max_loss": 17.0,
+          "top1_pct": 52.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:AAVEUSDT": {
+      "symbol": "Binance:AAVEUSDT",
+      "spread_bps_mean": 101.0,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": 595.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 137.0,
+          "avg_loss": 0,
+          "max_loss": 7.0,
+          "top1_pct": 52.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:AIAUSDT": {
+      "symbol": "Binance:AIAUSDT",
+      "spread_bps_mean": 314.7,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 5,
+          "net_9bps": 1691.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 356.2,
+          "avg_loss": 0,
+          "max_loss": 16.0,
+          "top1_pct": 75.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": 1428.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 731.8,
+          "avg_loss": 0,
+          "max_loss": 693.0,
+          "top1_pct": 53.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 8,
+          "net_9bps": -1003.0,
+          "pf": 0.56,
+          "hit_rate": 0.38,
+          "avg_win": 357.9,
+          "avg_loss": -386.6,
+          "max_loss": -1181.0,
+          "top1_pct": -69.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 0,
+          "status": "NO_DATA"
+        }
+      },
+      "enabled_events": [
+        "DeleveragingReversal"
+      ],
+      "disabled_events": [
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:AIGENSYNUSDT": {
+      "symbol": "Binance:AIGENSYNUSDT",
+      "spread_bps_mean": 379.9,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 4,
+          "net_9bps": 506.0,
+          "pf": 2.17,
+          "hit_rate": 0.5,
+          "avg_win": 535.5,
+          "avg_loss": -246.7,
+          "max_loss": -266.0,
+          "top1_pct": 132.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": 2505.0,
+          "pf": 10.97,
+          "hit_rate": 0.83,
+          "avg_win": 575.1,
+          "avg_loss": -262.2,
+          "max_loss": -262.0,
+          "top1_pct": 62.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:AIOTUSDT": {
+      "symbol": "Binance:AIOTUSDT",
+      "spread_bps_mean": 425.7,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": -148.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -129.8,
+          "max_loss": -130.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 10,
+          "net_9bps": -4444.0,
+          "pf": 0.05,
+          "hit_rate": 0.2,
+          "avg_win": 103.4,
+          "avg_loss": -558.9,
+          "max_loss": -1257.0,
+          "top1_pct": -3.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 2,
+          "net_9bps": 1264.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 650.2,
+          "avg_loss": 0,
+          "max_loss": 187.0,
+          "top1_pct": 86.0,
+          "status": "INSUFFICIENT_DATA"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:ALGOUSDT": {
+      "symbol": "Binance:ALGOUSDT",
+      "spread_bps_mean": 138.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 4,
+          "net_9bps": -238.0,
+          "pf": 0.55,
+          "hit_rate": 0.25,
+          "avg_win": 201.9,
+          "avg_loss": -122.8,
+          "max_loss": -190.0,
+          "top1_pct": -121.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "RelativeStrengthShock": {
+          "n": 2,
+          "net_9bps": 658.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 346.9,
+          "avg_loss": 0,
+          "max_loss": 230.0,
+          "top1_pct": 67.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 7,
+          "net_9bps": -403.0,
+          "pf": 0.65,
+          "hit_rate": 0.29,
+          "avg_win": 257.9,
+          "avg_loss": -158.5,
+          "max_loss": -304.0,
+          "top1_pct": -144.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.7,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:ALLOUSDT": {
+      "symbol": "Binance:ALLOUSDT",
+      "spread_bps_mean": 267.4,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": -413.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -395.3,
+          "max_loss": -395.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 3,
+          "net_9bps": 391.0,
+          "pf": 2.18,
+          "hit_rate": 0.67,
+          "avg_win": 411.3,
+          "avg_loss": -377.4,
+          "max_loss": -377.0,
+          "top1_pct": 163.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "RelativeStrengthShock": {
+          "n": 8,
+          "net_9bps": 1770.0,
+          "pf": 4.27,
+          "hit_rate": 0.75,
+          "avg_win": 416.6,
+          "avg_loss": -292.9,
+          "max_loss": -569.0,
+          "top1_pct": 54.0,
+          "status": "ENABLE"
+        },
+        "FundingCarryEU": {
+          "n": 9,
+          "net_9bps": 5300.0,
+          "pf": 3.66,
+          "hit_rate": 0.78,
+          "avg_win": 1073.6,
+          "avg_loss": -1026.8,
+          "max_loss": -1489.0,
+          "top1_pct": 105.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:ANTHROPICUSDT": {
+      "symbol": "Binance:ANTHROPICUSDT",
+      "spread_bps_mean": 184.0,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 0,
+          "status": "NO_DATA"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:APEUSDT": {
+      "symbol": "Binance:APEUSDT",
+      "spread_bps_mean": 213.6,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 6,
+          "net_9bps": -1935.0,
+          "pf": 0.08,
+          "hit_rate": 0.33,
+          "avg_win": 74.8,
+          "avg_loss": -494.2,
+          "max_loss": -1289.0,
+          "top1_pct": -6.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 8,
+          "net_9bps": 8335.0,
+          "pf": 8.44,
+          "hit_rate": 0.5,
+          "avg_win": 2404.6,
+          "avg_loss": -284.8,
+          "max_loss": -426.0,
+          "top1_pct": 108.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:APTUSDT": {
+      "symbol": "Binance:APTUSDT",
+      "spread_bps_mean": 127.0,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 1,
+          "net_9bps": -710.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -692.3,
+          "max_loss": -692.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": 1433.0,
+          "pf": 12.73,
+          "hit_rate": 0.8,
+          "avg_win": 413.2,
+          "avg_loss": -129.9,
+          "max_loss": -130.0,
+          "top1_pct": 46.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:ARBUSDT": {
+      "symbol": "Binance:ARBUSDT",
+      "spread_bps_mean": 130.2,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 1,
+          "net_9bps": 299.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 317.1,
+          "avg_loss": 0,
+          "max_loss": 317.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": 1393.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 250.2,
+          "avg_loss": 0,
+          "max_loss": 20.0,
+          "top1_pct": 53.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:ASTERUSDT": {
+      "symbol": "Binance:ASTERUSDT",
+      "spread_bps_mean": 93.6,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 5,
+          "net_9bps": 162.0,
+          "pf": 2.53,
+          "hit_rate": 0.6,
+          "avg_win": 138.9,
+          "avg_loss": -82.4,
+          "max_loss": -133.0,
+          "top1_pct": 95.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "RelativeStrengthShock": {
+          "n": 2,
+          "net_9bps": -331.0,
+          "pf": 0.29,
+          "hit_rate": 0.5,
+          "avg_win": 121.0,
+          "avg_loss": -416.5,
+          "max_loss": -416.0,
+          "top1_pct": -41.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 7,
+          "net_9bps": 193.0,
+          "pf": 2.17,
+          "hit_rate": 0.43,
+          "avg_win": 197.3,
+          "avg_loss": -68.2,
+          "max_loss": -149.0,
+          "top1_pct": 78.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:AVAXUSDT": {
+      "symbol": "Binance:AVAXUSDT",
+      "spread_bps_mean": 83.5,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": -129.0,
+          "pf": 0.92,
+          "hit_rate": 0.5,
+          "avg_win": 82.9,
+          "avg_loss": -89.9,
+          "max_loss": -148.0,
+          "top1_pct": -530.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:AXSUSDT": {
+      "symbol": "Binance:AXSUSDT",
+      "spread_bps_mean": 142.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 59.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 77.3,
+          "avg_loss": 0,
+          "max_loss": 77.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 2,
+          "net_9bps": 228.0,
+          "pf": 2.38,
+          "hit_rate": 0.5,
+          "avg_win": 456.1,
+          "avg_loss": -191.7,
+          "max_loss": -192.0,
+          "top1_pct": 173.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": -8.0,
+          "pf": 1.09,
+          "hit_rate": 0.5,
+          "avg_win": 420.8,
+          "avg_loss": -387.4,
+          "max_loss": -470.0,
+          "top1_pct": 969.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:BASEDUSDT": {
+      "symbol": "Binance:BASEDUSDT",
+      "spread_bps_mean": 273.6,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 1016.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 1034.4,
+          "avg_loss": 0,
+          "max_loss": 1034.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 7,
+          "net_9bps": 693.0,
+          "pf": 2.01,
+          "hit_rate": 0.71,
+          "avg_win": 325.3,
+          "avg_loss": -403.7,
+          "max_loss": -683.0,
+          "top1_pct": 74.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 3,
+          "net_9bps": 1388.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 480.7,
+          "avg_loss": 0,
+          "max_loss": 268.0,
+          "top1_pct": 55.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:BCHUSDT": {
+      "symbol": "Binance:BCHUSDT",
+      "spread_bps_mean": 78.8,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -14.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 3.5,
+          "avg_loss": 0,
+          "max_loss": 4.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": 1257.0,
+          "pf": 10.02,
+          "hit_rate": 0.67,
+          "avg_win": 379.1,
+          "avg_loss": -75.6,
+          "max_loss": -136.0,
+          "top1_pct": 43.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:BEATUSDT": {
+      "symbol": "Binance:BEATUSDT",
+      "spread_bps_mean": 323.8,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 2,
+          "net_9bps": 6.0,
+          "pf": 1.3,
+          "hit_rate": 0.5,
+          "avg_win": 180.6,
+          "avg_loss": -138.9,
+          "max_loss": -139.0,
+          "top1_pct": 433.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 6,
+          "net_9bps": 888.0,
+          "pf": 3.33,
+          "hit_rate": 0.67,
+          "avg_win": 355.6,
+          "avg_loss": -213.3,
+          "max_loss": -404.0,
+          "top1_pct": 73.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 0,
+          "status": "NO_DATA"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:BIOUSDT": {
+      "symbol": "Binance:BIOUSDT",
+      "spread_bps_mean": 244.9,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": -63.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -45.5,
+          "max_loss": -45.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 3,
+          "net_9bps": -1380.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -442.1,
+          "max_loss": -890.0,
+          "top1_pct": 6.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "RelativeStrengthShock": {
+          "n": 6,
+          "net_9bps": 104.0,
+          "pf": 1.34,
+          "hit_rate": 0.5,
+          "avg_win": 279.6,
+          "avg_loss": -209.0,
+          "max_loss": -318.0,
+          "top1_pct": 217.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 7,
+          "net_9bps": 6641.0,
+          "pf": 45.99,
+          "hit_rate": 0.86,
+          "avg_win": 1152.9,
+          "avg_loss": -150.4,
+          "max_loss": -150.0,
+          "top1_pct": 37.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:BUSDT": {
+      "symbol": "Binance:BUSDT",
+      "spread_bps_mean": 422.6,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 2,
+          "net_9bps": 162.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 98.8,
+          "avg_loss": 0,
+          "max_loss": 82.0,
+          "top1_pct": 59.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -262.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -244.2,
+          "max_loss": -244.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 7,
+          "net_9bps": 1376.0,
+          "pf": 6.6,
+          "hit_rate": 0.57,
+          "avg_win": 442.4,
+          "avg_loss": -89.4,
+          "max_loss": -148.0,
+          "top1_pct": 57.0,
+          "status": "ENABLE"
+        },
+        "FundingCarryEU": {
+          "n": 1,
+          "net_9bps": -943.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -925.2,
+          "max_loss": -925.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:CBRSUSDT": {
+      "symbol": "Binance:CBRSUSDT",
+      "spread_bps_mean": 159.6,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": -343.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -324.8,
+          "max_loss": -325.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 106.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 124.1,
+          "avg_loss": 0,
+          "max_loss": 124.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 1,
+          "net_9bps": 344.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 362.2,
+          "avg_loss": 0,
+          "max_loss": 362.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:CHIPUSDT": {
+      "symbol": "Binance:CHIPUSDT",
+      "spread_bps_mean": 240.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": 827.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 431.4,
+          "avg_loss": 0,
+          "max_loss": 271.0,
+          "top1_pct": 69.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 4,
+          "net_9bps": -690.0,
+          "pf": 0.32,
+          "hit_rate": 0.5,
+          "avg_win": 144.9,
+          "avg_loss": -453.8,
+          "max_loss": -738.0,
+          "top1_pct": -40.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "FundingCarryEU": {
+          "n": 7,
+          "net_9bps": 3461.0,
+          "pf": 114.75,
+          "hit_rate": 0.71,
+          "avg_win": 723.8,
+          "avg_loss": -15.8,
+          "max_loss": -17.0,
+          "top1_pct": 47.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.7,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:CHZUSDT": {
+      "symbol": "Binance:CHZUSDT",
+      "spread_bps_mean": 161.1,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": -33.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -15.3,
+          "max_loss": -15.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -435.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -417.1,
+          "max_loss": -417.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 3,
+          "net_9bps": -140.0,
+          "pf": 0.47,
+          "hit_rate": 0.67,
+          "avg_win": 38.2,
+          "avg_loss": -162.9,
+          "max_loss": -163.0,
+          "top1_pct": -69.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "FundingCarryEU": {
+          "n": 7,
+          "net_9bps": 1258.0,
+          "pf": 4.46,
+          "hit_rate": 0.71,
+          "avg_win": 356.7,
+          "avg_loss": -199.8,
+          "max_loss": -381.0,
+          "top1_pct": 68.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:DASHUSDT": {
+      "symbol": "Binance:DASHUSDT",
+      "spread_bps_mean": 177.5,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 145.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 163.5,
+          "avg_loss": 0,
+          "max_loss": 163.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 4,
+          "net_9bps": 750.0,
+          "pf": 3.59,
+          "hit_rate": 0.5,
+          "avg_win": 569.7,
+          "avg_loss": -158.6,
+          "max_loss": -270.0,
+          "top1_pct": 94.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": -231.0,
+          "pf": 0.74,
+          "hit_rate": 0.4,
+          "avg_win": 201.0,
+          "avg_loss": -181.1,
+          "max_loss": -432.0,
+          "top1_pct": -178.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:DOGSUSDT": {
+      "symbol": "Binance:DOGSUSDT",
+      "spread_bps_mean": 246.6,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 3,
+          "net_9bps": -57.0,
+          "pf": 0.34,
+          "hit_rate": 0.33,
+          "avg_win": 1.6,
+          "avg_loss": -2.4,
+          "max_loss": -3.0,
+          "top1_pct": -51.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "RelativeStrengthShock": {
+          "n": 5,
+          "net_9bps": 2184.0,
+          "pf": 5.09,
+          "hit_rate": 0.6,
+          "avg_win": 943.3,
+          "avg_loss": -277.8,
+          "max_loss": -409.0,
+          "top1_pct": 109.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 9,
+          "net_9bps": -2303.0,
+          "pf": 0.13,
+          "hit_rate": 0.44,
+          "avg_win": 83.1,
+          "avg_loss": -494.6,
+          "max_loss": -916.0,
+          "top1_pct": -5.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:DOTUSDT": {
+      "symbol": "Binance:DOTUSDT",
+      "spread_bps_mean": 106.5,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -18.0,
+          "pf": 0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": 0,
+          "max_loss": 0.0,
+          "top1_pct": 0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": 41.0,
+          "pf": 1.46,
+          "hit_rate": 0.67,
+          "avg_win": 118.7,
+          "avg_loss": -162.8,
+          "max_loss": -181.0,
+          "top1_pct": 155.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:EDENUSDT": {
+      "symbol": "Binance:EDENUSDT",
+      "spread_bps_mean": 320.6,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 7,
+          "net_9bps": -2260.0,
+          "pf": 0.43,
+          "hit_rate": 0.14,
+          "avg_win": 1627.5,
+          "avg_loss": -627.0,
+          "max_loss": -1310.0,
+          "top1_pct": -76.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 4,
+          "net_9bps": 3874.0,
+          "pf": 20.62,
+          "hit_rate": 0.75,
+          "avg_win": 1382.3,
+          "avg_loss": -201.1,
+          "max_loss": -201.0,
+          "top1_pct": 92.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:EDGEUSDT": {
+      "symbol": "Binance:EDGEUSDT",
+      "spread_bps_mean": 229.9,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": -24.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -6.4,
+          "max_loss": -6.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": -447.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -205.6,
+          "max_loss": -408.0,
+          "top1_pct": 1.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 4,
+          "net_9bps": 424.0,
+          "pf": 3.15,
+          "hit_rate": 0.5,
+          "avg_win": 363.1,
+          "avg_loss": -115.3,
+          "max_loss": -138.0,
+          "top1_pct": 131.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 0,
+          "status": "NO_DATA"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:ENAUSDT": {
+      "symbol": "Binance:ENAUSDT",
+      "spread_bps_mean": 155.9,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 1,
+          "net_9bps": 500.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 518.4,
+          "avg_loss": 0,
+          "max_loss": 518.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 4,
+          "net_9bps": 99.0,
+          "pf": 1.67,
+          "hit_rate": 0.5,
+          "avg_win": 213.1,
+          "avg_loss": -127.8,
+          "max_loss": -245.0,
+          "top1_pct": 138.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:ESPORTSUSDT": {
+      "symbol": "Binance:ESPORTSUSDT",
+      "spread_bps_mean": 461.5,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": 165.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 182.7,
+          "avg_loss": 0,
+          "max_loss": 183.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 342.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 360.5,
+          "avg_loss": 0,
+          "max_loss": 360.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 10,
+          "net_9bps": 5628.0,
+          "pf": 5.47,
+          "hit_rate": 0.6,
+          "avg_win": 1184.6,
+          "avg_loss": -324.8,
+          "max_loss": -602.0,
+          "top1_pct": 49.0,
+          "status": "ENABLE"
+        },
+        "FundingCarryEU": {
+          "n": 4,
+          "net_9bps": -8552.0,
+          "pf": 0.28,
+          "hit_rate": 0.25,
+          "avg_win": 3302.8,
+          "avg_loss": -3927.7,
+          "max_loss": -9694.0,
+          "top1_pct": -39.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.7,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:ETCUSDT": {
+      "symbol": "Binance:ETCUSDT",
+      "spread_bps_mean": 87.2,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 169.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 186.9,
+          "avg_loss": 0,
+          "max_loss": 187.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": -453.0,
+          "pf": 0.08,
+          "hit_rate": 0.17,
+          "avg_win": 29.9,
+          "avg_loss": -74.9,
+          "max_loss": -193.0,
+          "top1_pct": -9.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:FARTCOINUSDT": {
+      "symbol": "Binance:FARTCOINUSDT",
+      "spread_bps_mean": 161.0,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -74.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -56.1,
+          "max_loss": -56.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 2,
+          "net_9bps": -561.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -262.6,
+          "max_loss": -334.0,
+          "top1_pct": 36.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": -1125.0,
+          "pf": 0.07,
+          "hit_rate": 0.17,
+          "avg_win": 75.3,
+          "avg_loss": -218.5,
+          "max_loss": -613.0,
+          "top1_pct": -7.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:FETUSDT": {
+      "symbol": "Binance:FETUSDT",
+      "spread_bps_mean": 161.5,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 6,
+          "net_9bps": -170.0,
+          "pf": 0.93,
+          "hit_rate": 0.33,
+          "avg_win": 403.9,
+          "avg_loss": -217.4,
+          "max_loss": -400.0,
+          "top1_pct": -768.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": 342.0,
+          "pf": 2.2,
+          "hit_rate": 0.67,
+          "avg_win": 206.5,
+          "avg_loss": -187.9,
+          "max_loss": -254.0,
+          "top1_pct": 61.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:FIDAUSDT": {
+      "symbol": "Binance:FIDAUSDT",
+      "spread_bps_mean": 233.0,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 2274.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 2291.8,
+          "avg_loss": 0,
+          "max_loss": 2292.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 4,
+          "net_9bps": 821.0,
+          "pf": 2.09,
+          "hit_rate": 0.5,
+          "avg_win": 855.8,
+          "avg_loss": -409.2,
+          "max_loss": -471.0,
+          "top1_pct": 141.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": 6067.0,
+          "pf": 9.0,
+          "hit_rate": 0.4,
+          "avg_win": 3463.3,
+          "avg_loss": -256.5,
+          "max_loss": -445.0,
+          "top1_pct": 89.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:GENIUSUSDT": {
+      "symbol": "Binance:GENIUSUSDT",
+      "spread_bps_mean": 314.8,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": 227.0,
+          "pf": 2.79,
+          "hit_rate": 0.5,
+          "avg_win": 410.4,
+          "avg_loss": -146.9,
+          "max_loss": -147.0,
+          "top1_pct": 156.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 7,
+          "net_9bps": 1256.0,
+          "pf": 4.69,
+          "hit_rate": 0.57,
+          "avg_win": 439.0,
+          "avg_loss": -124.7,
+          "max_loss": -265.0,
+          "top1_pct": 66.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 2,
+          "net_9bps": -257.0,
+          "pf": 0.73,
+          "hit_rate": 0.5,
+          "avg_win": 586.2,
+          "avg_loss": -807.6,
+          "max_loss": -808.0,
+          "top1_pct": -265.0,
+          "status": "INSUFFICIENT_DATA"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:GRASSUSDT": {
+      "symbol": "Binance:GRASSUSDT",
+      "spread_bps_mean": 232.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": -249.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -106.4,
+          "max_loss": -108.0,
+          "top1_pct": 49.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 7,
+          "net_9bps": -18.0,
+          "pf": 1.12,
+          "hit_rate": 0.57,
+          "avg_win": 257.8,
+          "avg_loss": -307.7,
+          "max_loss": -541.0,
+          "top1_pct": 586.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 0,
+          "status": "NO_DATA"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:GUAUSDT": {
+      "symbol": "Binance:GUAUSDT",
+      "spread_bps_mean": 487.8,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 2,
+          "net_9bps": -28.0,
+          "pf": 1.03,
+          "hit_rate": 0.5,
+          "avg_win": 276.9,
+          "avg_loss": -269.2,
+          "max_loss": -269.0,
+          "top1_pct": 3582.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 7,
+          "net_9bps": 2150.0,
+          "pf": 20.67,
+          "hit_rate": 0.86,
+          "avg_win": 398.6,
+          "avg_loss": -115.7,
+          "max_loss": -116.0,
+          "top1_pct": 44.0,
+          "status": "ENABLE"
+        },
+        "FundingCarryEU": {
+          "n": 3,
+          "net_9bps": -4315.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -1420.4,
+          "max_loss": -3498.0,
+          "top1_pct": 6.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.7,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:HBARUSDT": {
+      "symbol": "Binance:HBARUSDT",
+      "spread_bps_mean": 86.8,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -366.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -348.3,
+          "max_loss": -348.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 2,
+          "net_9bps": 681.0,
+          "pf": 16.46,
+          "hit_rate": 0.5,
+          "avg_win": 763.8,
+          "avg_loss": -46.4,
+          "max_loss": -46.0,
+          "top1_pct": 106.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": 176.0,
+          "pf": 3.32,
+          "hit_rate": 0.5,
+          "avg_win": 135.4,
+          "avg_loss": -40.7,
+          "max_loss": -45.0,
+          "top1_pct": 70.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:HUSDT": {
+      "symbol": "Binance:HUSDT",
+      "spread_bps_mean": 334.1,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": 170.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 187.9,
+          "avg_loss": 0,
+          "max_loss": 188.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 1148.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 1166.4,
+          "avg_loss": 0,
+          "max_loss": 1166.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 11,
+          "net_9bps": 3572.0,
+          "pf": 21.26,
+          "hit_rate": 0.91,
+          "avg_win": 395.7,
+          "avg_loss": -186.1,
+          "max_loss": -186.0,
+          "top1_pct": 39.0,
+          "status": "ENABLE"
+        },
+        "FundingCarryEU": {
+          "n": 1,
+          "net_9bps": 443.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 461.4,
+          "avg_loss": 0,
+          "max_loss": 461.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:HYPERUSDT": {
+      "symbol": "Binance:HYPERUSDT",
+      "spread_bps_mean": 164.7,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 5,
+          "net_9bps": -1306.0,
+          "pf": 0.05,
+          "hit_rate": 0.2,
+          "avg_win": 69.8,
+          "avg_loss": -321.5,
+          "max_loss": -730.0,
+          "top1_pct": -6.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "RelativeStrengthShock": {
+          "n": 1,
+          "net_9bps": 216.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 234.4,
+          "avg_loss": 0,
+          "max_loss": 234.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 9,
+          "net_9bps": 1191.0,
+          "pf": 7.22,
+          "hit_rate": 0.67,
+          "avg_win": 261.7,
+          "avg_loss": -72.5,
+          "max_loss": -136.0,
+          "top1_pct": 48.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:ICPUSDT": {
+      "symbol": "Binance:ICPUSDT",
+      "spread_bps_mean": 163.2,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": 967.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 501.5,
+          "avg_loss": 0,
+          "max_loss": 336.0,
+          "top1_pct": 67.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 6,
+          "net_9bps": -551.0,
+          "pf": 0.74,
+          "hit_rate": 0.5,
+          "avg_win": 414.4,
+          "avg_loss": -562.0,
+          "max_loss": -642.0,
+          "top1_pct": -115.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 8,
+          "net_9bps": 475.0,
+          "pf": 2.0,
+          "hit_rate": 0.75,
+          "avg_win": 205.9,
+          "avg_loss": -308.2,
+          "max_loss": -459.0,
+          "top1_pct": 111.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:INJUSDT": {
+      "symbol": "Binance:INJUSDT",
+      "spread_bps_mean": 193.9,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 3,
+          "net_9bps": -411.0,
+          "pf": 0.3,
+          "hit_rate": 0.33,
+          "avg_win": 150.0,
+          "avg_loss": -253.3,
+          "max_loss": -374.0,
+          "top1_pct": -42.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "RelativeStrengthShock": {
+          "n": 5,
+          "net_9bps": 358.0,
+          "pf": 3.17,
+          "hit_rate": 0.6,
+          "avg_win": 218.2,
+          "avg_loss": -103.3,
+          "max_loss": -188.0,
+          "top1_pct": 74.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 4,
+          "net_9bps": 529.0,
+          "pf": 88.34,
+          "hit_rate": 0.75,
+          "avg_win": 202.6,
+          "avg_loss": -6.9,
+          "max_loss": -7.0,
+          "top1_pct": 44.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:JTOUSDT": {
+      "symbol": "Binance:JTOUSDT",
+      "spread_bps_mean": 214.7,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": -325.0,
+          "pf": 0.01,
+          "hit_rate": 0.5,
+          "avg_win": 2.5,
+          "avg_loss": -291.1,
+          "max_loss": -291.0,
+          "top1_pct": -1.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 5,
+          "net_9bps": -151.0,
+          "pf": 0.92,
+          "hit_rate": 0.6,
+          "avg_win": 220.0,
+          "avg_loss": -360.5,
+          "max_loss": -388.0,
+          "top1_pct": -857.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 8,
+          "net_9bps": 2694.0,
+          "pf": 5.41,
+          "hit_rate": 0.62,
+          "avg_win": 696.5,
+          "avg_loss": -214.7,
+          "max_loss": -569.0,
+          "top1_pct": 65.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:KATUSDT": {
+      "symbol": "Binance:KATUSDT",
+      "spread_bps_mean": 208.0,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 2,
+          "net_9bps": 1436.0,
+          "pf": 8.69,
+          "hit_rate": 0.5,
+          "avg_win": 1663.9,
+          "avg_loss": -191.6,
+          "max_loss": -192.0,
+          "top1_pct": 113.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 8,
+          "net_9bps": 1932.0,
+          "pf": 6.63,
+          "hit_rate": 0.75,
+          "avg_win": 407.4,
+          "avg_loss": -184.3,
+          "max_loss": -274.0,
+          "top1_pct": 52.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:LAYERUSDT": {
+      "symbol": "Binance:LAYERUSDT",
+      "spread_bps_mean": 146.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -117.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -98.8,
+          "max_loss": -99.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 7,
+          "net_9bps": -898.0,
+          "pf": 0.13,
+          "hit_rate": 0.14,
+          "avg_win": 117.1,
+          "avg_loss": -148.3,
+          "max_loss": -413.0,
+          "top1_pct": -15.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:LDOUSDT": {
+      "symbol": "Binance:LDOUSDT",
+      "spread_bps_mean": 135.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 3,
+          "net_9bps": 992.0,
+          "pf": 9.21,
+          "hit_rate": 0.33,
+          "avg_win": 1173.7,
+          "avg_loss": -63.7,
+          "max_loss": -103.0,
+          "top1_pct": 112.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "RelativeStrengthShock": {
+          "n": 2,
+          "net_9bps": -44.0,
+          "pf": 0.96,
+          "hit_rate": 0.5,
+          "avg_win": 210.6,
+          "avg_loss": -218.8,
+          "max_loss": -219.0,
+          "top1_pct": -2539.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 4,
+          "net_9bps": -419.0,
+          "pf": 0.23,
+          "hit_rate": 0.5,
+          "avg_win": 52.1,
+          "avg_loss": -225.7,
+          "max_loss": -262.0,
+          "top1_pct": -16.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:LINKUSDT": {
+      "symbol": "Binance:LINKUSDT",
+      "spread_bps_mean": 84.0,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -4.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 13.9,
+          "avg_loss": 0,
+          "max_loss": 14.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": -651.0,
+          "pf": 0.53,
+          "hit_rate": 0.17,
+          "avg_win": 609.2,
+          "avg_loss": -230.4,
+          "max_loss": -385.0,
+          "top1_pct": -112.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:LITUSDT": {
+      "symbol": "Binance:LITUSDT",
+      "spread_bps_mean": 240.7,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": 336.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 354.4,
+          "avg_loss": 0,
+          "max_loss": 354.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 149.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 167.0,
+          "avg_loss": 0,
+          "max_loss": 167.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 5,
+          "net_9bps": 194.0,
+          "pf": 1.6,
+          "hit_rate": 0.6,
+          "avg_win": 251.6,
+          "avg_loss": -235.2,
+          "max_loss": -447.0,
+          "top1_pct": 133.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 4,
+          "net_9bps": -851.0,
+          "pf": 0.43,
+          "hit_rate": 0.25,
+          "avg_win": 587.9,
+          "avg_loss": -455.6,
+          "max_loss": -1145.0,
+          "top1_pct": -75.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:LTCUSDT": {
+      "symbol": "Binance:LTCUSDT",
+      "spread_bps_mean": 62.8,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 3,
+          "net_9bps": -156.0,
+          "pf": 0.16,
+          "hit_rate": 0.33,
+          "avg_win": 19.9,
+          "avg_loss": -61.2,
+          "max_loss": -79.0,
+          "top1_pct": -19.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 3,
+          "net_9bps": -1.0,
+          "pf": 1.57,
+          "hit_rate": 0.33,
+          "avg_win": 145.8,
+          "avg_loss": -46.5,
+          "max_loss": -55.0,
+          "top1_pct": 276.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:MEGAUSDT": {
+      "symbol": "Binance:MEGAUSDT",
+      "spread_bps_mean": 223.6,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": -375.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -169.6,
+          "max_loss": -203.0,
+          "top1_pct": 40.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 4,
+          "net_9bps": -402.0,
+          "pf": 0.54,
+          "hit_rate": 0.25,
+          "avg_win": 389.0,
+          "avg_loss": -239.6,
+          "max_loss": -471.0,
+          "top1_pct": -118.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "FundingCarryEU": {
+          "n": 8,
+          "net_9bps": 311.0,
+          "pf": 1.42,
+          "hit_rate": 0.5,
+          "avg_win": 385.0,
+          "avg_loss": -271.4,
+          "max_loss": -579.0,
+          "top1_pct": 237.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:NAORISUSDT": {
+      "symbol": "Binance:NAORISUSDT",
+      "spread_bps_mean": 420.9,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": -156.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -138.3,
+          "max_loss": -138.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 674.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 692.3,
+          "avg_loss": 0,
+          "max_loss": 692.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 8,
+          "net_9bps": 1333.0,
+          "pf": 2.64,
+          "hit_rate": 0.38,
+          "avg_win": 792.4,
+          "avg_loss": -180.1,
+          "max_loss": -237.0,
+          "top1_pct": 89.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 1,
+          "net_9bps": -183.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -165.2,
+          "max_loss": -165.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:NATGASUSDT": {
+      "symbol": "Binance:NATGASUSDT",
+      "spread_bps_mean": 59.9,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": -59.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -40.9,
+          "max_loss": -41.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": 109.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 72.6,
+          "avg_loss": 0,
+          "max_loss": 52.0,
+          "top1_pct": 64.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 1,
+          "net_9bps": 72.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 89.8,
+          "avg_loss": 0,
+          "max_loss": 90.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 1,
+          "net_9bps": 157.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 175.3,
+          "avg_loss": 0,
+          "max_loss": 175.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:NILUSDT": {
+      "symbol": "Binance:NILUSDT",
+      "spread_bps_mean": 290.0,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": 266.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 283.5,
+          "avg_loss": 0,
+          "max_loss": 284.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 4,
+          "net_9bps": 1054.0,
+          "pf": 3.62,
+          "hit_rate": 0.75,
+          "avg_win": 518.4,
+          "avg_loss": -429.1,
+          "max_loss": -429.0,
+          "top1_pct": 105.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "RelativeStrengthShock": {
+          "n": 6,
+          "net_9bps": -1509.0,
+          "pf": 0.52,
+          "hit_rate": 0.33,
+          "avg_win": 746.0,
+          "avg_loss": -723.2,
+          "max_loss": -2204.0,
+          "top1_pct": -83.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": 5047.0,
+          "pf": 4.56,
+          "hit_rate": 0.8,
+          "avg_win": 1645.3,
+          "avg_loss": -1444.4,
+          "max_loss": -1444.0,
+          "top1_pct": 102.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:NOKUSDT": {
+      "symbol": "Binance:NOKUSDT",
+      "spread_bps_mean": 243.2,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 0,
+          "status": "NO_DATA"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:OPGUSDT": {
+      "symbol": "Binance:OPGUSDT",
+      "spread_bps_mean": 306.9,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 2,
+          "net_9bps": 292.0,
+          "pf": 38.72,
+          "hit_rate": 0.5,
+          "avg_win": 336.7,
+          "avg_loss": -8.7,
+          "max_loss": -9.0,
+          "top1_pct": 103.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -63.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -45.2,
+          "max_loss": -45.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 5,
+          "net_9bps": -3222.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -626.5,
+          "max_loss": -1540.0,
+          "top1_pct": 1.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": -382.0,
+          "pf": 0.87,
+          "hit_rate": 0.4,
+          "avg_win": 942.3,
+          "avg_loss": -725.6,
+          "max_loss": -1416.0,
+          "top1_pct": -575.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:OPUSDT": {
+      "symbol": "Binance:OPUSDT",
+      "spread_bps_mean": 136.9,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 4,
+          "net_9bps": -451.0,
+          "pf": 0.45,
+          "hit_rate": 0.5,
+          "avg_win": 153.6,
+          "avg_loss": -343.3,
+          "max_loss": -359.0,
+          "top1_pct": -43.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "FundingCarryEU": {
+          "n": 8,
+          "net_9bps": 277.0,
+          "pf": 1.54,
+          "hit_rate": 0.62,
+          "avg_win": 239.3,
+          "avg_loss": -258.4,
+          "max_loss": -357.0,
+          "top1_pct": 191.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:ORCAUSDT": {
+      "symbol": "Binance:ORCAUSDT",
+      "spread_bps_mean": 224.5,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": -98.0,
+          "pf": 0.42,
+          "hit_rate": 0.5,
+          "avg_win": 44.6,
+          "avg_loss": -106.4,
+          "max_loss": -106.0,
+          "top1_pct": -72.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 4,
+          "net_9bps": 1375.0,
+          "pf": 2.91,
+          "hit_rate": 0.5,
+          "avg_win": 1101.5,
+          "avg_loss": -378.1,
+          "max_loss": -666.0,
+          "top1_pct": 132.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": 6164.0,
+          "pf": 15.38,
+          "hit_rate": 0.6,
+          "avg_win": 2229.6,
+          "avg_loss": -217.4,
+          "max_loss": -245.0,
+          "top1_pct": 84.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:ORDIUSDT": {
+      "symbol": "Binance:ORDIUSDT",
+      "spread_bps_mean": 184.8,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -11.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 7.1,
+          "avg_loss": 0,
+          "max_loss": 7.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 3,
+          "net_9bps": 1326.0,
+          "pf": 5.54,
+          "hit_rate": 0.67,
+          "avg_win": 841.9,
+          "avg_loss": -304.2,
+          "max_loss": -304.0,
+          "top1_pct": 119.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": -1206.0,
+          "pf": 0.17,
+          "hit_rate": 0.2,
+          "avg_win": 228.4,
+          "avg_loss": -336.0,
+          "max_loss": -751.0,
+          "top1_pct": -20.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:PAXGUSDT": {
+      "symbol": "Binance:PAXGUSDT",
+      "spread_bps_mean": 28.2,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -45.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -27.2,
+          "max_loss": -27.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 3,
+          "net_9bps": -53.0,
+          "pf": 1.01,
+          "hit_rate": 0.67,
+          "avg_win": 69.5,
+          "avg_loss": -137.9,
+          "max_loss": -138.0,
+          "top1_pct": 6763.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:PENDLEUSDT": {
+      "symbol": "Binance:PENDLEUSDT",
+      "spread_bps_mean": 184.9,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 75.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 92.8,
+          "avg_loss": 0,
+          "max_loss": 93.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 3,
+          "net_9bps": -304.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -83.2,
+          "max_loss": -203.0,
+          "top1_pct": 4.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "FundingCarryEU": {
+          "n": 8,
+          "net_9bps": 518.0,
+          "pf": 2.06,
+          "hit_rate": 0.75,
+          "avg_win": 214.6,
+          "avg_loss": -312.8,
+          "max_loss": -604.0,
+          "top1_pct": 69.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:PENGUUSDT": {
+      "symbol": "Binance:PENGUUSDT",
+      "spread_bps_mean": 165.0,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 3,
+          "net_9bps": -300.0,
+          "pf": 0.11,
+          "hit_rate": 0.33,
+          "avg_win": 29.2,
+          "avg_loss": -137.6,
+          "max_loss": -181.0,
+          "top1_pct": -12.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "RelativeStrengthShock": {
+          "n": 3,
+          "net_9bps": -372.0,
+          "pf": 0.45,
+          "hit_rate": 0.33,
+          "avg_win": 262.6,
+          "avg_loss": -290.5,
+          "max_loss": -476.0,
+          "top1_pct": -82.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": -762.0,
+          "pf": 0.31,
+          "hit_rate": 0.2,
+          "avg_win": 296.7,
+          "avg_loss": -242.1,
+          "max_loss": -418.0,
+          "top1_pct": -44.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.7,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:PHAROSUSDT": {
+      "symbol": "Binance:PHAROSUSDT",
+      "spread_bps_mean": 221.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 2,
+          "net_9bps": -512.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -238.0,
+          "max_loss": -248.0,
+          "top1_pct": 48.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 3,
+          "net_9bps": 49.0,
+          "pf": 1.26,
+          "hit_rate": 0.33,
+          "avg_win": 493.7,
+          "avg_loss": -195.5,
+          "max_loss": -300.0,
+          "top1_pct": 480.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:PLAYUSDT": {
+      "symbol": "Binance:PLAYUSDT",
+      "spread_bps_mean": 528.2,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 465.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 483.1,
+          "avg_loss": 0,
+          "max_loss": 483.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 9,
+          "net_9bps": 4661.0,
+          "pf": 2.96,
+          "hit_rate": 0.78,
+          "avg_win": 1040.3,
+          "avg_loss": -1229.6,
+          "max_loss": -2030.0,
+          "top1_pct": 64.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 4,
+          "net_9bps": 1993.0,
+          "pf": 4.29,
+          "hit_rate": 0.75,
+          "avg_win": 897.5,
+          "avg_loss": -627.5,
+          "max_loss": -628.0,
+          "top1_pct": 65.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:PORTALUSDT": {
+      "symbol": "Binance:PORTALUSDT",
+      "spread_bps_mean": 275.4,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 3,
+          "net_9bps": 1081.0,
+          "pf": 999,
+          "hit_rate": 0.67,
+          "avg_win": 567.3,
+          "avg_loss": 0,
+          "max_loss": 0.0,
+          "top1_pct": 96.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "RelativeStrengthShock": {
+          "n": 3,
+          "net_9bps": 1919.0,
+          "pf": 3.09,
+          "hit_rate": 0.33,
+          "avg_win": 2918.7,
+          "avg_loss": -472.6,
+          "max_loss": -487.0,
+          "top1_pct": 148.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 2,
+          "net_9bps": 6558.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 3297.0,
+          "avg_loss": 0,
+          "max_loss": 280.0,
+          "top1_pct": 96.0,
+          "status": "INSUFFICIENT_DATA"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:PRLUSDT": {
+      "symbol": "Binance:PRLUSDT",
+      "spread_bps_mean": 270.6,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": 630.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 647.7,
+          "avg_loss": 0,
+          "max_loss": 648.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 2.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 19.9,
+          "avg_loss": 0,
+          "max_loss": 20.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 6,
+          "net_9bps": -2815.0,
+          "pf": 0.04,
+          "hit_rate": 0.17,
+          "avg_win": 123.7,
+          "avg_loss": -566.1,
+          "max_loss": -987.0,
+          "top1_pct": -5.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 7,
+          "net_9bps": 8872.0,
+          "pf": 16.88,
+          "hit_rate": 0.86,
+          "avg_win": 1594.0,
+          "avg_loss": -566.4,
+          "max_loss": -566.0,
+          "top1_pct": 75.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:PUMPUSDT": {
+      "symbol": "Binance:PUMPUSDT",
+      "spread_bps_mean": 142.8,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 3,
+          "net_9bps": 282.0,
+          "pf": 3.84,
+          "hit_rate": 0.67,
+          "avg_win": 227.3,
+          "avg_loss": -118.4,
+          "max_loss": -118.0,
+          "top1_pct": 124.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "RelativeStrengthShock": {
+          "n": 2,
+          "net_9bps": -154.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -59.2,
+          "max_loss": -94.0,
+          "top1_pct": 21.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 9,
+          "net_9bps": -610.0,
+          "pf": 0.62,
+          "hit_rate": 0.44,
+          "avg_win": 184.4,
+          "avg_loss": -237.2,
+          "max_loss": -666.0,
+          "top1_pct": -83.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:RAVEUSDT": {
+      "symbol": "Binance:RAVEUSDT",
+      "spread_bps_mean": 296.6,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 4,
+          "net_9bps": 2301.0,
+          "pf": 10.95,
+          "hit_rate": 0.75,
+          "avg_win": 870.6,
+          "avg_loss": -238.5,
+          "max_loss": -238.0,
+          "top1_pct": 66.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 0,
+          "status": "NO_DATA"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:RENDERUSDT": {
+      "symbol": "Binance:RENDERUSDT",
+      "spread_bps_mean": 145.8,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 4,
+          "net_9bps": -395.0,
+          "pf": 0.03,
+          "hit_rate": 0.25,
+          "avg_win": 9.9,
+          "avg_loss": -111.0,
+          "max_loss": -206.0,
+          "top1_pct": -3.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "RelativeStrengthShock": {
+          "n": 2,
+          "net_9bps": 20.0,
+          "pf": 2.02,
+          "hit_rate": 0.5,
+          "avg_win": 110.1,
+          "avg_loss": -54.5,
+          "max_loss": -54.0,
+          "top1_pct": 198.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 7,
+          "net_9bps": -1578.0,
+          "pf": 0.32,
+          "hit_rate": 0.43,
+          "avg_win": 225.0,
+          "avg_loss": -531.7,
+          "max_loss": -877.0,
+          "top1_pct": -38.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.7,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:RIVERUSDT": {
+      "symbol": "Binance:RIVERUSDT",
+      "spread_bps_mean": 212.1,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 3,
+          "net_9bps": -528.0,
+          "pf": 0.57,
+          "hit_rate": 0.33,
+          "avg_win": 630.7,
+          "avg_loss": -552.5,
+          "max_loss": -612.0,
+          "top1_pct": -133.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": 134.0,
+          "pf": 59.44,
+          "hit_rate": 0.5,
+          "avg_win": 173.0,
+          "avg_loss": -2.9,
+          "max_loss": -3.0,
+          "top1_pct": 102.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 6,
+          "net_9bps": -198.0,
+          "pf": 0.75,
+          "hit_rate": 0.5,
+          "avg_win": 91.1,
+          "avg_loss": -121.2,
+          "max_loss": -205.0,
+          "top1_pct": -132.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 0,
+          "status": "NO_DATA"
+        }
+      },
+      "enabled_events": [
+        "DeleveragingReversal"
+      ],
+      "disabled_events": [
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.7,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:SAGAUSDT": {
+      "symbol": "Binance:SAGAUSDT",
+      "spread_bps_mean": 244.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": 254.0,
+          "pf": 2.34,
+          "hit_rate": 0.5,
+          "avg_win": 505.6,
+          "avg_loss": -215.7,
+          "max_loss": -216.0,
+          "top1_pct": 174.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 5,
+          "net_9bps": -134.0,
+          "pf": 0.97,
+          "hit_rate": 0.6,
+          "avg_win": 529.6,
+          "avg_loss": -816.6,
+          "max_loss": -1542.0,
+          "top1_pct": -1857.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 4,
+          "net_9bps": 1853.0,
+          "pf": 4.88,
+          "hit_rate": 0.5,
+          "avg_win": 1210.7,
+          "avg_loss": -248.1,
+          "max_loss": -420.0,
+          "top1_pct": 113.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:SEIUSDT": {
+      "symbol": "Binance:SEIUSDT",
+      "spread_bps_mean": 126.6,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": 43.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 60.6,
+          "avg_loss": 0,
+          "max_loss": 61.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 5,
+          "net_9bps": 493.0,
+          "pf": 4.1,
+          "hit_rate": 0.8,
+          "avg_win": 192.7,
+          "avg_loss": -187.8,
+          "max_loss": -188.0,
+          "top1_pct": 48.0,
+          "status": "ENABLE"
+        },
+        "RelativeStrengthShock": {
+          "n": 1,
+          "net_9bps": 243.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 260.9,
+          "avg_loss": 0,
+          "max_loss": 261.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": 733.0,
+          "pf": 3.32,
+          "hit_rate": 0.6,
+          "avg_win": 392.5,
+          "avg_loss": -177.3,
+          "max_loss": -246.0,
+          "top1_pct": 69.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:SIRENUSDT": {
+      "symbol": "Binance:SIRENUSDT",
+      "spread_bps_mean": 298.8,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 6,
+          "net_9bps": -1240.0,
+          "pf": 0.18,
+          "hit_rate": 0.33,
+          "avg_win": 124.9,
+          "avg_loss": -345.4,
+          "max_loss": -672.0,
+          "top1_pct": -15.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 5,
+          "net_9bps": 2487.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 515.4,
+          "avg_loss": 0,
+          "max_loss": 269.0,
+          "top1_pct": 28.0,
+          "status": "ENABLE"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:SLXUSDT": {
+      "symbol": "Binance:SLXUSDT",
+      "spread_bps_mean": 666.8,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 0,
+          "status": "NO_DATA"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:SOONUSDT": {
+      "symbol": "Binance:SOONUSDT",
+      "spread_bps_mean": 178.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": -81.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -62.7,
+          "max_loss": -63.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": 121.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 138.6,
+          "avg_loss": 0,
+          "max_loss": 139.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 3,
+          "net_9bps": 716.0,
+          "pf": 3.04,
+          "hit_rate": 0.33,
+          "avg_win": 1147.7,
+          "avg_loss": -188.8,
+          "max_loss": -271.0,
+          "top1_pct": 149.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 2,
+          "net_9bps": -227.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -95.6,
+          "max_loss": -153.0,
+          "top1_pct": 20.0,
+          "status": "INSUFFICIENT_DATA"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:SPKUSDT": {
+      "symbol": "Binance:SPKUSDT",
+      "spread_bps_mean": 157.4,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -310.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -292.3,
+          "max_loss": -292.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 3,
+          "net_9bps": -1471.0,
+          "pf": 0.13,
+          "hit_rate": 0.33,
+          "avg_win": 206.5,
+          "avg_loss": -811.6,
+          "max_loss": -1048.0,
+          "top1_pct": -15.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "FundingCarryEU": {
+          "n": 3,
+          "net_9bps": -564.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -170.1,
+          "max_loss": -263.0,
+          "top1_pct": 5.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.7,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:STRKUSDT": {
+      "symbol": "Binance:STRKUSDT",
+      "spread_bps_mean": 160.3,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -184.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -166.1,
+          "max_loss": -166.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 2,
+          "net_9bps": -969.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -466.7,
+          "max_loss": -669.0,
+          "top1_pct": 28.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": 1236.0,
+          "pf": 6.62,
+          "hit_rate": 0.83,
+          "avg_win": 316.6,
+          "avg_loss": -239.2,
+          "max_loss": -239.0,
+          "top1_pct": 62.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:SWARMSUSDT": {
+      "symbol": "Binance:SWARMSUSDT",
+      "spread_bps_mean": 289.9,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 1,
+          "net_9bps": 163.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 181.4,
+          "avg_loss": 0,
+          "max_loss": 181.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -22.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -4.4,
+          "max_loss": -4.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 10,
+          "net_9bps": -3425.0,
+          "pf": 0.38,
+          "hit_rate": 0.5,
+          "avg_win": 392.3,
+          "avg_loss": -1041.4,
+          "max_loss": -2614.0,
+          "top1_pct": -29.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        },
+        "FundingCarryEU": {
+          "n": 2,
+          "net_9bps": 882.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 459.2,
+          "avg_loss": 0,
+          "max_loss": 344.0,
+          "top1_pct": 63.0,
+          "status": "INSUFFICIENT_DATA"
+        }
+      },
+      "enabled_events": [],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 1.0,
+      "risk_tag": "normal",
+      "recommendation": "SHADOW_ONLY"
+    },
+    "Binance:TAGUSDT": {
+      "symbol": "Binance:TAGUSDT",
+      "spread_bps_mean": 352.1,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 2,
+          "net_9bps": 371.0,
+          "pf": 999,
+          "hit_rate": 1.0,
+          "avg_win": 203.5,
+          "avg_loss": 0,
+          "max_loss": 154.0,
+          "top1_pct": 62.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -285.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -267.2,
+          "max_loss": -267.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 9,
+          "net_9bps": 2231.0,
+          "pf": 2.2,
+          "hit_rate": 0.44,
+          "avg_win": 1097.9,
+          "avg_loss": -399.7,
+          "max_loss": -688.0,
+          "top1_pct": 131.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        },
+        "FundingCarryEU": {
+          "n": 0,
+          "status": "NO_DATA"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    },
+    "Binance:TIAUSDT": {
+      "symbol": "Binance:TIAUSDT",
+      "spread_bps_mean": 167.2,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 2,
+          "net_9bps": -27.0,
+          "pf": 1.04,
+          "hit_rate": 0.5,
+          "avg_win": 200.6,
+          "avg_loss": -191.9,
+          "max_loss": -192.0,
+          "top1_pct": 2329.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 3,
+          "net_9bps": -159.0,
+          "pf": 0.65,
+          "hit_rate": 0.33,
+          "avg_win": 199.9,
+          "avg_loss": -152.6,
+          "max_loss": -189.0,
+          "top1_pct": -190.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "FundingCarryEU": {
+          "n": 6,
+          "net_9bps": -686.0,
+          "pf": 0.66,
+          "hit_rate": 0.5,
+          "avg_win": 372.3,
+          "avg_loss": -564.9,
+          "max_loss": -1065.0,
+          "top1_pct": -125.0,
+          "status": "DISABLE",
+          "reason": "net_negative"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption",
+        "FundingCarryEU"
+      ],
+      "weight_multiplier": 0.7,
+      "risk_tag": "normal",
+      "recommendation": "ENABLE_NORMAL"
+    },
+    "Binance:TRUMPUSDT": {
+      "symbol": "Binance:TRUMPUSDT",
+      "spread_bps_mean": 117.7,
+      "data_quality": 1.0,
+      "alphas": {
+        "DeleveragingReversal": {
+          "n": 0,
+          "status": "NO_DATA"
+        },
+        "OIShockAbsorption": {
+          "n": 1,
+          "net_9bps": -194.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -176.0,
+          "max_loss": -176.0,
+          "top1_pct": 100.0,
+          "status": "INSUFFICIENT_DATA"
+        },
+        "RelativeStrengthShock": {
+          "n": 3,
+          "net_9bps": -855.0,
+          "pf": 0.0,
+          "hit_rate": 0.0,
+          "avg_win": 0,
+          "avg_loss": -266.9,
+          "max_loss": -479.0,
+          "top1_pct": 1.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "marginal_pf"
+        },
+        "FundingCarryEU": {
+          "n": 7,
+          "net_9bps": 1380.0,
+          "pf": 17.96,
+          "hit_rate": 0.86,
+          "avg_win": 265.8,
+          "avg_loss": -88.8,
+          "max_loss": -89.0,
+          "top1_pct": 64.0,
+          "status": "REDUCED_WEIGHT",
+          "reason": "top1_concentrated_small_sample"
+        }
+      },
+      "enabled_events": [
+        "RelativeStrengthShock",
+        "FundingCarryEU"
+      ],
+      "disabled_events": [
+        "DeleveragingReversal",
+        "OIShockAbsorption"
+      ],
+      "weight_multiplier": 0.5,
+      "risk_tag": "top_contributor",
+      "recommendation": "ENABLE_REDUCED_WEIGHT"
+    }
+  }
+}
