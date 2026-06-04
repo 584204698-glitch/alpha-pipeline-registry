@@ -205,29 +205,57 @@
   },
   "shadow_config_requirements": {
     "mandatory_fields_per_trade": [
-      "symbol",
-      "event_type",
-      "direction",
-      "event_score",
-      "regime",
-      "regime_confidence",
-      "entry_price_simulated",
-      "exit_price_simulated",
-      "expected_hold",
-      "expected_cost_bps",
-      "reject_reason_or_allow_reason",
-      "future_return",
-      "net_after_cost"
+      "symbol", "event_type", "trigger_time", "bar_close_time",
+      "simulated_entry_time", "entry_delay_seconds",
+      "direction", "regime", "regime_confidence", "event_score",
+      "entry_price_sim", "exit_price_sim",
+      "hold_bars", "cost_assumption_bps",
+      "trigger_conditions", "reject_reason",
+      "gross_bps", "net_bps_9", "net_bps_12", "net_bps_15"
     ],
-    "regime_confidence_definition": "0=low (regime boundary, recent flip), 1=high (clear regime, stable). RS Shock requires confidence >= 1 for range trades.",
-    "live_execution": "NOT ALLOWED for any event. All events are shadow_candidate only."
+    "five_mandatory_daily_metrics": [
+      "1. Signal fidelity — shadow signals match paper conditions exactly",
+      "2. Top contribution — top1/top3/top5% concentration, net_without_top3",
+      "3. Slippage pressure — 9/12/15 bps cost tiers",
+      "4. Signal delay — entry_delay p50/p95/p99, must be <60s p95",
+      "5. Rejected analysis — would rejected signals have made money?"
+    ],
+    "regime_confidence_definition": "0=low (boundary, recent flip), 1=medium (stable >4 bars), 2=high (stable >8 bars). RS Shock requires >= 1.",
+    "live_execution": "NOT ALLOWED. Shadow-only."
   },
-  "next_steps": [
-    "Run shadow for 3-7 days minimum",
-    "Collect 50+ shadow trades per event type",
-    "Re-run extreme contribution after 50+ shadow trades",
-    "If concentration risk persists → add position cap or kill",
-    "Only then reconsider tiny_live for the best survivor"
+  "tiny_live_promotion_criteria": {
+    "general": {
+      "min_shadow_trades": 30,
+      "min_net_12bps": "> 0",
+      "min_pf": 1.15,
+      "require_net_without_top3_positive": true,
+      "max_single_loss": "human review required",
+      "regime_slice_no_runaway_loss": true,
+      "no_manual_rule_changes": true
+    },
+    "DeleveragingReversal_special": {
+      "min_shadow_trades": 50,
+      "require_net_without_top3_positive": "MANDATORY — non-negotiable",
+      "note": "Stricter due to paper extreme contribution FAIL (top3=104% of net)"
+    },
+    "promotion_process": "ALL criteria must pass → human review → git commit → audit trail. No subjective bypass."
+  },
+  "forbidden_actions": [
+    "Place orders during shadow",
+    "Modify event rules during shadow",
+    "Skip gates without audit commit",
+    "Promote to tiny_live without ALL criteria met",
+    "Re-enable symmetric trading for OI Shock Absorption",
+    "Mine new events during shadow observation period"
   ],
-  "last_updated": "2026-06-04T11:00:00Z"
+  "next_steps": [
+    "1. Trading Hermes: git pull origin master",
+    "2. Load shadow_config.json → shadow_monitor.py",
+    "3. Run shadow-only for 3-7 days (minimum)",
+    "4. Generate daily reports (5 mandatory metrics)",
+    "5. After criteria met: human review → tiny_live candidate",
+    "6. Re-run extreme contribution after 50+ shadow trades",
+    "7. Only then reconsider tiny_live for the best survivor"
+  ],
+  "last_updated": "2026-06-04T11:30:00Z"
 }

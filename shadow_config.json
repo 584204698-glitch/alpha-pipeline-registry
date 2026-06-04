@@ -1,0 +1,124 @@
+{
+  "version": "1.0",
+  "mode": "shadow_only",
+  "live_execution": false,
+  "order_placement": false,
+  "ai_override_forbidden": true,
+  "events": {
+    "SmallCapDeleveragingReversalV1": {
+      "status": "shadow_candidate",
+      "tiny_live_allowed": false,
+      "priority": 1,
+      "min_regime_confidence": 0,
+      "enabled_gates": [
+        "return_1h_filter",
+        "oi_bell_score",
+        "volume_z_filter",
+        "panic_chop_filter",
+        "close_location_filter",
+        "funding_z_filter",
+        "systemic_deleveraging_gate",
+        "regime_score_thresholds"
+      ]
+    },
+    "OIShockAbsorptionV1": {
+      "status": "shadow_candidate",
+      "tiny_live_allowed": false,
+      "priority": 2,
+      "min_regime_confidence": 0,
+      "symmetric_trading_forbidden": true,
+      "allow_short_side": false,
+      "allow_long_side": true,
+      "enabled_gates": [
+        "oi_delta_z_filter",
+        "volume_z_filter",
+        "close_loc_filter",
+        "price_failure_filter",
+        "panic_chop_filter"
+      ]
+    },
+    "RelativeStrengthShockV1": {
+      "status": "shadow_candidate",
+      "tiny_live_allowed": false,
+      "priority": 3,
+      "requires_regime_confidence": true,
+      "min_regime_confidence": 1,
+      "enabled_gates": [
+        "rs_threshold_filter",
+        "volume_z_filter",
+        "oi_delta_z_filter",
+        "close_location_filter",
+        "funding_z_filter",
+        "event_score_filter",
+        "btc_ret_floor_filter",
+        "regime_skip_filter"
+      ],
+      "range_regime_long_restriction": "shadow_only \u2014 requires volume+OI+BTC confirmation"
+    }
+  },
+  "conflict_resolution": {
+    "priority_order": [
+      "DeleveragingReversal",
+      "OIShockAbsorption",
+      "RelativeStrengthShock"
+    ],
+    "direction_conflict_rule": "SKIP_ALL",
+    "same_direction_rule": "accept_highest_priority"
+  },
+  "mandatory_shadow_fields": [
+    "symbol",
+    "event_type",
+    "trigger_time",
+    "bar_close_time",
+    "simulated_entry_time",
+    "entry_delay_seconds",
+    "direction",
+    "regime",
+    "regime_confidence",
+    "event_score",
+    "entry_price_sim",
+    "exit_price_sim",
+    "hold_bars",
+    "cost_assumption_bps",
+    "trigger_conditions",
+    "reject_reason",
+    "gross_bps",
+    "net_bps_9",
+    "net_bps_12",
+    "net_bps_15"
+  ],
+  "daily_report_metrics": [
+    "signal_fidelity",
+    "top_contribution",
+    "slippage_pressure",
+    "signal_delay",
+    "rejected_analysis"
+  ],
+  "tiny_live_promotion_criteria": {
+    "general": {
+      "min_shadow_trades": 30,
+      "min_net_12bps": 0,
+      "min_pf": 1.15,
+      "require_net_without_top3_positive": true,
+      "max_single_loss_tolerance": "subjective",
+      "regime_slice_no_runaway_loss": true,
+      "no_manual_rule_changes": true
+    },
+    "DeleveragingReversal_special": {
+      "min_shadow_trades": 50,
+      "min_net_12bps": 0,
+      "min_pf": 1.15,
+      "require_net_without_top3_positive": true,
+      "max_single_loss_tolerance": "subjective",
+      "regime_slice_no_runaway_loss": true,
+      "no_manual_rule_changes": true
+    }
+  },
+  "forbidden_actions": [
+    "Do NOT place orders",
+    "Do NOT modify event rules during shadow",
+    "Do NOT skip gates without audit",
+    "Do NOT promote to tiny_live without all criteria met",
+    "Do NOT re-enable symmetric trading for OI Absorption"
+  ]
+}
