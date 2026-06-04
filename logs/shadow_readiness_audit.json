@@ -1,0 +1,293 @@
+{
+  "DeleveragingReversal": {
+    "extreme": {
+      "n_trades": 36,
+      "total_net_9bps": 2493.0,
+      "max_single_trade": 1321.0,
+      "top3_pct_of_net": 104.0,
+      "net_no_top1": 1172.0,
+      "pct_remain_no_top1": 47.0,
+      "net_no_top3": -89.0,
+      "pct_remain_no_top3": -4.0,
+      "net_no_top5pct": 1172.0,
+      "pct_remain_no_top5pct": 47.0,
+      "verdict": "FAIL",
+      "warnings": [
+        "remove_top_1 leaves only 47% of net",
+        "remove_top_3 leaves only -4% of net",
+        "top 3 trades = 104% of net \u2014 concentration risk"
+      ]
+    },
+    "time_slice": {
+      "early": {
+        "n": 12,
+        "net": 381.0,
+        "pf": 1.63,
+        "hit": 50.0,
+        "date_range": "2026-04-26 \u2192 2026-05-10"
+      },
+      "middle": {
+        "n": 12,
+        "net": 1196.0,
+        "pf": 1.79,
+        "hit": 58.0,
+        "date_range": "2026-05-10 \u2192 2026-05-19"
+      },
+      "late": {
+        "n": 12,
+        "net": 916.0,
+        "pf": 2.0,
+        "hit": 58.0,
+        "date_range": "2026-05-19 \u2192 2026-06-03"
+      },
+      "verdict": "PASS",
+      "any_slice_negative": false
+    },
+    "cost_stress": {
+      "cost_9bps": {
+        "net": 2493.0,
+        "pf": 1.82,
+        "hit": 55.6,
+        "alive": "True"
+      },
+      "cost_12bps": {
+        "net": 2385.0,
+        "pf": 1.77,
+        "hit": 55.6,
+        "alive": "True"
+      },
+      "cost_15bps": {
+        "net": 2277.0,
+        "pf": 1.73,
+        "hit": 55.6,
+        "alive": "True"
+      },
+      "delay_1bar_plus5bps": {
+        "net": 2313.0,
+        "pf": 1.74,
+        "hit": 55.6,
+        "alive": "True"
+      },
+      "worst_15bps_delay": {
+        "net": 2097.0,
+        "pf": 1.65,
+        "hit": 50.0,
+        "alive": "True"
+      },
+      "verdict": "PASS_STRONG"
+    },
+    "shadow_fields": {
+      "required_present": 9,
+      "required_missing": [],
+      "recommended_present": 2,
+      "recommended_missing": [
+        "regime_confidence",
+        "entry_price_simulated",
+        "exit_price_simulated",
+        "expected_cost_bps",
+        "reject_reason",
+        "future_return",
+        "net_after_cost",
+        "vol_z"
+      ],
+      "verdict": "PASS"
+    }
+  },
+  "RelativeStrengthShock": {
+    "extreme": {
+      "n_trades": 311,
+      "total_net_9bps": 16800.0,
+      "max_single_trade": 3138.0,
+      "top3_pct_of_net": 54.0,
+      "net_no_top1": 13662.0,
+      "pct_remain_no_top1": 81.0,
+      "net_no_top3": 7693.0,
+      "pct_remain_no_top3": 46.0,
+      "net_no_top5pct": -13392.0,
+      "pct_remain_no_top5pct": -80.0,
+      "verdict": "FAIL",
+      "warnings": [
+        "remove_top_3 leaves only 46% of net",
+        "top 3 trades = 54% of net \u2014 concentration risk"
+      ]
+    },
+    "time_slice": {
+      "early": {
+        "n": 103,
+        "net": 8970.0,
+        "pf": 1.4,
+        "hit": 46.0,
+        "date_range": "2026-04-23 \u2192 2026-05-07"
+      },
+      "middle": {
+        "n": 103,
+        "net": -6529.0,
+        "pf": 0.74,
+        "hit": 46.0,
+        "date_range": "2026-05-07 \u2192 2026-05-21"
+      },
+      "late": {
+        "n": 105,
+        "net": 14359.0,
+        "pf": 1.98,
+        "hit": 54.0,
+        "date_range": "2026-05-21 \u2192 2026-06-03"
+      },
+      "verdict": "WARN",
+      "any_slice_negative": true
+    },
+    "cost_stress": {
+      "cost_9bps": {
+        "net": 16800.0,
+        "pf": 1.27,
+        "hit": 48.6,
+        "alive": "True"
+      },
+      "cost_12bps": {
+        "net": 15867.0,
+        "pf": 1.25,
+        "hit": 48.6,
+        "alive": "True"
+      },
+      "cost_15bps": {
+        "net": 14934.0,
+        "pf": 1.24,
+        "hit": 48.6,
+        "alive": "True"
+      },
+      "delay_1bar_plus5bps": {
+        "net": 15245.0,
+        "pf": 1.24,
+        "hit": 48.6,
+        "alive": "True"
+      },
+      "worst_15bps_delay": {
+        "net": 13379.0,
+        "pf": 1.21,
+        "hit": 47.9,
+        "alive": "True"
+      },
+      "verdict": "PASS_STRONG"
+    },
+    "shadow_fields": {
+      "required_present": 9,
+      "required_missing": [],
+      "recommended_present": 3,
+      "recommended_missing": [
+        "regime_confidence",
+        "entry_price_simulated",
+        "exit_price_simulated",
+        "expected_cost_bps",
+        "reject_reason",
+        "future_return",
+        "net_after_cost"
+      ],
+      "verdict": "PASS"
+    }
+  },
+  "OIShockAbsorption": {
+    "extreme": {
+      "n_trades": 115,
+      "total_net_9bps": 7728.0,
+      "max_single_trade": 2283.0,
+      "top3_pct_of_net": 60.0,
+      "net_no_top1": 5446.0,
+      "pct_remain_no_top1": 70.0,
+      "net_no_top3": 3102.0,
+      "pct_remain_no_top3": 40.0,
+      "net_no_top5pct": 866.0,
+      "pct_remain_no_top5pct": 11.0,
+      "verdict": "FAIL",
+      "warnings": [
+        "remove_top_3 leaves only 40% of net",
+        "top 3 trades = 60% of net \u2014 concentration risk"
+      ]
+    },
+    "time_slice": {
+      "early": {
+        "n": 38,
+        "net": -498.0,
+        "pf": 0.87,
+        "hit": 42.0,
+        "date_range": "2026-04-25 \u2192 2026-05-07"
+      },
+      "middle": {
+        "n": 38,
+        "net": 4792.0,
+        "pf": 2.65,
+        "hit": 50.0,
+        "date_range": "2026-05-07 \u2192 2026-05-20"
+      },
+      "late": {
+        "n": 39,
+        "net": 3435.0,
+        "pf": 1.89,
+        "hit": 44.0,
+        "date_range": "2026-05-20 \u2192 2026-06-02"
+      },
+      "verdict": "WARN",
+      "any_slice_negative": true
+    },
+    "cost_stress": {
+      "cost_9bps": {
+        "net": 7728.0,
+        "pf": 1.72,
+        "hit": 45.2,
+        "alive": "True"
+      },
+      "cost_12bps": {
+        "net": 7383.0,
+        "pf": 1.68,
+        "hit": 44.3,
+        "alive": "True"
+      },
+      "cost_15bps": {
+        "net": 7038.0,
+        "pf": 1.63,
+        "hit": 43.5,
+        "alive": "True"
+      },
+      "delay_1bar_plus5bps": {
+        "net": 7153.0,
+        "pf": 1.65,
+        "hit": 43.5,
+        "alive": "True"
+      },
+      "worst_15bps_delay": {
+        "net": 6463.0,
+        "pf": 1.57,
+        "hit": 41.7,
+        "alive": "True"
+      },
+      "verdict": "PASS_STRONG"
+    },
+    "shadow_fields": {
+      "required_present": 9,
+      "required_missing": [],
+      "recommended_present": 3,
+      "recommended_missing": [
+        "regime_confidence",
+        "entry_price_simulated",
+        "exit_price_simulated",
+        "expected_cost_bps",
+        "reject_reason",
+        "future_return",
+        "net_after_cost"
+      ],
+      "verdict": "PASS"
+    }
+  },
+  "conflicts": {
+    "total_trades_combined": 462,
+    "overlapping_events": 0,
+    "direction_conflicts": 0,
+    "details": [],
+    "verdict": "PASS",
+    "recommended_priority": [
+      "1. Deleveraging Reversal",
+      "2. OI Shock Absorption (short squeeze)",
+      "3. RS Shock"
+    ],
+    "conflict_rule": "Direction conflict \u2192 SKIP. Same direction \u2192 accept highest-score event."
+  }
+}
