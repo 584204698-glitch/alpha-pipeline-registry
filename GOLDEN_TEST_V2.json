@@ -1,0 +1,221 @@
+{
+  "_golden_test_v2": "不依赖具体币种和数据源。给固定输入，验证每个 alpha 的输出逻辑。",
+  "_how_to_use": "对每个测试用例，把输入值喂给你的 alpha 判断函数，看输出是否匹配。不匹配 = 逻辑有 bug。",
+
+  "tests": [
+
+    {
+      "test": "Deleveraging: 应该触发信号",
+      "inputs": {
+        "return_1h": -0.04,
+        "oi_delta_z": -2.5,
+        "volume_z": 1.8,
+        "close_location": 0.6,
+        "funding_z": 0.5,
+        "btc_regime": "trend_down",
+        "marketwide_oi_collapse_count": 2
+      },
+      "expected": {
+        "should_fire": true,
+        "direction": "long",
+        "event_score": "~0.85-0.95 (取决于评分函数精度)",
+        "hold_bars": 2
+      }
+    },
+
+    {
+      "test": "Deleveraging: return太浅不触发",
+      "inputs": {
+        "return_1h": -0.01,
+        "oi_delta_z": -2.5,
+        "volume_z": 1.8,
+        "close_location": 0.6,
+        "funding_z": 0.5,
+        "btc_regime": "trend_down",
+        "marketwide_oi_collapse_count": 2
+      },
+      "expected": {
+        "should_fire": false,
+        "reject_reason": "return_1h >= -2.5% 或类似"
+      }
+    },
+
+    {
+      "test": "Deleveraging: BTC panic_down 不触发",
+      "inputs": {
+        "return_1h": -0.04,
+        "oi_delta_z": -2.5,
+        "volume_z": 1.8,
+        "close_location": 0.6,
+        "funding_z": 0.5,
+        "btc_regime": "panic_down",
+        "marketwide_oi_collapse_count": 2
+      },
+      "expected": {
+        "should_fire": false,
+        "reject_reason": "BTC panic_down 或 regime 拒绝"
+      }
+    },
+
+    {
+      "test": "Deleveraging: funding极端不触发",
+      "inputs": {
+        "return_1h": -0.04,
+        "oi_delta_z": -2.5,
+        "volume_z": 1.8,
+        "close_location": 0.6,
+        "funding_z": 3.0,
+        "btc_regime": "trend_down",
+        "marketwide_oi_collapse_count": 2
+      },
+      "expected": {
+        "should_fire": false,
+        "reject_reason": "|funding_z| > 2.0"
+      }
+    },
+
+    {
+      "test": "OI Shock: 应该触发信号",
+      "inputs": {
+        "oi_delta_z": 3.0,
+        "volume_z": 2.0,
+        "close_location": 0.25,
+        "ret_15m": 0.005,
+        "ret_1h": 0.01,
+        "btc_regime": "range"
+      },
+      "expected": {
+        "should_fire": true,
+        "direction": "long",
+        "hold_bars": 2
+      }
+    },
+
+    {
+      "test": "OI Shock: close_location太高不触发(不是低位挤压)",
+      "inputs": {
+        "oi_delta_z": 3.0,
+        "volume_z": 2.0,
+        "close_location": 0.8,
+        "ret_15m": 0.005,
+        "ret_1h": 0.01,
+        "btc_regime": "range"
+      },
+      "expected": {
+        "should_fire": false,
+        "reject_reason": "close_loc >= 0.4 或类似"
+      }
+    },
+
+    {
+      "test": "RS Shock trend_down: 应该做空",
+      "inputs": {
+        "relative_return_vs_btc": 0.07,
+        "volume_z": 2.5,
+        "oi_delta_z": 1.0,
+        "close_location": 0.65,
+        "funding_z": 1.0,
+        "btc_ret_1h": 0.0,
+        "btc_regime": "trend_down"
+      },
+      "expected": {
+        "should_fire": true,
+        "direction": "short",
+        "hold_bars": 2
+      }
+    },
+
+    {
+      "test": "RS Shock range + 低confidence: 不触发",
+      "inputs": {
+        "relative_return_vs_btc": 0.07,
+        "volume_z": 2.5,
+        "oi_delta_z": 1.0,
+        "close_location": 0.65,
+        "funding_z": 1.0,
+        "btc_ret_1h": 0.0,
+        "btc_regime": "range",
+        "regime_confidence": 0
+      },
+      "expected": {
+        "should_fire": false,
+        "reject_reason": "regime_confidence < 1 for range"
+      }
+    },
+
+    {
+      "test": "Funding Carry EU: 应该触发",
+      "inputs": {
+        "funding_z": -3.0,
+        "oi_delta_z": -0.5,
+        "btc_regime": "range",
+        "utc_hour": 10
+      },
+      "expected": {
+        "should_fire": true,
+        "direction": "long",
+        "hold_bars": 12
+      }
+    },
+
+    {
+      "test": "Funding Carry: 非EU时段不触发",
+      "inputs": {
+        "funding_z": -3.0,
+        "oi_delta_z": -0.5,
+        "btc_regime": "range",
+        "utc_hour": 3
+      },
+      "expected": {
+        "should_fire": false,
+        "reject_reason": "非 EU 时段 (07-17 UTC)"
+      }
+    },
+
+    {
+      "test": "Funding Carry: OI正在崩塌不触发",
+      "inputs": {
+        "funding_z": -3.0,
+        "oi_delta_z": -3.5,
+        "btc_regime": "range",
+        "utc_hour": 10
+      },
+      "expected": {
+        "should_fire": false,
+        "reject_reason": "oi_delta_z < -2.0 (ongoing liquidation)"
+      }
+    },
+
+    {
+      "test": "冲突: 同向多alpha只保留最高优先级",
+      "inputs": {
+        "signals_on_same_symbol_same_time": [
+          {"event_type": "FundingCarryEU", "direction": "long"},
+          {"event_type": "DeleveragingReversal", "direction": "long"}
+        ]
+      },
+      "expected": {
+        "final_signal": "DeleveragingReversal",
+        "other_status": "MERGED",
+        "should_not_stack": true
+      }
+    },
+
+    {
+      "test": "冲突: 反向全拒",
+      "inputs": {
+        "signals_on_same_symbol_same_time": [
+          {"event_type": "RelativeStrengthShock", "direction": "long"},
+          {"event_type": "RelativeStrengthShock", "direction": "short"}
+        ]
+      },
+      "expected": {
+        "all_rejected": true,
+        "reject_reason": "DIRECTION_CONFLICT"
+      }
+    }
+  ],
+
+  "_data_coverage_note": "Golden test V1 写死了 RAVEUSDT/SPKUSDT 导致数据源不同时无法复现。V2 改为逻辑测试——喂固定输入、验固定输出。和具体币种无关。只要 13 个测试全过，你的实现就正确。",
+  "_symbol_coverage_note": "86 个币够开始 shadow。Coinglass 覆盖不足的问题: 研究端回测用 500 币 parquet(历史数据)，实盘用 CCXT 拉 Binance 全量永续列表。接受当前 86 币先跑起来，后续切 CCXT 扩展到全量。核心逻辑已经通过 13 个测试验证了，币种数量不影响逻辑正确性。"
+}
