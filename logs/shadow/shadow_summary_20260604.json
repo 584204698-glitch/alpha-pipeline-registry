@@ -1,0 +1,29 @@
+{
+  "event_name": "SmallCapEventScanner",
+  "scans": [
+    {
+      "scan_ts": "2026-06-04T09:22:58.319877+00:00",
+      "latest_data_ts": "2026-06-04 01:00:00+00:00",
+      "small_cap_pool_size": 81,
+      "signals": {
+        "total_raw": 2,
+        "after_conflict_resolution": 2,
+        "by_event": {
+          "DeleveragingReversal": 2
+        },
+        "by_regime": {
+          "trend_down": 2
+        }
+      },
+      "rejected": {
+        "total": 24,
+        "by_reason": {
+          "oi_z": 18,
+          "funding_z": 1,
+          "volume_z": 1,
+          "return": 4
+        }
+      }
+    }
+  ]
+}
