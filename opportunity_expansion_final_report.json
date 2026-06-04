@@ -1,0 +1,66 @@
+{
+  "research_name": "Opportunity Expansion Research",
+  "date": "2026-06-04",
+  "researcher": "research Hermes",
+  "conclusion": "NO new event types found. NO universe expansion warranted. Existing 3 events + rank 20-100 universe is the optimal configuration.",
+  
+  "sections": [
+    {
+      "section": "A. New Event Type Discovery (V1 — baseline)",
+      "variants_tested": 4,
+      "results": {
+        "OIBuildupBreakout": {"n": 1222, "net_9bps": -5624, "pf": 0.95, "verdict": "KILL"},
+        "VolCompressionBreak": {"n": 1380, "net_9bps": -43716, "pf": 0.78, "verdict": "KILL"},
+        "FailedBreakoutReversal": {"n": 5135, "net_9bps": -103905, "pf": 0.81, "verdict": "KILL"},
+        "MidCap4h": {"n": 0, "verdict": "KILL — 0 signals"}
+      },
+      "insight": "High signal counts, universally negative. Gates too loose, direction random at 1h scale."
+    },
+    {
+      "section": "B. New Event Type Discovery (V2 — tighter + long-only)",
+      "variants_tested": 12,
+      "results": {
+        "OI_Buildup_V2_mid": {"n": 676, "net_9bps": -9092, "pf": 0.86, "verdict": "KILL"},
+        "OI_Buildup_V2_ext": {"n": 734, "net_9bps": -11808, "pf": 0.84, "verdict": "KILL"},
+        "OI_Buildup_V2_all": {"n": 1410, "net_9bps": -20900, "pf": 0.85, "verdict": "KILL"},
+        "FailedBreakout_V2_mid": {"n": 2003, "net_9bps": -27151, "pf": 0.89, "verdict": "KILL"},
+        "FailedBreakout_V2_ext": {"n": 2388, "net_9bps": 12935, "pf": 1.05, "verdict": "KILL — PF too low, top3=120%"},
+        "FailedBreakout_V2_all": {"n": 4391, "net_9bps": -14217, "pf": 0.97, "verdict": "KILL"},
+        "VolCompression_V2_mid": {"n": 295, "net_9bps": -6714, "pf": 0.86, "verdict": "KILL"},
+        "VolCompression_V2_ext": {"n": 521, "net_9bps": -3195, "pf": 0.95, "verdict": "KILL"},
+        "VolCompression_V2_all": {"n": 816, "net_9bps": -9909, "pf": 0.91, "verdict": "KILL"},
+        "FundingSqueeze_mid": {"n": 149, "net_9bps": -12418, "pf": 0.58, "verdict": "KILL"},
+        "FundingSqueeze_ext": {"n": 226, "net_9bps": -1756, "pf": 0.93, "verdict": "KILL"},
+        "FundingSqueeze_all": {"n": 375, "net_9bps": -14174, "pf": 0.75, "verdict": "KILL"}
+      },
+      "insight": "Tighter parameters reduced noise but didn't create alpha. OI Buildup, Vol Compression, and Failed Breakout patterns are alpha-decayed at 1h scale. Funding extreme mean-reversion is already priced efficiently."
+    },
+    {
+      "section": "C. Extended Universe (rank 101-200) — Existing Events",
+      "variants_tested": 3,
+      "results": {
+        "Deleveraging_ext": {"n": 40, "net_9bps": -4650, "pf": 0.27, "verdict": "KILL"},
+        "OI_Absorption_ext": {"n": 152, "net_9bps": 3747, "pf": 1.25, "top3_pct": 137, "net_without_top3": -1388, "verdict": "TOO_CONCENTRATED"},
+        "RS_Shock_ext": {"n": 376, "net_9bps": -9085, "pf": 0.88, "verdict": "KILL"}
+      },
+      "insight": "Rank 101+ is too noisy for event-driven alpha. OI Absorption partially works (152 trades, PF=1.25) but 3 trades drive 137% of net profit — not viable without a concentration filter. Deleveraging and RS Shock completely fail."
+    }
+  ],
+
+  "overall_verdicts": {
+    "OIBuildupBreakout": {"status": "KILL", "reason": "Net negative across all parameter sets and universes"},
+    "VolCompressionBreak": {"status": "KILL", "reason": "Net negative across all parameter sets and universes"},
+    "FailedBreakoutReversal": {"status": "KILL", "reason": "Net negative with usable signal count; PF never exceeds 1.05"},
+    "FundingSqueeze": {"status": "KILL", "reason": "Funding mean-reversion alpha fully decayed"},
+    "MidCap4h_LowFreq": {"status": "KILL", "reason": "Zero signals at 4h resolution — event density collapses"},
+    "OI_Absorption_ext_universe": {"status": "FILTER_ONLY", "reason": "PF=1.25 but top3=137% of net. Could work IF a concentration filter removes outlier dependency, but no such filter currently exists. Not recommended for deployment."},
+    "Deleveraging_ext_universe": {"status": "KILL", "reason": "PF=0.27 — small caps don't have structural deleveraging edges"},
+    "RS_Shock_ext_universe": {"status": "KILL", "reason": "PF=0.88 — RS signal is noise in illiquid small caps"}
+  },
+
+  "recommended_registry_update": "NONE. No new factors to register. Existing 3 events + rank 20-100 universe confirmed as optimal.",
+  
+  "key_insight": "The event-driven alpha edge exists ONLY in rank 20-100 (mid-cap by volume). This is the 'sweet spot' — liquid enough for tradability, small enough for structural inefficiencies (forced liquidation, short squeezes). Rank 1-19 is too efficient (regime anchors only). Rank 101+ is too noisy/illiquid. New event types (buildup, compression, breakout, funding) are alpha-decayed at the 1h scale — market makers and HFT firms have already arbitraged these patterns.",
+
+  "research_boundary_confirmed": "The pipeline's current scope (3 events, rank 20-100, shadow-only) is the correct and complete configuration. No expansion is warranted based on available data."
+}
