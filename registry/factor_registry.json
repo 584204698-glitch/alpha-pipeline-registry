@@ -13,9 +13,6 @@
         "entry_mode": "current_close",
         "hold_bars": 2,
         "v1.0_cost_9bps": { "n_trades": 233, "net_bps": 7257, "pf": 1.68, "cost_to_gross_pct": 22, "hit_rate": 0.532 },
-        "v1.1_funding_filter": { "filter": "reject |funding_z|>2.0", "effect": "ΔPF+0.16" },
-        "v1.1_systemic_gate": { "filter": "reject if >5 coins OI collapsing simultaneously", "effect": "PF=1.98, n=52" },
-        "v1.1_combined": { "filter": "funding + systemic gate", "n_trades": 46, "net_bps": 3750, "pf": 2.53, "hit_rate": 0.54 },
         "v1.2_regime_gated": {
           "n_trades": 34,
           "net_9bps": 3349,
@@ -26,30 +23,84 @@
             "range": { "n": 21, "net_9bps": 1904, "hit": 0.62, "rule": "default (0.60), full size" },
             "trend_up": { "n": 6, "net_9bps": -130, "hit": 0.17, "rule": "strict entry (0.75), half size — worst regime" }
           },
-          "key_insight": "BTC downtrend = real forced liquidations (86% hit). BTC uptrend drops = idiosyncratic weakness (17% hit). Inverted from initial assumption."
+          "key_insight": "BTC downtrend = real forced liquidations (86% hit). BTC uptrend drops = idiosyncratic weakness (17% hit)."
         }
       },
       "gates": [
         "return_1h < -2.5% and > -12%",
         "oi_z in (-3.0, -2.0] bell-shaped scoring, center=-2.5",
         "volume_z > 1.0 and < 8.0",
-        "BTC regime != panic_down and != chop ← V1.2 adds chop",
+        "BTC regime != panic_down and != chop",
         "close_location > 0.35 for entry confirmation",
-        "|funding_z| < 2.0 ← V1.1",
-        "systemic_deleveraging gate (>5 coins collapsing) ← V1.1",
-        "regime-based score thresholds: trend_down=0.50, range=0.60, trend_up=0.75 ← V1.2",
-        "regime-based position sizing: trend_up=50% ← V1.2",
+        "|funding_z| < 2.0",
+        "systemic_deleveraging gate (>5 coins collapsing)",
+        "regime-based score thresholds: trend_down=0.50, range=0.60, trend_up=0.75",
+        "regime-based position sizing: trend_up=50%",
         "cooldown 4h per symbol"
       ],
       "promotion_requirements": [
         "Shadow for 2-4 weeks before tiny_live",
-        "Expand data to 1000-bar for more regime samples (current: 0 panic_down, 4 chop)",
+        "Expand data to 1000-bar for more regime samples",
         "Validate regime rules hold with more trade samples"
       ],
       "killed": false,
-      "last_updated": "2026-06-04T09:00:00Z"
+      "last_updated": "2026-06-04T10:00:00Z"
+    },
+    "RelativeStrengthShockV1": {
+      "status": "SHADOW_CANDIDATE",
+      "version": "1.0",
+      "family": "small_cap_event_alpha",
+      "role": "small_cap_event_alpha",
+      "direction": "regime_dependent",
+      "mechanism": "Small-cap coin shows significant outperformance vs BTC (RS > 5%) with volume + OI confirmation. Direction is REGIME-DEPENDENT: range → LONG (real accumulation), trend_down → SHORT (dead cat bounce fade), trend_up → SKIP (no edge). High frequency complement to Deleveraging Reversal.",
+      "latest_paper": {
+        "data": "500 symbols 1h, 1002 timestamps (41d)",
+        "universe": "volume_rank 20-100",
+        "entry_mode": "current_close",
+        "hold_bars": 2,
+        "cost_9bps": {
+          "n_trades": 311,
+          "net_bps": 16800,
+          "pf": 1.27,
+          "cost_to_gross_pct": 14,
+          "hit_rate": 0.486
+        },
+        "regime_breakdown": {
+          "range_long": { "n": 259, "net_9bps": 10070, "hit": 0.46, "logic": "real accumulation in sideways market" },
+          "trend_down_short": { "n": 52, "net_9bps": 6730, "hit": 0.64, "logic": "dead cat bounce in downtrend" }
+        },
+        "key_insight": "RS shocks in range are real accumulation (long wins). RS shocks in trend_down are dead cat bounces (short wins). Trend_up has no edge. This is the mirror image of Deleveraging Reversal's regime behavior."
+      },
+      "gates": [
+        "RS > 5% (symbol_ret - btc_ret)",
+        "volume_z > 2.0",
+        "oi_delta_z > 0.5 (new money entering)",
+        "close_location > 0.50 (not fading)",
+        "|funding_z| < 2.5 (not a crowded trade)",
+        "event_score > 0.60",
+        "btc_ret_1h > -1% (BTC not crashing)",
+        "skip trend_up/panic_down/chop regimes",
+        "cooldown 8 bars per symbol"
+      ],
+      "promotion_requirements": [
+        "Shadow for 2-4 weeks before tiny_live",
+        "Validate regime-dependent direction holds out-of-sample",
+        "Monitor correlation with Deleveraging Reversal (<0.3 target)",
+        "Test parameter stability across tighter RS thresholds"
+      ],
+      "killed": false,
+      "last_updated": "2026-06-04T10:00:00Z"
     }
   },
-  "shadow_candidates": ["SmallCapDeleveragingReversalV1"],
-  "last_updated": "2026-06-04T09:00:00Z"
+  "shadow_candidates": [
+    "SmallCapDeleveragingReversalV1",
+    "RelativeStrengthShockV1"
+  ],
+  "event_family_summary": {
+    "total_events": 2,
+    "combined_net_9bps": 20149,
+    "combined_trades": 345,
+    "complementarity": "Deleveraging (low freq, high PF, OI-collapse events) + RS Shock (high freq, medium PF, RS events) — non-overlapping triggers, both profitable in trend_down via different mechanisms"
+  },
+  "last_updated": "2026-06-04T10:00:00Z"
 }
