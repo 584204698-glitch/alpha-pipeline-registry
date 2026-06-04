@@ -1,0 +1,50 @@
+{
+  "_golden_test": "交易端实现后，用自己的框架跑这个时间戳，输出必须与本文件一致。不一致 = 实现有误。",
+  "test_timestamp": "2026-06-04 01:00:00+00:00",
+  "test_regime": "trend_down",
+  "test_universe": "rank 20-100 (81 symbols)",
+  "expected_output": {
+    "total_raw_signals": 2,
+    "after_conflict": 2,
+    "conflicts": 0,
+    "rejected": 24,
+    "signals": [
+      {
+        "symbol": "Binance:RAVEUSDT",
+        "event_type": "DeleveragingReversal",
+        "direction": "long",
+        "event_score": 0.9083,
+        "hold_bars": 2,
+        "status": "SHADOW_SIGNAL"
+      },
+      {
+        "symbol": "Binance:SPKUSDT",
+        "event_type": "DeleveragingReversal",
+        "direction": "long",
+        "event_score": 0.9083,
+        "hold_bars": 2,
+        "status": "SHADOW_SIGNAL"
+      }
+    ],
+    "by_alpha": {
+      "DeleveragingReversal": 2,
+      "OIShockAbsorption": 0,
+      "RelativeStrengthShock": 0,
+      "FundingCarryEU": 0
+    }
+  },
+  "why_this_test": "这个时间戳是 Asia 夜间，市场平静。只有 Deleveraging 有信号。Funding Carry 无信号（不在 EU 时段）。如果交易端输出多了或少了信号，说明 gate 实现有误。",
+  "what_to_check": [
+    "1. 只有 2 个 SHADOW_SIGNAL → RAVEUSDT 和 SPKUSDT",
+    "2. 有 24 个 REJECTED（不满足 Deleveraging 条件的币）",
+    "3. 0 个 FundingCarryEU 信号（01:00 UTC 不在 07-17 EU 窗口）",
+    "4. 0 个冲突",
+    "5. event_score 精确匹配 0.9083（评分函数实现是否正确）"
+  ],
+  "debug_tips": [
+    "如果 Deleveraging 信号超过 2 个 → oi_delta_z 阈值或 volume_z 阈值设置太松",
+    "如果 Deleveraging 信号为 0 个 → return_1h < -2.5% 条件未满足或数据滞后",
+    "如果 FundingCarryEU 有信号 → session gate 未生效（01:00 UTC 不是 EU）",
+    "如果 event_score 不匹配 → 评分权重有差异（oi:0.30, ret:0.25, vol:0.20, btc:0.15, tradability:0.10）"
+  ]
+}
