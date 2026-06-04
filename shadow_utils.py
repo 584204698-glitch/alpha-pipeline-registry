@@ -103,6 +103,7 @@ def resolve_event_conflicts(
             "DeleveragingReversal",
             "OIShockAbsorption",
             "RelativeStrengthShock",
+            "FundingCarryEU",
         ]
 
     priority_map = {et: i for i, et in enumerate(priority_order)}
