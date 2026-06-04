@@ -1,0 +1,14 @@
+{
+  "version": "v1.0",
+  "generated": "2026-06-04 21:08:31.519308+00:00",
+  "method": "At signal bar, check taker flow state for directional confirmation",
+  "results": {
+    "total_signals": 44,
+    "by_alpha": {
+      "DeleveragingReversal": {
+        "n": 0,
+        "error": "too few"
+      }
+    }
+  }
+}

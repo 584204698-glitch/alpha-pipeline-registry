@@ -46,7 +46,7 @@ def generate_historical_signals(data: pd.DataFrame) -> list[dict]:
 
     # Regime map
     print("    Computing regime map...")
-    regime_map = detect_regime_fast(data)
+    regime_map = detect_regime_fast(data).to_dict()
     btc_present = "BTCUSDT" in data.index.get_level_values("symbol")
 
     # 1. Deleveraging — per-bar scan
@@ -137,6 +137,13 @@ def generate_historical_signals(data: pd.DataFrame) -> list[dict]:
         if k not in seen:
             seen.add(k)
             dedup.append(s)
+
+    # Save raw historical signals for statistical analysis
+    signal_path = ROOT / "logs" / "shadow" / "historical_signals.jsonl"
+    signal_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(signal_path, "w") as f:
+        for s in dedup:
+            f.write(json.dumps(s, default=str) + "\n")
 
     return dedup
 

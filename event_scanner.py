@@ -187,12 +187,12 @@ def score_volume(vol_z: float) -> float:
 
 
 def score_btc_stability(btc_ret_15m: float, btc_regime: str) -> float:
-    """BTC must not be in freefall."""
+    """BTC must not be in freefall. Thresholds scaled for 1h returns (was 15m)."""
     if btc_regime == "panic_down":
         return 0.0
-    if btc_ret_15m < -0.02:
+    if btc_ret_15m < -0.05:   # 5% in 1h ≈ extreme (was 2% in 15m)
         return 0.1
-    if btc_ret_15m < -0.01:
+    if btc_ret_15m < -0.025:   # 2.5% in 1h ≈ notable (was 1% in 15m)
         return 0.5
     return 1.0
 
@@ -245,7 +245,7 @@ class DeleveragingEventScanner:
         btc_regime_map: dict[pd.Timestamp, str],
         universe: SmallCapUniverse | None = None,
         hold_bars: int = 2,
-        cooldown_bars: int = 16,  # ~4h cooldown at 15m bars
+        cooldown_bars: int = 4,   # ~4h cooldown at 1h bars (was 16 at 15m bars)
     ):
         self.data = data
         self.btc_regime = btc_regime_map
@@ -267,37 +267,38 @@ class DeleveragingEventScanner:
         data = self.data
 
         # Returns (1 bar = 15m, 4 bars = 1h)
+        # On 1h bars, 1-bar change = 1h return (was pct_change(4) for 15m→1h)
         self.ret_1h = data["close"].groupby(level="symbol").transform(
-            lambda s: s.pct_change(4)
+            lambda s: s.pct_change(1)
         )
         # BTC returns for stability check
         btc_data = data.xs("Binance:BTCUSDT", level="symbol") if "Binance:BTCUSDT" in data.index.get_level_values("symbol") else None
         if btc_data is not None and len(btc_data) > 0:
-            self.btc_ret_15m = btc_data["close"].pct_change()
+            self.btc_ret_15m = btc_data["close"].pct_change()  # 1h return on 1h bars (was 15m on 15m bars)
         else:
             self.btc_ret_15m = pd.Series(0.0, index=data.index.get_level_values("timestamp").unique())
 
-        # OI delta z-score (6-bar OI change, 48-bar z-score window)
+        # OI delta z-score (2-bar OI change for 1h bars, was 6-bar for 15m bars)
         oi_delta = data["open_interest"].groupby(level="symbol").transform(
-            lambda s: s.diff(6)
+            lambda s: s.diff(2)
         )
         g = oi_delta.groupby(level="symbol")
-        oi_mean = g.transform(lambda s: s.rolling(48, min_periods=8).mean())
-        oi_std = g.transform(lambda s: s.rolling(48, min_periods=8).std()).replace(0, np.nan)
+        oi_mean = g.transform(lambda s: s.rolling(12, min_periods=4).mean())
+        oi_std = g.transform(lambda s: s.rolling(12, min_periods=4).std()).replace(0, np.nan)
         self.oi_z = ((oi_delta - oi_mean) / oi_std).fillna(0.0)
 
-        # Volume z-score
+        # Volume z-score (12-bar window for 1h bars, was 48-bar for 15m)
         vol = data["volume"]
         gv = vol.groupby(level="symbol")
-        vol_mean = gv.transform(lambda s: s.rolling(48, min_periods=8).mean())
-        vol_std = gv.transform(lambda s: s.rolling(48, min_periods=8).std()).replace(0, np.nan)
+        vol_mean = gv.transform(lambda s: s.rolling(12, min_periods=4).mean())
+        vol_std = gv.transform(lambda s: s.rolling(12, min_periods=4).std()).replace(0, np.nan)
         self.vol_z = ((vol - vol_mean) / vol_std).fillna(0.0)
 
-        # Funding z-score (for extreme funding gate)
+        # Funding z-score (6-bar window for 1h bars, was 24-bar for 15m)
         funding = data["funding_rate"]
         gf = funding.groupby(level="symbol")
-        f_mean = gf.transform(lambda s: s.rolling(24, min_periods=8).mean())
-        f_std = gf.transform(lambda s: s.rolling(24, min_periods=8).std()).replace(0, np.nan)
+        f_mean = gf.transform(lambda s: s.rolling(6, min_periods=4).mean())
+        f_std = gf.transform(lambda s: s.rolling(6, min_periods=4).std()).replace(0, np.nan)
         self.funding_z = ((funding - f_mean) / f_std).fillna(0.0)
 
         # Close location

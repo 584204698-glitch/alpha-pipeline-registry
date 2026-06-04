@@ -61,25 +61,25 @@ def detect_oi_shock_absorption(
     Returns:
         List of event dicts
     """
-    # Precompute
+    # Precompute (1h bars: pct_change(1) = 1h return, was 15m/1h on 15m bars)
     ret_15m = data["close"].groupby(level="symbol").transform(
-        lambda s: s.pct_change(1)
+        lambda s: s.pct_change(1)  # 1h return on 1h bars
     )
     ret_1h = data["close"].groupby(level="symbol").transform(
-        lambda s: s.pct_change(4)
+        lambda s: s.pct_change(1)  # same timeframe on 1h bars (was pct_change(4))
     )
 
-    # OI z-score
+    # OI z-score (2-bar OI delta, 12-bar window for 1h bars)
     oi_delta = data["open_interest"].groupby(level="symbol").transform(
-        lambda s: s.diff(6)
+        lambda s: s.diff(2)  # 2h OI change (was diff(6) for 15m→90m)
     )
-    def roll_z(series, window=48):
+    def roll_z(series, window=12):  # was 48 for 15m bars
         g = series.groupby(level="symbol")
-        mean = g.transform(lambda s: s.rolling(window, min_periods=8).mean())
-        std = g.transform(lambda s: s.rolling(window, min_periods=8).std()).replace(0, np.nan)
+        mean = g.transform(lambda s: s.rolling(window, min_periods=4).mean())
+        std = g.transform(lambda s: s.rolling(window, min_periods=4).std()).replace(0, np.nan)
         return ((series - mean) / std).fillna(0.0)
-    oi_z = roll_z(oi_delta, 48)
-    vol_z = roll_z(data["volume"], 48)
+    oi_z = roll_z(oi_delta, 12)
+    vol_z = roll_z(data["volume"], 12)
 
     hl_range = (data["high"] - data["low"]).clip(lower=1e-8)
     close_loc = (data["close"] - data["low"]) / hl_range

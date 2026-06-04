@@ -26,7 +26,7 @@ import pandas as pd
 
 # ── Helpers ──────────────────────────────────────────
 
-def _roll_z(series, window=48):
+def _roll_z(series, window=12):  # was 48 for 15m bars
     """Per-symbol rolling z-score."""
     g = series.groupby(level="symbol")
     mean = g.transform(lambda s: s.rolling(window, min_periods=8).mean())
@@ -68,9 +68,9 @@ def detect_relative_strength_shock(
     Returns:
         List of event dicts with symbol, timestamp, metrics, score
     """
-    # Precompute
+    # Precompute (1h bars: pct_change(1)=1h return, was pct_change(4) for 15m→1h)
     ret_1h = data["close"].groupby(level="symbol").transform(
-        lambda s: s.pct_change(4)
+        lambda s: s.pct_change(1)
     )
 
     # BTC return
@@ -80,15 +80,15 @@ def detect_relative_strength_shock(
         return []
     btc_close = btc_data.droplevel("symbol").sort_index()
     btc_close = btc_close[~btc_close.index.duplicated(keep="last")]["close"]
-    btc_ret_1h = btc_close.pct_change(4)
+    btc_ret_1h = btc_close.pct_change(1)  # 1h return on 1h bars
 
-    # Metrics
-    vol_z = _roll_z(data["volume"], 48)
+    # Metrics (12-bar windows for 1h bars, was 48-bar for 15m)
+    vol_z = _roll_z(data["volume"], 12)
     oi_delta = data["open_interest"].groupby(level="symbol").transform(
-        lambda s: s.diff(6)
+        lambda s: s.diff(2)  # 2h OI change (was diff(6))
     )
-    oi_delta_z = _roll_z(oi_delta, 48)
-    funding_z = _roll_z(data["funding_rate"], 24)
+    oi_delta_z = _roll_z(oi_delta, 12)
+    funding_z = _roll_z(data["funding_rate"], 6)  # was 24
 
     hl_range = (data["high"] - data["low"]).clip(lower=1e-8)
     close_loc = (data["close"] - data["low"]) / hl_range

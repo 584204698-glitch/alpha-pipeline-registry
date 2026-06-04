@@ -1,0 +1,3002 @@
+{
+  "Binance:0GUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000000BOBUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000000MOGUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000BONKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000CATUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000CHEEMSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000FLOKIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000LUNCUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000PEPEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000RATSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000SATSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000SHIBUSDT": {
+    "spread_bps_mean": 19.6,
+    "half_spread_bps": 9.8,
+    "total_cost_bps": 12.8,
+    "cost_bucket": "medium"
+  },
+  "Binance:1000XECUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1INCHUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:1MBABYDOGEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:2ZUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:4USDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AAVEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ACEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ACHUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ACTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ACUUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ACXUSDT": {
+    "spread_bps_mean": 19.4,
+    "half_spread_bps": 9.7,
+    "total_cost_bps": 12.7,
+    "cost_bucket": "medium"
+  },
+  "Binance:ADAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AERGOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AEROUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AEVOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AGLDUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AGTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AIAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AIGENSYNUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AINUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AIOTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AIOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AIXBTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AKEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AKTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ALCHUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ALGOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ALICEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ALLOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ALLUSDT": {
+    "spread_bps_mean": 18.1,
+    "half_spread_bps": 9.1,
+    "total_cost_bps": 12.1,
+    "cost_bucket": "medium"
+  },
+  "Binance:ALPINEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ALTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ANIMEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ANKRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ANTHROPICUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:APEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:API3USDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:APRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:APTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ARBUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ARCUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ARIAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ARKMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ARKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ARPAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ARUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ASRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ASTERUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ASTRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ASTSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ATHUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ATOMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ATUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AUCTIONUSDT": {
+    "spread_bps_mean": 16.6,
+    "half_spread_bps": 8.3,
+    "total_cost_bps": 11.3,
+    "cost_bucket": "medium"
+  },
+  "Binance:AUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AVAAIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AVAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AVAXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AVGOUSDT": {
+    "spread_bps_mean": 17.9,
+    "half_spread_bps": 8.9,
+    "total_cost_bps": 11.9,
+    "cost_bucket": "medium"
+  },
+  "Binance:AVNTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AWEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AXLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AXSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:AZTECUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:B2USDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BABAUSDT": {
+    "spread_bps_mean": 15.6,
+    "half_spread_bps": 7.8,
+    "total_cost_bps": 10.8,
+    "cost_bucket": "medium"
+  },
+  "Binance:BABYUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BANANAS31USDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BANANAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BANDUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BANKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BANUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BARDUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BASEDUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BASUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BATUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BBUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BBXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BCHUSDT": {
+    "spread_bps_mean": 19.7,
+    "half_spread_bps": 9.8,
+    "total_cost_bps": 12.8,
+    "cost_bucket": "medium"
+  },
+  "Binance:BEAMXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BEATUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BELUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BERAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BICOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BIGTIMEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BIOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BIRBUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BLESSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BLUAIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BLURUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BMTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BNBUSDT": {
+    "spread_bps_mean": 14.6,
+    "half_spread_bps": 7.3,
+    "total_cost_bps": 10.3,
+    "cost_bucket": "medium"
+  },
+  "Binance:BNTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BOMEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BRETTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BREVUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BRKBUSDT": {
+    "spread_bps_mean": 9.0,
+    "half_spread_bps": 4.5,
+    "total_cost_bps": 7.5,
+    "cost_bucket": "medium"
+  },
+  "Binance:BROCCOLI714USDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BROCCOLIF3BUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BSBUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BSVUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BTCDOMUSDT": {
+    "spread_bps_mean": 6.8,
+    "half_spread_bps": 3.4,
+    "total_cost_bps": 6.4,
+    "cost_bucket": "medium"
+  },
+  "Binance:BTCUSDT": {
+    "spread_bps_mean": 12.7,
+    "half_spread_bps": 6.3,
+    "total_cost_bps": 9.3,
+    "cost_bucket": "medium"
+  },
+  "Binance:BTRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BULLAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:BZUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:C98USDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CAKEUSDT": {
+    "spread_bps_mean": 19.0,
+    "half_spread_bps": 9.5,
+    "total_cost_bps": 12.5,
+    "cost_bucket": "medium"
+  },
+  "Binance:CARVUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CATIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CBRSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CCUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CELOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CELRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CETUSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CFGUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CFXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CGPTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CHILLGUYUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CHIPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CHRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CHZUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CKBUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CLANKERUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CLOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:COAIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:COHRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:COLLECTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:COMPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:COOKIEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:COSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:COTIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:COWUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CRMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CROSSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CRVUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CRWVUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CSCOUSDT": {
+    "spread_bps_mean": 17.3,
+    "half_spread_bps": 8.6,
+    "total_cost_bps": 11.6,
+    "cost_bucket": "medium"
+  },
+  "Binance:CTKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CTRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CTSIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CVCUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CVXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CYBERUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:CYSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DASHUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DEEPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DELLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DEXEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DIAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DISUSDT": {
+    "spread_bps_mean": 15.2,
+    "half_spread_bps": 7.6,
+    "total_cost_bps": 10.6,
+    "cost_bucket": "medium"
+  },
+  "Binance:DODOXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DOGEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DOGSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DOLOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DOODUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DOTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DRIFTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DUSKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DYDXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:DYMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:EDENUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:EDGEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:EDUUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:EGLDUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:EIGENUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ELSAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ENAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ENJUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ENSOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ENSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:EPICUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ERAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ESPORTSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ESPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ETCUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ETHFIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ETHUSDT": {
+    "spread_bps_mean": 16.4,
+    "half_spread_bps": 8.2,
+    "total_cost_bps": 11.2,
+    "cost_bucket": "medium"
+  },
+  "Binance:ETHWUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:EULUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:EVAAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:EWJUSDT": {
+    "spread_bps_mean": 11.0,
+    "half_spread_bps": 5.5,
+    "total_cost_bps": 8.5,
+    "cost_bucket": "medium"
+  },
+  "Binance:EWTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FARTCOINUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FETUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FFUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FHEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FIDAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FIGHTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FILUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FLNCUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FLOCKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FLOWUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FLUIDUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FLUXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FOGOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FOLKSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FORMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FRAXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:FUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GALAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GASUSDT": {
+    "spread_bps_mean": 19.2,
+    "half_spread_bps": 9.6,
+    "total_cost_bps": 12.6,
+    "cost_bucket": "medium"
+  },
+  "Binance:GENIUSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GIGGLEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GLMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GMTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GMXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GOATUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GPSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GRASSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GRIFFAINUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GRTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GTCUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GUAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GUNUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:GWEIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HAEDALUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HANAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HBARUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HDUSDT": {
+    "spread_bps_mean": 14.7,
+    "half_spread_bps": 7.4,
+    "total_cost_bps": 10.4,
+    "cost_bucket": "medium"
+  },
+  "Binance:HEIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HEMIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HFTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HIGHUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HIVEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HMSTRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HOLOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HOMEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HOODUSDT": {
+    "spread_bps_mean": 19.0,
+    "half_spread_bps": 9.5,
+    "total_cost_bps": 12.5,
+    "cost_bucket": "medium"
+  },
+  "Binance:HOTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HUMAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HYPERUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HYPEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:HYUNDAIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:IBMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ICNTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ICPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ICXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:IDOLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:IDUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ILVUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:IMXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:INITUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:INJUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:INUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:INXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:IOSTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:IOTAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:IOTXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:IOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:IPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:IRENUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:IRYSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:JASMYUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:JCTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:JELLYJELLYUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:JOEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:JPMUSDT": {
+    "spread_bps_mean": 13.7,
+    "half_spread_bps": 6.9,
+    "total_cost_bps": 9.9,
+    "cost_bucket": "medium"
+  },
+  "Binance:JSTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:JTOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:JUPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KAIAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KAITOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KASUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KATUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KAVAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KERNELUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KGENUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KITEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KMNOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KNCUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KOMAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:KSMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LABUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LAYERUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LDOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LIGHTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LINEAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LINKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LISTAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LITEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LITUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LLYUSDT": {
+    "spread_bps_mean": 16.9,
+    "half_spread_bps": 8.5,
+    "total_cost_bps": 11.5,
+    "cost_bucket": "medium"
+  },
+  "Binance:LPTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LQTYUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LSKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LTCUSDT": {
+    "spread_bps_mean": 15.7,
+    "half_spread_bps": 7.9,
+    "total_cost_bps": 10.9,
+    "cost_bucket": "medium"
+  },
+  "Binance:LUMIAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LUNA2USDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:LYNUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MAGICUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MAGMAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MANAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MANTAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MANTRAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MASKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MAVIAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MAVUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MBOXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MEGAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MELANIAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MEMEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MERLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:METISUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:METUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MEWUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MINAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MIRAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MITOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MMTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MOCAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MONUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MOODENGUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MORPHOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MOVEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MOVRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MTLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MUBARAKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:MYXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NAORISUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NATGASUSDT": {
+    "spread_bps_mean": 15.0,
+    "half_spread_bps": 7.5,
+    "total_cost_bps": 10.5,
+    "cost_bucket": "medium"
+  },
+  "Binance:NBISUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NEARUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NEIROUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NEOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NEWTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NFPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NIGHTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NILUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NMRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NOKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NOMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NOTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NOWUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NVOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:NXPCUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:OGNUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:OGUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ONDOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ONDSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ONEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ONGUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ONTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ONUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:OPENAIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:OPENUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:OPGUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:OPNUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:OPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ORCAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ORDERUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ORDIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PARTIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PAXGUSDT": {
+    "spread_bps_mean": 7.0,
+    "half_spread_bps": 3.5,
+    "total_cost_bps": 6.5,
+    "cost_bucket": "medium"
+  },
+  "Binance:PAYPUSDT": {
+    "spread_bps_mean": 19.1,
+    "half_spread_bps": 9.5,
+    "total_cost_bps": 12.5,
+    "cost_bucket": "medium"
+  },
+  "Binance:PENDLEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PENGUUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PEOPLEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PHAROSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PHAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PIEVERSEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PIPPINUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PIXELUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PLAYUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PLUMEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PNUTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:POLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:POLYXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:POPCATUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PORTALUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:POWERUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:POWRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PRLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PROMPTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PROMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PROVEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PTBUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PUMPBTCUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PUMPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PUNDIXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:PYTHUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:QCOMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:QNTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:QNTXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:QTUMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:QUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RAREUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RAVEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RAYSOLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RECALLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:REDUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RENDERUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RESOLVUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:REZUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RIFUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RIVERUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RKLBUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RLCUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ROBOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RONINUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:ROSEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RPLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RSRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RUNEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:RVNUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SAFEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SAGAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SAMSUNGUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SANDUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SANTOSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SAPIENUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SCRTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SCRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SEIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SENTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SFPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SHELLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SIGNUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SIRENUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SKHYNIXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SKLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SKRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SKYAIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SKYUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SLPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SLXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SNDKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SNXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SOLUSDT": {
+    "spread_bps_mean": 19.0,
+    "half_spread_bps": 9.5,
+    "total_cost_bps": 12.5,
+    "cost_bucket": "medium"
+  },
+  "Binance:SOLVUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SOMIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SONICUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SOONUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SOPHUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SPACEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SPELLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SPKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SPORTFUNUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SPXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SQDUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SSVUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:STABLEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:STARUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:STBLUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:STEEMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:STGUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:STORJUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:STOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:STRKUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:STXUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SUIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SUNUSDT": {
+    "spread_bps_mean": 12.0,
+    "half_spread_bps": 6.0,
+    "total_cost_bps": 9.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SUPERUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SUSHIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SWARMSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SXTUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SYNUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:SYRUPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TACUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TAGUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TAIKOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TAKEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TAOUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:THETAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:THEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TIAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TLMUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TNSRUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TONUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TOSHIUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TOWNSUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TRADOORUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TRBUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TREEUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TRIAUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  },
+  "Binance:TRUMPUSDT": {
+    "spread_bps_mean": 20.0,
+    "half_spread_bps": 10.0,
+    "total_cost_bps": 13.0,
+    "cost_bucket": "medium"
+  }
+}

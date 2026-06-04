@@ -24,8 +24,8 @@ from shadow_utils import build_shadow_record
 
 # ── Constants ──────────────────────────────────────
 
-HOLD_BARS = 12
-COOLDOWN_BARS = 16
+HOLD_BARS = 12  # 12h hold for 1h bars
+COOLDOWN_BARS = 4   # ~4h cooldown (was 16 for 15m bars)
 COST_TIERS = [9, 12, 15]
 SESSION_START = 7   # 07 UTC
 SESSION_END = 17     # 17 UTC
@@ -81,18 +81,18 @@ class FundingCarryScanner:
         self.rejects: list[dict] = []
         self.closed: list[dict] = []
 
-        # Precompute funding_z
+        # Precompute funding_z (6-bar window for 1h bars, was 24-bar for 15m)
         fr = data["funding_rate"]
         gf = fr.groupby(level="symbol")
-        fm = gf.transform(lambda s: s.rolling(24, min_periods=8).mean())
-        fs = gf.transform(lambda s: s.rolling(24, min_periods=8).std()).replace(0, np.nan)
+        fm = gf.transform(lambda s: s.rolling(6, min_periods=4).mean())
+        fs = gf.transform(lambda s: s.rolling(6, min_periods=4).std()).replace(0, np.nan)
         self.funding_z = ((fr - fm) / fs).fillna(0.0)
 
-        # Precompute oi_delta_z
-        oi_d = data["open_interest"].groupby(level="symbol").transform(lambda s: s.diff(6))
+        # Precompute oi_delta_z (2-bar OI delta, 12-bar window for 1h bars)
+        oi_d = data["open_interest"].groupby(level="symbol").transform(lambda s: s.diff(2))
         go = oi_d.groupby(level="symbol")
-        om = go.transform(lambda s: s.rolling(48, min_periods=8).mean())
-        os_ = go.transform(lambda s: s.rolling(48, min_periods=8).std()).replace(0, np.nan)
+        om = go.transform(lambda s: s.rolling(12, min_periods=4).mean())
+        os_ = go.transform(lambda s: s.rolling(12, min_periods=4).std()).replace(0, np.nan)
         self.oi_delta_z = ((oi_d - om) / os_).fillna(0.0)
 
     def scan(self, ts: pd.Timestamp) -> list[ScanResult]:
