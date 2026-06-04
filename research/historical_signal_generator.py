@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 
 from execution_simulator import (
     simulate_orders, build_report, load_symbol_cost, build_spread_fallback,
@@ -23,8 +24,7 @@ def generate_historical_signals(data: pd.DataFrame) -> list[dict]:
     """Run all 4 scanners across full history, output signal list."""
     signals = []
 
-    # Import scanners
-    sys.path.insert(0, str(ROOT))
+    # Import scanners (ROOT already in sys.path)
     from event_scanner import DeleveragingEventScanner
     from relative_strength_shock import detect_relative_strength_shock
     from oi_shock_absorption import detect_oi_shock_absorption
