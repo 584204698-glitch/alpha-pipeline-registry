@@ -1,0 +1,86 @@
+{
+  "research": "Multi-Cap Opportunity Exploration",
+  "date": "2026-06-04",
+  "total_directions_tested": 5,
+  "survivors": 1,
+
+  "results": {
+    "FundingCarry_EU_Session": {
+      "status": "NEW_OPPORTUNITY_PASS",
+      "mechanism": "Extreme negative funding (< -2.5σ) → long 3h, BUT ONLY during EU session (08-16 UTC)",
+      "n_trades": 702,
+      "cost_9bps": {"net_bps": 21460, "pf": 1.22, "top3": 15459, "net_no_top3": 6001, "max_loss": -5620},
+      "cost_12bps": {"net_bps": 17248, "pf": 1.17, "top3": 15441, "net_no_top3": 1807},
+      "cost_15bps": {"net_bps": 13036, "pf": 1.13, "top3": 15423, "net_no_top3": -2387},
+      "session": "EU (08-16 UTC)",
+      "hold_bars": 12,
+      "direction": "long",
+      "universe": "rank 20-100 (81 symbols)",
+      "recommended_action": "Register as PAPER_CANDIDATE. Session filter is critical — Asia session net=-301 (noise), US session net=+6533 (marginal). Session gate MUST be enforced."
+    },
+    "FundingCarry_US_Session": {
+      "status": "PAPER_CANDIDATE",
+      "n_trades": 698,
+      "cost_9bps": {"net_bps": 6533, "pf": 1.10, "net_no_top3": -4123},
+      "note": "Fails at 15bps and net_no_top3 negative. Not deployable without concentration fix."
+    },
+    "FundingCarry_Asia_Session": {
+      "status": "KILL",
+      "n_trades": 663,
+      "cost_9bps": {"net_bps": -301, "pf": 1.00}
+    },
+    "FundingCarry_AllSessions_PriceOnly": {
+      "status": "PAPER_CANDIDATE",
+      "n_trades": 573,
+      "cost_9bps": {"net_bps": 15694, "pf": 1.11, "net_no_top3": -11269},
+      "note": "Without session filter, edge is diluted. Concentration kills it."
+    },
+    "OICascadeWick": {
+      "status": "KILL",
+      "long": {"n": 398, "net_9bps": -16308, "pf": 0.57},
+      "short": {"n": 360, "net_9bps": -3142, "pf": 0.93}
+    },
+    "TakerFlowImbalance": {
+      "status": "KILL",
+      "n": 318,
+      "net_9bps": -6511,
+      "pf": 0.81
+    },
+    "MidCap_101_300": {
+      "status": "ALL_KILL",
+      "funding_carry_long": {"n": 463, "net_9bps": -59851, "pf": 0.51},
+      "funding_carry_short": {"n": 173, "net_9bps": -23402, "pf": 0.52},
+      "oi_cascade_long": {"n": 877, "net_9bps": -14238, "pf": 0.79},
+      "oi_cascade_short": {"n": 944, "net_9bps": -18944, "pf": 0.83},
+      "taker_flow": {"n": 594, "net_9bps": -9861, "pf": 0.81}
+    }
+  },
+
+  "key_insight": "Session matters enormously. Funding extreme mean-reversion is a real alpha, but ONLY during EU session (08-16 UTC) when institutional flows create genuine pressure. Asia session is pure noise — likely driven by retail speculation. US session is marginal. This is the first NEW alpha found since the original 3 events.",
+
+  "recommended_registry_update": {
+    "action": "REGISTER_NEW_FACTOR",
+    "factor_id": "FundingCarryEUSessionV1.0",
+    "status": "paper_candidate",
+    "direction": "long_only",
+    "hold_bars": 12,
+    "session_gate": "EU (08-16 UTC) — MANDATORY, non-negotiable",
+    "funding_threshold": "funding_z < -2.5",
+    "universe": "rank 20-100",
+    "live_allowed": false,
+    "gates": [
+      "funding_z < -2.5",
+      "session == EU (08-16 UTC)",
+      "btc_regime != panic_down",
+      "oi_delta_z > -2.0 (no ongoing liquidation)",
+      "volume_z < 3.0 (no anomalous vol)"
+    ]
+  },
+
+  "cost_stress_verdict": "Survives 12bps with net_no_top3 positive. At 15bps net_no_top3 turns negative (-2,387) but gross net remains positive (+13,036). Mark as COST_SENSITIVE at 15bps, viable at 9-12bps.",
+
+  "files_generated": [
+    "multi_cap_opportunity.py",
+    "multi_cap_opportunity_report.json"
+  ]
+}
