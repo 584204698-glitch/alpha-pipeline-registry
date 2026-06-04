@@ -246,8 +246,43 @@
     "Skip gates without audit commit",
     "Promote to tiny_live without ALL criteria met",
     "Re-enable symmetric trading for OI Shock Absorption",
-    "Mine new events during shadow observation period"
+    "Mine new events during shadow observation period",
+    "Add global filter gates (marketwide_oi_collapse > N, event_density, global_panic) -- all KILL alpha"
   ],
+  "research_completed": {
+    "LargeCapRegimeFilterResearch": {
+      "status": "completed",
+      "date": "2026-06-04",
+      "decision": "no_new_global_filter",
+      "conclusion": "current_event_scanner_gates_validated",
+      "filters_tested": 32,
+      "FILTER_PASS": 11,
+      "KILL": 18,
+      "TOO_STRICT": 3,
+      "key_finding": "Adding global filters (N-based systemic gate, event density, funding extreme) uniformly kills alpha. The per-symbol gate approach in event_scanner.py is the correct implementation.",
+      "report": "large_cap_regime_filter_report.json"
+    }
+  },
+  "scanner_config": {
+    "version": "scanner_v1_0",
+    "frozen_date": "2026-06-04",
+    "frozen_gates": [
+      "1. return_1h < -2.5% and > -12%",
+      "2. oi_z in (-3.0, -2.0] bell-shaped scoring",
+      "3. volume_z > 1.0 and < 8.0",
+      "4. BTC regime != panic_down and != chop",
+      "5. close_location > 0.35",
+      "6. |funding_z| < 2.0 (per-symbol)",
+      "7. systemic per-symbol rejection if >5 coins collapsing",
+      "8. regime-based score thresholds"
+    ],
+    "forbidden_gates": [
+      "marketwide_oi_collapse_count > N global ban",
+      "event_density high → reject all",
+      "global panic filter (covered by regime gate)"
+    ],
+    "change_policy": "No new gates without shadow evidence of drift. Only modify based on live shadow data, not historical backtests."
+  },
   "next_steps": [
     "1. Trading Hermes: git pull origin master",
     "2. Load shadow_config.json → shadow_monitor.py",

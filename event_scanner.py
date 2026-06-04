@@ -1,15 +1,24 @@
 """
-SmallCapDeleveragingReversal — Real-time Event Scanner.
+SmallCapDeleveragingReversal -- Real-time Event Scanner.
 
-Captures: small-cap coins undergoing forced liquidation (OI collapse + sharp drop
-+ volume surge) that are NOT in a systemic panic → long the bounce.
+SCANNER VERSION: scanner_v1_0 (FROZEN 2026-06-04)
+GATE CHANGE POLICY: No new gates without shadow evidence of drift.
+Gates validated by LargeCapRegimeFilterResearch -- adding global filters kills alpha.
 
-Design:
-- Scan every 15m using 1h rolling metrics
-- Bell-shaped OI severity scoring (optimal: -3.0 < oi_z <= -2.0)
-- BTC regime gate (panic_down → no entry)
-- State machine: WATCH → QUALIFIED → CONFIRMED → ENTERED → EXITED
-- Long-only (short side killed after paper review)
+8 GATES (frozen):
+1. return_1h < -2.5% and > -12%
+2. oi_z in (-3.0, -2.0] bell-shaped scoring, center=-2.5
+3. volume_z > 1.0 and < 8.0
+4. BTC regime != panic_down and != chop
+5. close_location > 0.35 for entry confirmation
+6. |funding_z| < 2.0 (per-symbol, NOT global)
+7. systemic_deleveraging gate -- per-symbol rejection if >5 coins collapsing
+8. regime-based score thresholds: trend_down=0.50, range=0.60, trend_up=0.75
+
+FORBIDDEN GATES (tested, killed, do NOT re-add):
+- marketwide_oi_collapse_count > N global ban (kills alpha at all N)
+- event_density high → reject all (kills opportunity concentration)
+- global panic filter (covered by regime gate, adding threshold kills trades)
 """
 from __future__ import annotations
 
@@ -87,37 +96,37 @@ class SmallCapUniverse:
 REGIME_RULES = {
     "trend_up": {
         "allow_long": True,
-        "description": "BTC trending up — small-cap drops likely idiosyncratic, fakeouts",
-        "event_score_threshold": 0.75,  # very strict — most are fakeouts
+        "description": "BTC trending up -- small-cap drops likely idiosyncratic, fakeouts",
+        "event_score_threshold": 0.75,  # very strict -- most are fakeouts
         "position_pct": 0.5,  # reduced size
     },
     "range": {
         "allow_long": True,
-        "description": "Sideways — default conditions",
+        "description": "Sideways -- default conditions",
         "event_score_threshold": 0.60,
         "position_pct": 1.0,
     },
     "trend_down": {
         "allow_long": True,
-        "description": "BTC trending down — prime deleveraging hunting ground",
-        "event_score_threshold": 0.50,  # relaxed — these are real liquidations
+        "description": "BTC trending down -- prime deleveraging hunting ground",
+        "event_score_threshold": 0.50,  # relaxed -- these are real liquidations
         "position_pct": 1.0,  # full size
     },
     "chop": {
         "allow_long": False,
-        "description": "Directionless high-vol — no trading",
+        "description": "Directionless high-vol -- no trading",
         "event_score_threshold": 0.99,
         "position_pct": 0.0,
     },
     "panic_down": {
         "allow_long": False,
-        "description": "Systemic panic — NO longs",
+        "description": "Systemic panic -- NO longs",
         "event_score_threshold": 0.99,
         "position_pct": 0.0,
     },
     "unknown": {
         "allow_long": True,
-        "description": "Unknown regime — default to range rules",
+        "description": "Unknown regime -- default to range rules",
         "event_score_threshold": 0.60,
         "position_pct": 1.0,
     },
