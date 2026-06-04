@@ -1,8 +1,102 @@
 {
-  "mode": "disabled",
-  "enabled_factors": [],
-  "max_risk_per_trade": 0.002,
-  "allow_ai_override": false,
-  "require_risk_check_id": true,
-  "block_unapproved_factors": true
+  "_schema": "live_config.json — trading Hermes READ-ONLY. Do NOT modify on trading side.",
+  "_generated_by": "research Hermes",
+  "_generated_at": "2026-06-04T12:00:00Z",
+  "_git_commit": "f4ccd30",
+  "mode": "shadow_only",
+  "live_execution": false,
+  "order_placement": false,
+  "ai_override_forbidden": true,
+  "events": {
+    "SmallCapDeleveragingReversalV1": {
+      "status": "shadow_candidate",
+      "live_allowed": false,
+      "direction": "long_only",
+      "hold_bars": 2,
+      "priority": 1,
+      "min_regime_confidence": 0,
+      "enabled": true,
+      "gates": [
+        "return_1h < -2.5% and > -12%",
+        "-3.0 < oi_delta_z <= -2.0 (bell-shaped, center=-2.5)",
+        "volume_z > 1.0 and < 8.0",
+        "btc_regime != panic_down and != chop",
+        "close_location > 0.35",
+        "|funding_z| < 2.0",
+        "marketwide_oi_collapse_count <= 5",
+        "regime-based score thresholds"
+      ]
+    },
+    "OIShockAbsorptionV1": {
+      "status": "shadow_candidate",
+      "live_allowed": false,
+      "direction": "long_only",
+      "hold_bars": 2,
+      "priority": 2,
+      "min_regime_confidence": 0,
+      "symmetric_trading_forbidden": true,
+      "allow_short_side": false,
+      "allow_long_side": true,
+      "enabled": true,
+      "gates": [
+        "oi_delta_z > 2.5",
+        "volume_z > 1.5",
+        "close_loc < 0.4 (trapped shorts at range low)",
+        "abs(ret_15m) < 1% OR abs(ret_1h) < 2%",
+        "btc_regime != panic_down and != chop"
+      ]
+    },
+    "RelativeStrengthShockV1": {
+      "status": "shadow_candidate",
+      "live_allowed": false,
+      "direction": "regime_dependent",
+      "hold_bars": 2,
+      "priority": 3,
+      "requires_regime_confidence": true,
+      "min_regime_confidence": 1,
+      "enabled": true,
+      "gates": [
+        "RS > 5% (symbol_ret - btc_ret)",
+        "volume_z > 2.0",
+        "oi_delta_z > 0.5",
+        "close_location > 0.50",
+        "|funding_z| < 2.5",
+        "event_score > 0.60",
+        "btc_ret_1h > -1%",
+        "skip trend_up/panic_down/chop"
+      ],
+      "range_regime_restriction": "shadow-only — requires volume+OI+BTC confirmation"
+    }
+  },
+  "conflict_resolution": {
+    "priority_order": [
+      "DeleveragingReversal",
+      "OIShockAbsorption",
+      "RelativeStrengthShock"
+    ],
+    "direction_conflict_rule": "SKIP_ALL",
+    "same_direction_rule": "accept_highest_priority"
+  },
+  "tiny_live_promotion_criteria": {
+    "general": {
+      "min_shadow_trades": 30,
+      "net_12bps_positive": true,
+      "pf_minimum": 1.15,
+      "net_without_top3_positive": true,
+      "no_regime_slice_runaway": true,
+      "no_manual_rule_changes": true
+    },
+    "DeleveragingReversal_special": {
+      "min_shadow_trades": 50,
+      "net_without_top3_mandatory": true,
+      "note": "Stricter due to paper extreme contribution FAIL"
+    }
+  },
+  "forbidden_actions": [
+    "Place orders during shadow",
+    "Modify event rules on trading side",
+    "Skip gates without audit commit",
+    "Promote to live without human approval",
+    "Re-enable symmetric trading for OI Shock Absorption"
+  ]
 }

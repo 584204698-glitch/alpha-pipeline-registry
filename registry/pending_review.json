@@ -1,1 +1,8 @@
-{"pending": []}
+{
+  "_schema": "pending_review.json — research Hermes submits promotion requests here",
+  "_process": "Human reviews this file, approves/rejects, then updates factor_registry.json",
+  "_last_reviewed_by": null,
+  "_last_reviewed_at": null,
+  "pending_promotions": [],
+  "notes": "Append promotion requests to pending_promotions array. After human review, move to registry and clear this file."
+}

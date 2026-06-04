@@ -127,36 +127,22 @@ class EventScannerRunner:
         signals = []
         rejects = []
         for r in results:
-            record = self._build_base_record(r.symbol, "DeleveragingReversal", "long", r.event_score)
-            record["metrics"]["oi_z"] = round(r.metrics.get("oi_z", 0), 2)
-            record["metrics"]["ret_1h"] = round(r.metrics.get("ret_1h", 0), 4)
-            record["metrics"]["vol_z"] = round(r.metrics.get("vol_z", 0), 2)
-            record["metrics"]["close_loc"] = round(r.metrics.get("close_loc", 0), 3)
+            oi_z_v = r.metrics.get("oi_z", 0)
+            ret_1h_v = r.metrics.get("ret_1h", 0)
+            vol_z_v = r.metrics.get("vol_z", 0)
+            cl_v = r.metrics.get("close_loc", 0)
+            record = self._build_base_record(r.symbol, "DeleveragingReversal", "long", r.event_score,
+                                             return_1h=ret_1h_v, oi_delta_z=oi_z_v, volume_z=vol_z_v,
+                                             close_location=cl_v)
 
             if r.state == EventState.REJECTED:
                 record["status"] = "REJECTED"
                 record["reject_reason"] = r.reject_reason
-                if "funding_z" in str(r.reject_reason).lower():
-                    record["reject_category"] = "funding_z"
-                elif "systemic" in str(r.reject_reason).lower():
-                    record["reject_category"] = "systemic_oi"
-                elif "panic" in str(r.reject_reason).lower():
-                    record["reject_category"] = "regime"
-                elif "return" in str(r.reject_reason).lower():
-                    record["reject_category"] = "return"
-                elif "oi_z" in str(r.reject_reason).lower():
-                    record["reject_category"] = "oi_z"
-                elif "volume" in str(r.reject_reason).lower():
-                    record["reject_category"] = "volume_z"
-                else:
-                    record["reject_category"] = "other"
                 rejects.append(record)
             elif r.state in (EventState.CONFIRMED, EventState.QUALIFIED):
                 record["status"] = "SHADOW_SIGNAL" if r.state == EventState.CONFIRMED else "QUALIFIED_EVENT"
                 record["hold_bars"] = HOLD_BARS
-                record["entry_price_sim"] = self._get_price(r.symbol)
                 record["direction"] = "long"
-                record["expected_cost_bps"] = 9
                 record["reasons"] = [
                     "return_1h < -2.5%",
                     "-3 < oi_delta_z <= -2",
@@ -185,16 +171,11 @@ class EventScannerRunner:
         signals = []
         rejects = []
         for ev in latest_events:
-            record = self._build_base_record(ev["symbol"], "OIShockAbsorption", ev["direction"], ev["event_score"])
-            record["metrics"]["oi_z"] = ev.get("oi_z", 0)
-            record["metrics"]["vol_z"] = ev.get("vol_z", 0)
-            record["metrics"]["close_loc"] = ev.get("close_loc", 0)
-            record["metrics"]["ret_15m_pct"] = ev.get("ret_15m_pct", 0)
-            record["metrics"]["ret_1h_pct"] = ev.get("ret_1h_pct", 0)
+            record = self._build_base_record(ev["symbol"], "OIShockAbsorption", ev["direction"], ev["event_score"],
+                                             return_1h=ev.get("ret_1h_pct", 0) / 100, oi_delta_z=ev.get("oi_z", 0), 
+                                             volume_z=ev.get("vol_z", 0), close_location=ev.get("close_loc", 0))
             record["status"] = "SHADOW_SIGNAL"
             record["hold_bars"] = HOLD_BARS
-            record["entry_price_sim"] = self._get_price(ev["symbol"])
-            record["expected_cost_bps"] = 9
             record["reasons"] = [
                 "oi_delta_z > 2.5",
                 "volume_z > 1.5",
@@ -217,13 +198,9 @@ class EventScannerRunner:
         signals = []
         rejects = []
         for ev in latest_events:
-            record = self._build_base_record(ev["symbol"], "RelativeStrengthShock", ev["direction"], ev["event_score"])
-            record["metrics"]["rs_pct"] = ev.get("rs_pct", 0)
-            record["metrics"]["ret_1h_pct"] = ev.get("ret_1h_pct", 0)
-            record["metrics"]["btc_ret_1h_pct"] = ev.get("btc_ret_1h_pct", 0)
-            record["metrics"]["vol_z"] = ev.get("vol_z", 0)
-            record["metrics"]["oi_delta_z"] = ev.get("oi_delta_z", 0)
-            record["metrics"]["close_loc"] = ev.get("close_loc", 0)
+            record = self._build_base_record(ev["symbol"], "RelativeStrengthShock", ev["direction"], ev["event_score"],
+                                             return_1h=ev.get("ret_1h_pct", 0) / 100, oi_delta_z=ev.get("oi_delta_z", 0),
+                                             volume_z=ev.get("vol_z", 0), close_location=ev.get("close_loc", 0))
 
             rg_conf = self.regime_conf_map.get(ev.get("regime", "unknown"), 0)
 
@@ -231,14 +208,11 @@ class EventScannerRunner:
             if ev.get("regime") == "range" and rg_conf < 1:
                 record["status"] = "REJECTED"
                 record["reject_reason"] = "regime_confidence_low"
-                record["reject_category"] = "regime_confidence"
                 rejects.append(record)
                 continue
 
             record["status"] = "SHADOW_SIGNAL"
             record["hold_bars"] = HOLD_BARS
-            record["entry_price_sim"] = self._get_price(ev["symbol"])
-            record["expected_cost_bps"] = 9
             record["reasons"] = [
                 "RS > 5%",
                 "volume_z > 2.0",
@@ -254,37 +228,56 @@ class EventScannerRunner:
 
     # ── Helpers ─────────────────────────────────────
 
-    def _build_base_record(self, symbol: str, event_type: str, direction: str, score: float) -> dict:
-        """Build base shadow record with all mandatory fields."""
+    def _build_base_record(self, symbol: str, event_type: str, direction: str, score: float,
+                           return_1h: float = 0.0, oi_delta_z: float = 0.0, volume_z: float = 0.0,
+                           close_location: float = 0.0, spread_bps: float = 0.0) -> dict:
+        """Build shadow record matching trading Hermes signal spec."""
         regime = self.regime_map.get(self.latest_ts, "unknown") if self.latest_ts else "unknown"
         rg_conf = int(self.regime_conf_map.get(self.latest_ts, 0)) if self.latest_ts else 0
 
+        # Count market-wide OI collapses at this timestamp
+        marketwide_collapse = 0
+        if self.latest_ts:
+            mask = self.data.index.get_level_values("timestamp") == self.latest_ts
+            syms_ts = set(self.data.index.get_level_values("symbol")[mask])
+            for s in self.small_syms & syms_ts:
+                try:
+                    oi_z_val = float(self._get_oi_z(s))
+                    if oi_z_val < -1.5:
+                        marketwide_collapse += 1
+                except (KeyError, TypeError):
+                    pass
+
         return {
             "timestamp": str(self.latest_ts) if self.latest_ts else str(self.scan_ts),
-            "scan_time": self.scan_ts.isoformat(),
             "symbol": symbol,
             "event_type": event_type,
             "status": "UNKNOWN",
             "direction": direction,
-            "event_score": round(score, 4),
-            "regime": regime,
-            "regime_confidence": rg_conf,
             "hold_bars": None,
-            "entry_price_sim": None,
-            "expected_cost_bps": None,
-            "reject_reason": "",
-            "reject_category": "",
+            "event_score": round(score, 4),
+            "return_1h": round(return_1h, 4),
+            "oi_delta_z": round(oi_delta_z, 2),
+            "volume_z": round(volume_z, 2),
+            "close_location": round(close_location, 3),
+            "btc_regime": regime,
+            "regime_confidence": rg_conf,
+            "marketwide_oi_collapse_count": marketwide_collapse,
+            "spread_bps": round(spread_bps, 1),
+            "expected_cost_bps": 18,
             "reasons": [],
-            "metrics": {},
+            "reject_reason": "",
         }
 
-    def _get_price(self, symbol: str) -> float | None:
-        """Get latest close price for a symbol."""
+    def _get_oi_z(self, symbol: str) -> float | None:
+        """Get OI delta z-score for a symbol at latest timestamp using event_scanner precompute."""
         if self.latest_ts is None:
             return None
         try:
-            return round(float(self.data.loc[(self.latest_ts, symbol), "close"]), 8)
-        except KeyError:
+            # Use the precomputed oi_z from DeleveragingEventScanner
+            scanner = DeleveragingEventScanner(self.data, self.regime_map)
+            return float(scanner.oi_z.loc[(self.latest_ts, symbol)])
+        except (KeyError, TypeError, AttributeError):
             return None
 
     def _count_by_event(self, signals: list[dict]) -> dict[str, int]:
@@ -296,7 +289,7 @@ class EventScannerRunner:
     def _count_by_regime(self, signals: list[dict]) -> dict[str, int]:
         counts: dict[str, int] = {}
         for s in signals:
-            counts[s.get("regime", "unknown")] = counts.get(s.get("regime", "unknown"), 0) + 1
+            counts[s.get("btc_regime", "unknown")] = counts.get(s.get("btc_regime", "unknown"), 0) + 1
         return counts
 
     def _count_by_reason(self, rejects: list[dict]) -> dict[str, int]:
@@ -362,4 +355,4 @@ if __name__ == "__main__":
         for sig in sorted(runner.all_signals, key=lambda s: -s.get("event_score", 0))[:5]:
             print(f"  {sig['symbol']:20s} {sig['event_type']:25s} "
                   f"score={sig['event_score']:.3f} dir={sig['direction']:5s} "
-                  f"regime={sig.get('regime','?')}")
+                  f"regime={sig.get('btc_regime','?')}")

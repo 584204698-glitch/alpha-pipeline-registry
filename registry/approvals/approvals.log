@@ -1,0 +1,9 @@
+# Approvals Log — Human Approval Trail
+# Format: ISO_TIMESTAMP | ACTION | FACTOR/EVENT | FROM_STATUS → TO_STATUS | APPROVER | NOTES
+# DO NOT EDIT MANUALLY — append-only audit trail
+
+2026-06-04T11:00:00Z | SHADOW_CANDIDATE | SmallCapDeleveragingReversalV1 | paper_candidate → shadow_candidate | audit | Shadow Readiness Audit: PASS cost stress, FAIL extreme contribution. Shadow-only, live forbidden.
+2026-06-04T11:00:00Z | SHADOW_CANDIDATE | RelativeStrengthShockV1 | paper_pass → shadow_candidate | audit | Regime-dependent direction. Requires regime_confidence >= 1. Middle-period WARN.
+2026-06-04T11:00:00Z | SHADOW_CANDIDATE | OIShockAbsorptionV1 | paper_pass → shadow_candidate | audit | Long-only, symmetric_trading_forbidden. Early-period WARN.
+2026-06-04T11:30:00Z | CONFIG_LOCK | all_events | shadow_config → locked | audit | Shadow infrastructure deployed: monitor, config, promotion criteria locked. No live execution allowed.
+2026-06-04T12:00:00Z | SCANNER_DEPLOY | EventScanner | dev → shadow_active | audit | run_event_scanner.py deployed. Cronjob 560fdce195ef every 15m. Shadow-only, no orders.
